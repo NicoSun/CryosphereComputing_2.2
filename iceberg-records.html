@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="static/w3_content/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
 <style>
 body {font-family: "Lato";
   sans-serif;
@@ -24,6 +31,12 @@ body {font-family: "Lato";
   color: black;
   border-radius: 8px; 
 }
+
+#chartdiv {
+  width: 1200px;
+  height: 1000px;
+}
+
 
 
 /* Create three equal columns that floats next to each other */
@@ -163,7 +176,7 @@ body {font-family: "Lato";
            or sections missing means the real size is smaller. Therfore the size has been reduced by 10%. Usually the real size is 
            between 80-100% of the perfect calculated rectangle.
           </p>
-          <img src="Iceberg/Icebergs_size.png" class="w3-round">
+          <img src="Iceberg/Iceberg_size.png" class="w3-round">
         
         
         <h3 class="w3-wide">Iceberg Age</h3>
@@ -190,8 +203,6 @@ body {font-family: "Lato";
         <img src="Iceberg/Icebergs_distance.png" class="w3-round">
         <p> The current record is 21945 km by iceberg "b15k"</p>
 
-  </div>
-
   <div class="w3-row"></div>
 
      <h2> Iceberg speed </h2>
@@ -199,7 +210,25 @@ body {font-family: "Lato";
      <p> </p>
 
         <img src="Iceberg/iceberg_speed.png" class="w3-round">
-        <img src="Iceberg/Icebergs_calving_size.png" class="w3-round">
+
+    <div class="w3-row"></div>
+
+     <h2> Calving size per year </h2>
+     
+     <p> Still in Quality Control.</p>
+
+   <!--     <img src="Iceberg/Icebergs_calving_size.png" class="w3-round"> -->
+
+
+    <div class="w3-row"></div>
+
+     <h2> Furthest North </h2>
+     
+     <p> </p>
+
+        <img src="Iceberg/Furthest_north.png" class="w3-round">
+        
+        <div id="chartdiv"></div>
 
   </div>
   
@@ -214,6 +243,64 @@ body {font-family: "Lato";
 </div>
 
 <!-- Footer -->
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_worldLow;
+
+// Set projection
+chart.projection = new am4maps.projections.Orthographic();
+chart.panBehavior = "rotateLongLat";
+chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#33a7ff");
+chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 1;
+chart.background.fill = am4core.color("#000033");
+chart.background.fillOpacity = 1;
+chart.deltaLatitude = 90; 
+
+var grid = chart.series.push(new am4maps.GraticuleSeries());
+grid.toBack();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+// Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+polygonSeries.mapPolygons.template.nonScalingStroke = true;
+polygonSeries.mapPolygons.template.strokeOpacity = 0.5;
+
+let imageSeries = chart.series.push(new am4maps.MapImageSeries());
+let imageSeriesTemplate = imageSeries.mapImages.template;
+
+let circle = imageSeriesTemplate.createChild(am4core.Circle);
+circle.radius = 5;
+circle.fill = am4core.color("#808080");
+circle.stroke = am4core.color("#330000");
+circle.strokeWidth = 2;
+circle.nonScaling = true;
+circle.tooltipText = "{Iceberg}";
+
+
+
+imageSeriesTemplate.propertyFields.latitude = "Latitude";
+imageSeriesTemplate.propertyFields.longitude = "Longitude";
+
+imageSeries.dataSource.url = "https://carbonateoxygen.tk/icebergs/iceberg_northness.json";
+imageSeries.dataSource.parser = new am4core.JParser();
+imageSeries.dataSource.parser.options.emptyAs = 0;
+
+}); // end am4core.ready()
+</script>
 
 
 <script>
