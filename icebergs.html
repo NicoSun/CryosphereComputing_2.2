@@ -3,7 +3,7 @@
 <title>Icebergs</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
@@ -22,11 +22,11 @@
 <style>
 body {font-family: "Lato", sans-serif}
 
-hr { 
+hr {
   display: block;
   border-width: 2px;
   border-color: #666666;
-} 
+}
 
 body {
   background-color: #000033;
@@ -65,14 +65,14 @@ body {
    <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -91,7 +91,7 @@ body {
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -99,7 +99,7 @@ body {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -108,7 +108,7 @@ body {
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -140,7 +140,7 @@ body {
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -148,7 +148,7 @@ body {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -171,16 +171,16 @@ body {
       <div id="chartdiv"></div>
             <div>
         <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" class="w3-round" style="width:100%">
-        <img src="https://nrt.cryospherecomputing.com/icebergs_size.png" class="w3-round" style="width:100%">
+        <img src="https://nrt.cryospherecomputing.com/iceberg/icebergs_size.png" class="w3-round" style="width:100%">
       </div>
   </div>
-    
+
 
 <div class="w3-center">
 <h2 class="w3-wide" >Data used</h2>
 <p> U.S. National Ice Center (NIC); https://usicecenter.gov/pub/Iceberg_Tabular.csv </p>
 </div>
-	
+
 <!-- Chart code -->
 <script>
 am4core.ready(function() {
@@ -203,7 +203,7 @@ chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#33a7f
 chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 1;
 chart.background.fill = am4core.color("#000033");
 chart.background.fillOpacity = 1;
-chart.deltaLatitude = 90; 
+chart.deltaLatitude = 90;
 
 var grid = chart.series.push(new am4maps.GraticuleSeries());
 grid.toBack();
