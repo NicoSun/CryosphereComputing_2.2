@@ -3,7 +3,7 @@
 <title>Snow Cover Statistics</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
@@ -39,14 +39,14 @@ body {font-family: "Lato";
    <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -65,7 +65,7 @@ body {font-family: "Lato";
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -73,7 +73,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -82,7 +82,7 @@ body {font-family: "Lato";
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -114,7 +114,7 @@ body {font-family: "Lato";
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -122,7 +122,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -140,11 +140,11 @@ body {font-family: "Lato";
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIT">
     <h2 class="w3-wide">Northern Hemisphere Snow Cover</h2>
     <p>The following two charts show the variance in Snow Cover over the early 21t century. In the standard deviation chart it is seen the highest variance is in fall from October to late Novermber.
-    
+
     </p>
      <p>In summer when only Greenland and a few Mountains contain snow the variance between years is very small. Consequently on the histogram, days with near zero anomaly occur most.
      </p>
-    
+
     <div class="w3-half">
 	  <div id="Stdv" style="min-width: 400px; max-width: 900px; height: 600px; margin: 0 auto"></div>
 	</div>
@@ -168,9 +168,9 @@ body {font-family: "Lato";
       </div>
     </div>
   </div>
-  
 
-  
+
+
 <!-- End Page Content -->
 </div>
 
@@ -278,7 +278,7 @@ Highcharts.chart('Histogram', {
         name: 'Anomaly Bin',
         data: [0,2,1,4,2,5,3,7,7,14,19,48,21,42,63,71,93,152,193,209,243,257,305,364,440,603,783,712,864,539,453,401,342,317,253,210,156,126,106,87,49,46,30,25,18,13,8,6,4,5,3,0]
     }]
-    
+
 });
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -286,11 +286,11 @@ function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-
+darkmode()
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <title>Glacier size</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
@@ -18,6 +18,13 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <style>
+.buttonstyle {
+  background-color: #e6e6e6;
+  color: black;
+  border-radius: 12px;
+}
+
+
 body {font-family: "Lato";
   sans-serif;
   background-color: white;
@@ -38,14 +45,14 @@ body {font-family: "Lato";
   width: 100%;
   text-align: center;
   }
-  
-hr { 
+
+hr {
   display: block;
   border-width: 2px;
   border-color: #666666;
-} 
+}
 
-  
+
 </style>
 
 </head>
@@ -56,14 +63,14 @@ hr {
    <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -82,7 +89,7 @@ hr {
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -90,7 +97,7 @@ hr {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -99,7 +106,7 @@ hr {
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -131,7 +138,7 @@ hr {
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -139,7 +146,7 @@ hr {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -156,29 +163,46 @@ hr {
     <!-- Glacier Size compariso -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1920px" id="Greenland">
     <h2 class="w3-wide">Glacier Size</h2>
-    <p class="w3-opacity"><i>All of Greenlands major glaciers would fit into Pine Island Glacier from a width perspective. The adjacent Thwaites Glacier is another 60% wider.</i></p>
-    
-    
+
+
+    <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
+    <button onclick="more_info()" class="w3-button buttonstyle">Info</button>
+    <div id="more_info">
+    <p class="w3-justify">  A size comparison between glaciers in terms of height and width of the terminus. The glacier thickness is not necessarily
+       the difference between the surface and bedrock. This is only true for grounded ice.
+        Defining the edges of Antarctic glaciers is difficult because most of the western ice sheet is below sea level, but they still exhibt an underwater glacier valley.
+       </p>
+    </div>
+
+
+    </div>
+
+    <p class="w3-opacity"><i>All of Greenlands major glaciers would fit into Pine Island Glacier from a width perspective.
+       The adjacent Thwaites Glacier is another 60% wider.</i></p>
+
+
     <div class="w3-row">
   <div id="All_Glacier_Bedrock" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
 	</div>
 	<hr>
-	<p class="w3-opacity"><i>The surface data is just an estimation from the time when the measurements for the model were made. Since then they could have changed significantly.</i></p>
+	<p class="w3-opacity"><i>The surface data is just an estimation from the time when the measurements for the model were made.
+     Since then they could have changed significantly. </i></p>
 	 <div class="w3-row">
   <div id="Antarctic_Glacier_Front" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
 	</div>
-	
+
 	<hr>
 	 <div class="w3-row">
-	 <p class="w3-opacity"><i>The surface data is just an estimation from the time when the measurements for the model were made. Since then they could have changed significantly.</i></p>
+	 <p class="w3-opacity"><i>The surface data is just an estimation from the time when the measurements for the model were made.
+      Since then they could have changed significantly.</i></p>
   <div id="Greenland_Glacier_Front" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
 	</div>
-	
-	
+
+
 <hr>
 <div class="w3-row"></div>
 <h2 class="w3-wide">Data used</h2>
-<p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p> 
+<p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
 <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>
 
 
@@ -378,10 +402,23 @@ function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+darkmode()
+
+more_info()
+// Used to toggle Info
+function more_info() {
+  var x = document.getElementById("more_info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 </script>
 
 </body>

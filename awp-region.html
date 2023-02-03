@@ -3,7 +3,7 @@
 <title>AWP Regional</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
@@ -12,6 +12,13 @@
 <link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+.buttonstyle {
+  background-color: #e6e6e6;
+  color: black;
+  border-radius: 12px;
+}
+
+
 body {font-family: "Lato";
   sans-serif;
   background-color: white;
@@ -50,14 +57,14 @@ body {font-family: "Lato";
    <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -76,7 +83,7 @@ body {font-family: "Lato";
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -84,7 +91,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -93,7 +100,7 @@ body {font-family: "Lato";
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -125,7 +132,7 @@ body {font-family: "Lato";
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -133,7 +140,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -149,17 +156,29 @@ body {font-family: "Lato";
 
     <!-- Sea Ice Area -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIA">
-    <h2 class="w3-wide">Arctic</h2>
+    <h2 class="w3-wide">Regional Arctic AWP</h2>
     <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
+
+    <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
+    <button onclick="more_info()" class="w3-button buttonstyle">Info</button>
+    <div id="more_info">
+    <p class="w3-justify"> Arctic Regions: Sea of Okhotsk,	Bering Sea,	Hudson Bay,	Baffin Bay,	East Greenland Sea,
+      	Barents Sea,	Kara Sea,	Laptev Sea,	East Siberian Sea,	Chukchi Sea,	Beaufort Sea,	Canadian Archipelago,	Central Arctic
+
+       </p>
+    </div>
+    </div>
+
+
     <div class="w3-row w3-padding-12">
       <div class="w3-half">
       <img id="AWP_RegionD" src="AWP_regional/North_AWP_RegionD13.png" style="width:100%">
-      </div> 
+      </div>
       <div class="w3-half">
       <img id="AWP_RegionA" src="AWP_regional/North_AWP_RegionA13.png" style="width:100%">
       </div>
       <div class="w3-row">
-      
+
 <center>
 <div class="slidecontainer">
     <span>Region:</span>
@@ -170,17 +189,25 @@ body {font-family: "Lato";
 
 <div class="w3-row"></div>
 
-<h2 class="w3-wide">Antarctic</h2>
+<h2 class="w3-wide">Regional Antarctic AWP</h2>
+
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
+<button onclick="more_info2()" class="w3-button buttonstyle">Info</button>
+<div id="more_info2">
+<p class="w3-justify"> Antarctic Regions: Weddel Sea,	Indian Ocean,	Pacific Ocean,	Ross Sea,	Bell-Amundsen Sea
+   </p>
+</div>
+</div>
     <div class="w3-row w3-padding-12">
       <div class="w3-half">
       <img id="AWP_RegionD_south" src="AWP_regional/South_AWP_RegionD5.png" style="width:100%">
-      </div> 
+      </div>
       <div class="w3-half">
       <img id="AWP_RegionA_south" src="AWP_regional/South_AWP_RegionA5.png" style="width:100%">
       </div>
       <div class="w3-row">
-      
-      
+
+
 <center>
 <div class="slidecontainer">
     <span>Region:</span>
@@ -192,17 +219,17 @@ body {font-family: "Lato";
 
 <div class="w3-row"></div>
 
-      <h2 class="w3-wide">Heatmap</h2>
+      <h2 class="w3-wide">AWP Heatmap</h2>
     <p class="ex">AWP in percent of Icefree conditions</p>
 
 <div class="w3-half">
 <img  src="AWP_regional/Region_Heatmap.png" style="height:100%">
-</div> 
+</div>
 <div class="w3-half">
 <img src="AWP_regional/Region_Heatmap_south.png" style="height:100%">
 </div>
-    
-  
+
+
 <!-- End Page Content -->
 </div>
 </div>
@@ -215,6 +242,7 @@ body {font-family: "Lato";
 </footer>
 
 <script>
+darkmode()
 function darkmode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
@@ -230,12 +258,12 @@ outputR.innerHTML = sliderR.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 sliderR.oninput = function() {
   outputR.innerHTML = this.value;
-  
+
   //update image
 	var imageid_D = "AWP_regional/North_AWP_RegionD" + sliderR.value + ".png";
 	var imageid_A = "AWP_regional/North_AWP_RegionA" + sliderR.value + ".png";
 	showimage_Regions(imageid_D,imageid_A);
-} 
+}
 
 function showimage_Regions (imageid_D,imageid_A){
 document.getElementById("AWP_RegionD").src = imageid_D;
@@ -252,16 +280,39 @@ outputR_south.innerHTML = sliderR_south.value; // Display the default slider val
 // Update the current slider value (each time you drag the slider handle)
 sliderR_south.oninput = function() {
   outputR_south.innerHTML = this.value;
-  
+
   //update image
 	var imageid_D_south = "AWP_regional/South_AWP_RegionD" + sliderR_south.value + ".png";
 	var imageid_A_south = "AWP_regional/South_AWP_RegionA" + sliderR_south.value + ".png";
 	showimage_Regions_south(imageid_D_south,imageid_A_south);
-} 
+}
 
 function showimage_Regions_south (imageid_D_south,imageid_A_south){
 document.getElementById("AWP_RegionD_south").src = imageid_D_south;
 document.getElementById("AWP_RegionA_south").src = imageid_A_south;
+}
+
+
+
+more_info()
+more_info2()
+// Used to toggle Info
+function more_info() {
+  var x = document.getElementById("more_info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function more_info2() {
+  var x = document.getElementById("more_info2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
 
 //-------------------------------------------
@@ -271,7 +322,7 @@ function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }

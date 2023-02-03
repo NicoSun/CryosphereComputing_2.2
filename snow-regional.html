@@ -205,7 +205,8 @@ p.ex {
     <!-- Snow Covered Days -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIT">
     <h1 class="w3-wide">Regional Snow Extent</h1>
-    <p class="w3-opacity"><i>Data from Feb1997 to Dec2019</i></p>
+    <p"><i>Data from Feb1997 to Dec2019</i></p>
+    <p>The exact region extents can seens on the map.</p>
     <div class="w3-row w3-padding-12">
     </div>
 
@@ -217,10 +218,8 @@ p.ex {
 </div>
     <!-- Snow Cover anomaly -->
 <div class="w3-half">
-<p class="ex">Only the high resolution data since 1997 is good enough for a detailed regional analysis. <br>
-The limited timespan of 23 years would only allow two true decadal means. Instead I created 
-three 10 year means with a slight overlap. Over time they will drift apart until we get three true decades.
-<br> The exact region extents can seens on the map.</p>
+<p class="ex">Only the high resolution data since 1997 is good enough for a detailed regional analysis. <br><br>
+The first chart shows the changes of average snow extent over the year for the Regions of Arctic Ocean, USA, Canada, Europe and Asia. </p>
 
 <img id="Mean_extent" src="Snow_Cover_Regional/Mean_extent_Region1.png" style="width:100%">
 
@@ -237,8 +236,19 @@ three 10 year means with a slight overlap. Over time they will drift apart until
 <div class="w3-row w3-padding-12">
 <hr>
 <h2 class="w3-wide">Snow Extent change over time</h2>
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
+<p>
+The limited timespan of 23 years would only allow two true decadal means. Instead we created 
+three 10 year means with a slight overlap. Over time they will drift apart until we get three true decades.
+<br></p>
 
-<h4 class="w3-wide">North America</h4>
+</div>
+<h3 class="w3-wide">North America</h3>
+  <p>Regions: Greenland, Eastern Canada, Central Canada, Canadian Rockies, Northern Canada, Alaska, US NE, US SE, 
+          US MidWest, US SW, US Pacific, US Rockies
+<br></p>
+
+
 <img id="NorthAmerica"   src="Snow_Cover_Regional/NorthAmerica_Region1.png">
 
 <div class="slidecontainer">
@@ -248,7 +258,8 @@ three 10 year means with a slight overlap. Over time they will drift apart until
 </div>
 
 <hr>
-<h4 class="w3-wide">Europe</h4>
+<h3 class="w3-wide">Europe</h3>
+  <p>Regions: North Europe, West Europe, Central Europe, Southern Europe, Eastern Europe<br></p>
 <img id="Europe"   src="Snow_Cover_Regional/Europe_Region1.png">
 
 <div class="slidecontainer">
@@ -258,7 +269,11 @@ three 10 year means with a slight overlap. Over time they will drift apart until
 </div>
 
 <hr>
-<h4 class="w3-wide">Asia</h4>
+<h3 class="w3-wide">Asia</h3>
+  <p>Regions: East Siberia, Central Siberia, West Siberia, Central Asia, Central Mountain Asia, Eastern Asia, Tibet, Western Asia, Persia<br></p>
+
+
+
 <img id="Asia"   src="Snow_Cover_Regional/Asia_Region1.png">
 
 <div class="slidecontainer">
@@ -284,6 +299,8 @@ three 10 year means with a slight overlap. Over time they will drift apart until
 </footer>
 
 <script>
+darkmode()
+
 function darkmode() {
    var element = document.body;
    element.classList.toggle("dark-mode");

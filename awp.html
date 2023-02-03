@@ -3,7 +3,7 @@
 <title>Albedo-Warming Potential (AWP)</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 
@@ -19,6 +19,12 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <style>
+.buttonstyle {
+  background-color: #e6e6e6;
+  color: black;
+  border-radius: 12px;
+}
+
 body {font-family: "Lato";
   sans-serif;
   background-color: white;
@@ -31,11 +37,11 @@ body {font-family: "Lato";
 
 .mySlides {display: none}
 
-hr { 
+hr {
   display: block;
   border-width: 2px;
   border-color: #666666;
-} 
+}
 
 .slider {
   -webkit-appearance: none;
@@ -107,14 +113,14 @@ p.ex {
    <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -133,7 +139,7 @@ p.ex {
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -141,7 +147,7 @@ p.ex {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -150,7 +156,7 @@ p.ex {
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -182,7 +188,7 @@ p.ex {
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -190,7 +196,7 @@ p.ex {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -209,11 +215,18 @@ p.ex {
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="AWP">
     <h1 class="w3-wide">Arctic Albedo-Warming Potential</h1>
     <p class="w3-opacity"><i>Quantifying ocean warming from reduced sea ice</i></p>
+
+    <button onclick="more_info()" class="w3-button buttonstyle">Info</button>
+    <div id="more_info">
+    <p class="w3-justify">  For a full description see the documentation page.
+       </p>
+    </div>
+
     <div class="w3-row w3-padding-12">
     </div>
 
-    
-    
+
+
     <!-- AWP Arctic normal -->
 <div class="w3-half">
 <img id="normal" src="AWP/Final_2000.png">
@@ -223,7 +236,7 @@ p.ex {
 <img id="anomaly" src="AWP/AWP_anom_2000.png">
 </div>
 
-    
+
 <div class="slidecontainer">
     <span>Year:</span>
     <span id="Arctic_Yearselect" style="font-weight:bold;color:red">2000</span>
@@ -232,17 +245,17 @@ p.ex {
 
    </div>
    <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="AWP_more">
-   
+
 <div class="w3-half">
   <img src="AWP/Final_Icefree.png"  style="width:100%">
 </div>
 
 
 <div class="w3-half">
-  <p class="ex">Select individual years with the slider to view the difference with the new millenia baseline of 2000-2018. Soon to be updated to the
-   20 year period 2000-2019. Regions with a high coastline to area ratio have been removed from the calculation (only visible on the map) to reduce noise.
+  <p class="ex">Select individual years with the slider to view the difference with the new millenia baseline of 2000-2019. Regions with a high coastline
+     to area ratio have been removed from the calculation (only visible on the map) to reduce noise.
     Specifically all lakes, the Baltic Sea and the Gulf of St. Lawrence. </p>
-    
+
     <a href="https://sites.google.com/site/cryospherecomputing/awp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">former Albedo-Warming Potential (anomaly only)</a>
     <p class="ex">In the charts below click on the legend to deselect a series.</p>
   <div id="Accumulated" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
@@ -314,11 +327,11 @@ p.ex {
 <div class="w3-center">
 <hr>
 <h2 class="w3-wide">Data used</h2>
-<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and 
+<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and
 DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active
  Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
 </div>
-   
+
 <!-- End Page Content -->
 </div>
 
@@ -343,12 +356,12 @@ output_A.innerHTML = slider_A.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider_A.oninput = function() {
   output_A.innerHTML = this.value;
-  
+
   //update image
 	var imageid = "AWP/Final_" + slider_A.value + ".png";
 	var imageid_anom = "AWP/AWP_anom_" + slider_A.value + ".png";
 	showimage(imageid,imageid_anom);
-} 
+}
 
 function showimage (imageid,imageid_anom){
 document.getElementById("normal").src = imageid;
@@ -366,11 +379,11 @@ output.innerHTML = slider.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value;
-  
+
   //update image
 	var imageid = "AWP/AWP_percent_" + slider.value + ".png";
 	showimage_precent(imageid);
-} 
+}
 
 function showimage_precent (imageid){
 document.getElementById("percentofmax").src = imageid;
@@ -426,7 +439,7 @@ Highcharts.chart('Accumulated', {
         data: [-249,-233,-195,-274,-252,-211,-208,-214,-230,-184,-185,-97,-170,-208,-118,-181,-71,-188,-112,-108,-136,-100,-117,-91,-64,-84,-28,5,57,-10,-52,
         37,64,75,-21,-2,38,101,43,34,109,108]
     }]
-    
+
 });
 
 Highcharts.chart('Daily_AWP', {
@@ -643,7 +656,7 @@ Highcharts.chart('Accumulated_central', {
         data: [-255,-222,-172,-251,-255,-228,-203,-229,-220,-192,-206,-85,-171,-187,-54,-192,-53,-235,-118,-100,-144,-110,-155,-120,-87,-129,-56,-57,95,14,-44,
         41,96,152,-28,-31,83,120,52,20,142,140]
     }]
-    
+
 });
 
 Highcharts.chart('Daily_AWP_central', {
@@ -809,10 +822,20 @@ Highcharts.chart('Accumulated_AWP_central', {
     }]
 });
 
+// ------------------------------------------
 
+more_info()
+// Used to toggle Info
+function more_info() {
+  var x = document.getElementById("more_info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-
-
+darkmode()
 // ------------------------------------------
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -820,7 +843,7 @@ function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }

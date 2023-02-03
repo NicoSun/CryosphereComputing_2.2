@@ -3,7 +3,7 @@
 <title>AMSR2 SIC</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
@@ -53,14 +53,14 @@ body {font-family: "Lato";
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -79,7 +79,7 @@ body {font-family: "Lato";
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -87,7 +87,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -96,7 +96,7 @@ body {font-family: "Lato";
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -128,7 +128,7 @@ body {font-family: "Lato";
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -136,7 +136,7 @@ body {font-family: "Lato";
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -153,17 +153,25 @@ body {font-family: "Lato";
     <!----- Extent ----->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:2500px">
     <h2 class="w3-wide">AMSR2 Sea Ice Concentration</h2>
+
+    <button onclick="more_info()" class="w3-button buttonstyle">Info</button>
+    <div id="more_info">
+    <p class="w3-justify">  High resolution Sea Ice Concentration (3.125km) from AMSR2. Sometimes strong low pressure systems can create fake ice.
+       </p>
+    </div>
+
+
     <div class="w3-row w3-padding-12">
       <div class="w3-half">
         <img src="https://drive.google.com/uc?id=1aDWSQaIwTRcAUP63XaExQ6zD_NJawwvi&export=download" class="w3-round" style="width:100%">
-      </div> 
+      </div>
       <div class="w3-half">
         <img src="https://drive.google.com/uc?id=174TwoIX72UHx60TfRxiAKQYvkNCoUX8l&export=download" class="w3-round" style="width:100%">
       </div>
     </div>
   </div>
 
-  
+
 <!----- End Page Content ----->
 </div>
 
@@ -181,12 +189,25 @@ function darkmode() {
 
 //-------------------------------------------
 
+more_info()
+// Used to toggle Info
+function more_info() {
+  var x = document.getElementById("more_info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+//-------------------------------------------
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }

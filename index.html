@@ -3,7 +3,7 @@
 <title>CryosphereComputing</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
 <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
 
@@ -24,14 +24,14 @@ body {font-family: "Lato";
   color: #e6e6e6;
 }
 
-hr { 
+hr {
   display: block;
   border-width: 2px;
   border-color: #666666;
-} 
+}
 
 .buttonstyle {
-  background-color: #e6e6e6; 
+  background-color: #e6e6e6;
   color: black;
   border-radius: 8px;
   padding: 6px;
@@ -47,14 +47,14 @@ hr {
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
+
     <div class="w3-dropdown-hover">
     <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
         </div>
         </div>
-    
+
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -73,7 +73,7 @@ hr {
         </div>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -81,7 +81,7 @@ hr {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -90,7 +90,7 @@ hr {
         <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
-        
+
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -122,7 +122,7 @@ hr {
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
       <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -130,7 +130,7 @@ hr {
         <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
-        
+
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -146,25 +146,38 @@ hr {
 
   <!-- The Website Section -->
   <div class="w3-container w3-content w3-center w3-padding-48" style="max-width:1200px" id="top">
-    
+
     <div class="row">
-    
-    <div class="col-sm-2">    
+
+    <div class="col-sm-2">
     <a href="https://cointr.ee/sunlight" class="w3-button buttonstyle">Donations</a>
-    
+
+    <a href="amsr2.html" class="w3-button buttonstyle     ">AMSR2 SIC</a>
+
 
     </div>
-    
-    <div class="col-sm-8">    
+
+    <div class="col-sm-8">
      <h1 class="w3-wide">CryosphereComputing</h1>
     <p class="w3-opacity"><i>by Nico Sun</i></p>
     <a href="iceberg-records.html" class="w3-bar-item" style="color:red">NEW: Iceberg Records</a>
-        <p class="w3-justify">The Website is dedicated to monitoring and analysing changes in the polar regions. Current products include
-     sea ice area & thickness, snow cover, high Arctic temperature data, ice sheet bedrock elevation and a quantification of ocean warming from reduced sea ice.</p>
-      
-<a href="amsr2.html" class="w3-button buttonstyle     ">AMSR2 SIC</a>
+        <p class="w3-justify">The Website is dedicated to monitoring and analysing changes in the polar regions. Daily updated products include
+     Sea Ice Area, Snow Cover, High Arctic Temperature data and a quantification of ocean warming from reduced sea ice (AWP).
+     </p>
+     <button onclick="more_info()" class="w3-button buttonstyle">more</button>
+
+     <div id="more_info">
+
+     <p class="w3-justify">  Weekly updated are Antarctic Iceberg locations, speed and size. The Arctic also gets monthly Sea Ice Thickness updates
+        with the AMSR2 product. The Analysis section covers long term trends, extremes and special visualizations.
+        </p>
+        <p class="w3-justify"> For Earth's ice sheets current products include a thickness distribution, bedrock elevation overlayed on a true colorimage
+           and a size comparison between glaciers.
+        </p>
+       </div>
+
       </div>
-      
+
        <div class="col-sm-2">
         <center>
         <p>Sections</p>
@@ -174,13 +187,13 @@ hr {
     </center>
       </div>
       </div>
-    
+
     </div>
   </div>
-  
 
-  
-  
+
+
+
   <!-- NRT Images -->
 
     <!-- The Arctic Sea Ice -->
@@ -194,13 +207,13 @@ hr {
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEcHhMS3B6cmwwdUk&export=download" class="w3-round" style="width:100%">
         <div class="w3-left-align">lowests minimum: 2.241 (2012), 2.477 (2016)</div>
         <div class="w3-left-align">lowests maximum = 12.668 (2016), 12.761 (2017)</div>
-        
+
         <div class="slidecontainer">
         <span>Past Day(s):</span>
          <span id="Dayselect" style="font-weight:bold;color:red">1</span>
          <input type="range" min="1" max="7" value="1" class="slider" id="myRange" style="width:50%">
          </div>
-        
+
       </div>
 
       <div class="w3-third">
@@ -225,13 +238,13 @@ hr {
         <div class="w3-left-align">lowests maximum = 14.162 (1986), 14.195 (2017)</div>
         <div class="w3-left-align">highest minimum = 2.438 (2015)</div>
         <div class="w3-left-align">highest maximum = 16.324 (2014)</div>
-        
+
         <div class="slidecontainer">
         <span>Past Day(s):</span>
          <span id="Dayselect_south" style="font-weight:bold;color:red">1</span>
          <input type="range" min="1" max="7" value="1" class="slider" id="myRange_south" style="width:50%">
          </div>
-        
+
       </div>
       <div class="w3-third">
         <img id="Antarcticmap" src="https://drive.google.com/uc?id=0B1HTR0ONiUmEX25RR2xKSlpMUnc&export=download" class="w3-round" style="width:100%">
@@ -242,15 +255,15 @@ hr {
     </div>
   </div>
   <hr>
-  
+
 
     <!-- Northern Hemisphere Snow Cover -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="Snow">
     <h2 class="w3-wide">Northern Hemisphere Snow Cover</h2>
-    
+
     <div class="w3-center">Highest Anomaly = +6.57 (2002-10-15), +6.54 (2009-02-14)</div>
     <div class="w3-center">Lowest Anomaly = -6.86 (2005-11-13), -5.73 (2001-11-23)</div>
-    
+
     <a href="NRT3.html" class="w3-button buttonstyle     ">Animations & Statistics</a>
     <div class="w3-row w3-padding-24">
       <div class="w3-row">
@@ -265,8 +278,8 @@ hr {
     </div>
   </div>
   <hr>
-  
-  
+
+
       <!-- Freezing Degree Days -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="FDD">
     <h2 class="w3-wide">Freezing Degree Days</h2>
@@ -296,10 +309,10 @@ hr {
 
   <div class="w3-center">
 <h2 class="w3-wide">Data used</h2>
-<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from 
-Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and 
+<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from
+Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and
 Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
-<p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and 
+<p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and
 24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.</p>
 <p>Daily Mean Temperatures in the Arctic 1958 - 202X. http://ocean.dmi.dk/arctic/meant80n.uk.php </p>
 </div>
@@ -315,9 +328,9 @@ Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/
       </div>
     </div>
   </div>
-  
 
-  
+
+
 <!-- End Page Content -->
 </div>
 
@@ -335,12 +348,25 @@ function darkmode() {
 
 //-------------------------------------------
 
+more_info()
+// Used to toggle extra Info
+function more_info() {
+  var x = document.getElementById("more_info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+//-------------------------------------------
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
@@ -359,7 +385,7 @@ output.innerHTML = this.value;
 	var imagesrc = "https://carbonateoxygen.tk/NSIDC_Area/Arctic-" + this.value + ".png";
 	var imagesrc2 = "https://carbonateoxygen.tk/NSIDC_Area/Arctic_anom-" + this.value + ".png";
 	showimage(imagesrc,imagesrc2);
-} 
+}
 
 function showimage (imagesrc,imagesrc2){
 document.getElementById("Arcticmap").src = imagesrc;
@@ -380,7 +406,7 @@ output_south.innerHTML = this.value;
 	var imagesrc2 = "https://carbonateoxygen.tk/NSIDC_Area/Antarctic_anom-" + this.value + ".png";
 
 	showimage_south(imagesrc,imagesrc2);
-} 
+}
 
 function showimage_south (imagesrc3,imagesrc4){
 document.getElementById("Antarcticmap").src = imagesrc3;
