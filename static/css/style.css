@@ -20,15 +20,21 @@ body {font-family: "Lato", sans-serif;
   background-color: white;
   color: black;
 }
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
 
 hr {
   display: block;
   border-width: 2px;
   border-color: #666666;
+}
+
+.nopadding {
+  padding: 0.1em !important;
+  margin: 0.1em !important;
+}
+
+.dark-mode {
+  background-color: #00001a;
+  color: #e6e6e6;
 }
 
 .buttonstyle {
@@ -38,25 +44,13 @@ hr {
   padding: 6px;
 }
 
-/* Nav styles */
-/* Create three equal columns that floats next to each other */
-.AWPcolumn {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
+.dblcol {
+  max-width: 1900px;
 }
 
-.AWPcolumn a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+.dblcol img {
+  width: 100%;
 }
-
 
 /* Slider styles */
 .slider {

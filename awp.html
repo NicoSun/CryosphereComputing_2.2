@@ -9,8 +9,15 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/w3_content/w3.css">
-<link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
+
+<!--own styles-->
+<link rel="stylesheet" href="static/css/style.css">
+<script rel="javascript" src="static/js/functions.js"></script>
+
+<!--common style sheets -->
+<script rel="javascript" src="static/js/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="static/css/w3.css">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -18,65 +25,20 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+<script>
+    $(document).ready( function() {
+        darkmode();
+        more_info();
+    } );
+  </script>
+
 <style>
-.buttonstyle {
-  background-color: #e6e6e6;
-  color: black;
-  border-radius: 12px;
-}
-
-body {font-family: "Lato";
-  sans-serif;
-  background-color: white;
-  color: black;
-}
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
-
-.mySlides {display: none}
-
-hr {
-  display: block;
-  border-width: 2px;
-  border-color: #666666;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
 
 * {box-sizing: border-box}
-img {vertical-align: middle;}
+img {vertical-align: middle;
+    padding: 10px;
+}
+
 
 img.ex {
   padding: 35px;
@@ -86,25 +48,8 @@ p.ex {
   padding: 40px;
 }
 
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
-}
-
-.column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
 </style>
+
 
 </head>
 <body>
@@ -125,13 +70,13 @@ p.ex {
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
        <div class="row">
-        <div class="column">
+        <div class="AWPcolumn">
           <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
           <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
           <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
           <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
         </div>
-        <div class="column">
+        <div class="AWPcolumn">
           <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
@@ -227,14 +172,14 @@ p.ex {
 
 
 
-    <!-- AWP Arctic normal -->
-<div class="w3-half">
-<img id="normal" src="AWP/Final_2000.png">
-</div>
-    <!-- AWP Arctic anomaly -->
-<div class="w3-half">
-<img id="anomaly" src="AWP/AWP_anom_2000.png">
-</div>
+        <!-- AWP Arctic normal -->
+    <div class="w3-half">
+    <img id="normal" src="AWP/Final_2000.png">
+    </div>
+        <!-- AWP Arctic anomaly -->
+    <div class="w3-half">
+    <img id="anomaly" src="AWP/AWP_anom_2000.png">
+    </div>
 
 
 <div class="slidecontainer">
@@ -341,13 +286,6 @@ DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA
 </footer>
 
 <script>
-function darkmode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-
-//-------------------------------------------
-
 // Dispalys Slider value
 var slider_A = document.getElementById("myRange_Arctic");
 var output_A = document.getElementById("Arctic_Yearselect");
@@ -821,32 +759,6 @@ Highcharts.chart('Accumulated_AWP_central', {
         1091,1096,1101,1105,1109,1113,1117,1121,1124,1127,1130,1133,1136,1139,1141,1143,1145,1147,1149,1151]
     }]
 });
-
-// ------------------------------------------
-
-more_info()
-// Used to toggle Info
-function more_info() {
-  var x = document.getElementById("more_info");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-darkmode()
-// ------------------------------------------
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 
 </script>
 

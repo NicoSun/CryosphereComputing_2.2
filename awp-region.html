@@ -8,247 +8,229 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/w3_content/w3.css">
-<link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
+
+<!--own styles-->
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/nav.css">
+
+<script rel="javascript" src="static/js/functions.js"></script>
+
+<!--common frameworks -->
+<script rel="javascript" src="static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="static/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script>
+  $(document).ready( function() {
+      more_info();
+      more_info2();
+  } );
+
+</script>
+
 <style>
-.buttonstyle {
-  background-color: #e6e6e6;
-  color: black;
-  border-radius: 12px;
-}
-
-
-body {font-family: "Lato";
-  sans-serif;
-  background-color: white;
-  color: black;
-}
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
-}
-
-.column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
+  body {
+    background-color: rgb(93, 108, 122);
+  }
+  
 </style>
+
+
 
 </head>
 
 <body>
-<!-- Navbar -->
-<!-- div class="w3-top"-->
-   <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
 
-    <div class="w3-dropdown-hover">
-    <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
-        </div>
-        </div>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container-fluid">
+        <a class="nav-item nav-button" href="index.html"><img src="./static/favicon.ico"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!--AMSR2-->
+            <div class="dropdown">
+              <a class="nav-item nav-button dropdown-toggle" href="amsr2.html" role="button" data-bs-toggle="dropdown">AMSR2 </a>
+              <div class="dropdown-menu">
+              <a class="dropdown-item" href="sit.html">AMSR2 Ice Thickness </a>
+              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+            </div>
+            </div>
 
-        <div class="w3-dropdown-hover w3-hide-small">
-      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       <div class="row">
-        <div class="column">
-          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        </div>
-        <div class="column">
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
+            <!--AWP-->
+            <div class="dropdown">
+            <a class="nav-item nav-button dropdown-toggle" href="awp.html" role="button" data-bs-toggle="dropdown">Albedo-Warming Potential (AWP) </a>
+            <div class="dropdown-menu">
+              <div class="AWPcolumn">
+                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+              </div>
+              <div class="AWPcolumn">
+                <a class="dropdown-item" href="melt-awp.html">Ice-Melt AWP</a>
+              <a class="dropdown-item" href="NRT-icemelt.html">Ice-Melt NRT</a>
+              </div>
+            </div>
+            </div>
 
-        </div>
-        </div>
-        </div>
+            <!--SNOW-->
+            <div class="dropdown">
+              <a class="nav-item nav-button dropdown-toggle" href="snow-cover.html" role="button" data-bs-toggle="dropdown">Snow </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+            </div>
+            </div>
+            
+            <!--Icesheets-->
+            <div class="dropdown">
+            <a class="nav-item nav-button dropdown-toggle" href="icesheets.html" role="button" data-bs-toggle="dropdown">Ice Sheets </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="bedrock.html">Ice Sheets</a>
+              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+            </div>
+            </div>
 
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
-        </div>
-        </div>
-
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
-        <a href="bedrock-antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
-        <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
-        </div>
-        </div>
-
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
-    </div>
-    </div>
-     <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-     <a href="volcano.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volcanos</a>
-        <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
-    <a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-hide-small w3-right">Data<i class="fa fa-caret-down"></i></a>
-  </div>
-</div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
-    <div class="w3-dropdown-hover">
-  <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
-        </div>
-
-  <div class="w3-dropdown-hover">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
-        </div>
-        </div>
-
-  <div class="w3-dropdown-hover">
-  <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
-</div>
-</div>
-<a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-</div>
-
-    <!-- Sea Ice Area -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIA">
-    <h2 class="w3-wide">Regional Arctic AWP</h2>
-    <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
-
-    <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
-    <button onclick="more_info()" class="w3-button buttonstyle">Info</button>
-    <div id="more_info">
-    <p class="w3-justify"> Arctic Regions: Sea of Okhotsk,	Bering Sea,	Hudson Bay,	Baffin Bay,	East Greenland Sea,
-      	Barents Sea,	Kara Sea,	Laptev Sea,	East Siberian Sea,	Chukchi Sea,	Beaufort Sea,	Canadian Archipelago,	Central Arctic
-
-       </p>
-    </div>
-    </div>
+            <!--Analysis-->
+            <div class="dropdown">
+            <a class="nav-item nav-button dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Analysis </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+            </div>
+            </div>
 
 
-    <div class="w3-row w3-padding-12">
-      <div class="w3-half">
-      <img id="AWP_RegionD" src="AWP_regional/North_AWP_RegionD13.png" style="width:100%">
+            <!--Other-->
+            <a class="nav-item nav-button" href="doc.html">Documentation</a>
+            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+
+            <button class="nav-item" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
+              
+
+        </div>
+          
+      
+        </div>
+  
+        </div>
+
+    </nav>
+  </header>
+
+
+    <main>
+
+      <!-- Regional Arctic -->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2 class="">Regional Arctic AWP</h2>
+          <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
+    
+    
+          <button onclick="more_info()" class=" buttonstyle">Info</button>
+          <div id="more_info">
+          <p class=""> Arctic Regions: Sea of Okhotsk,	Bering Sea,	Hudson Bay,	Baffin Bay,	East Greenland Sea,
+              Barents Sea,	Kara Sea,	Laptev Sea,	East Siberian Sea,	Chukchi Sea,	Beaufort Sea,	Canadian Archipelago,	Central Arctic
+          </p>
+          </div>
+
+        </div>
+        </div>
+
       </div>
-      <div class="w3-half">
-      <img id="AWP_RegionA" src="AWP_regional/North_AWP_RegionA13.png" style="width:100%">
+      <div class="container-fluid dblcol" >
+      <div class="row">
+        <div class="col-xl-6">
+        <img id="AWP_RegionD" src="AWP_regional/North_AWP_RegionD13.png" title="Daily Arctic Regional AWP">
+        </div>
+        <div class="col-xl-6">
+        <img id="AWP_RegionA" src="AWP_regional/North_AWP_RegionA13.png" title="Accumulated Arctic Regional AWP">
+        </div>
+        
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <span>Region:</span>
+            <span id="AWP_Regionselect" style="font-weight:bold;color:red">13</span>
+          <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
+          </div>
+        </div>
+
       </div>
-      <div class="w3-row">
 
-<center>
-<div class="slidecontainer">
-    <span>Region:</span>
-    <span id="AWP_Regionselect" style="font-weight:bold;color:red">13</span>
-  <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
-</div>
-</center>
-
-<div class="w3-row"></div>
-
-<h2 class="w3-wide">Regional Antarctic AWP</h2>
-
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1000px">
-<button onclick="more_info2()" class="w3-button buttonstyle">Info</button>
-<div id="more_info2">
-<p class="w3-justify"> Antarctic Regions: Weddel Sea,	Indian Ocean,	Pacific Ocean,	Ross Sea,	Bell-Amundsen Sea
-   </p>
-</div>
-</div>
-    <div class="w3-row w3-padding-12">
-      <div class="w3-half">
-      <img id="AWP_RegionD_south" src="AWP_regional/South_AWP_RegionD5.png" style="width:100%">
+      <!--Antarctic Region-->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2 class="">Regional Antarctic AWP</h2>
+          <button onclick="more_info2()" class=" buttonstyle">Info</button>
+          <div id="more_info2">
+          <p class=""> Antarctic Regions: Weddel Sea,	Indian Ocean,	Pacific Ocean,	Ross Sea,	Bell-Amundsen Sea
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="w3-half">
-      <img id="AWP_RegionA_south" src="AWP_regional/South_AWP_RegionA5.png" style="width:100%">
+    </div>
+    <div class="container-fluid dblcol">
+      <div class="row">
+        <div class="col-xl-6">
+          <img id="AWP_RegionD_south" src="AWP_regional/South_AWP_RegionD5.png" title="Daily Antarctic Regional AWP">
+        </div>
+        <div class="col-xl-6">
+          <img id="AWP_RegionA_south" src="AWP_regional/South_AWP_RegionA5.png" title="Accumulated Antarctic Regional AWP">
+        </div>
       </div>
-      <div class="w3-row">
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <span>Region:</span>
+        <span id="AWP_Regionselect_south" style="font-weight:bold;color:red">13</span>
+      <input type="range" min="1" max="5" value="5" class="slider" id="Regionslider_south" style="width:66%">
+      </div>
+    </div>
 
 
-<center>
-<div class="slidecontainer">
-    <span>Region:</span>
-    <span id="AWP_Regionselect_south" style="font-weight:bold;color:red">13</span>
-  <input type="range" min="1" max="5" value="5" class="slider" id="Regionslider_south" style="width:66%">
-</div>
-</center>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2 class="">AWP Heatmap</h2>
+        <p class="ex">AWP in percent of Icefree conditions</p>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xxl-8">
+            <img  src="AWP_regional/Region_Heatmap.png" style="height:100%" title="Arctic AWP Heatmap">
+          </div>
+          <div class="col-xxl-4">
+            <img src="AWP_regional/Region_Heatmap_south.png" style="height:100%" title="Arctic AWP Heatmap">
+          </div>
+         </div>
+      </div>
 
+  </main>
 
-<div class="w3-row"></div>
-
-      <h2 class="w3-wide">AWP Heatmap</h2>
-    <p class="ex">AWP in percent of Icefree conditions</p>
-
-<div class="w3-half">
-<img  src="AWP_regional/Region_Heatmap.png" style="height:100%">
-</div>
-<div class="w3-half">
-<img src="AWP_regional/Region_Heatmap_south.png" style="height:100%">
-</div>
-
-
-<!-- End Page Content -->
-</div>
-</div>
-</div>
-
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+  <!-- Footer -->
+  <footer class="    ">
+    <p>CryosphereComputing</p>
+  </footer>
+</body>
 
 <script>
-darkmode()
-function darkmode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-
-// ------------------------------------------
 // Melt AWP map region graphs
 
 var sliderR = document.getElementById("Regionslider");
@@ -292,20 +274,6 @@ document.getElementById("AWP_RegionD_south").src = imageid_D_south;
 document.getElementById("AWP_RegionA_south").src = imageid_A_south;
 }
 
-
-
-more_info()
-more_info2()
-// Used to toggle Info
-function more_info() {
-  var x = document.getElementById("more_info");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
 function more_info2() {
   var x = document.getElementById("more_info2");
   if (x.style.display === "none") {
@@ -314,21 +282,7 @@ function more_info2() {
     x.style.display = "none";
   }
 }
-
-//-------------------------------------------
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-
 </script>
 
-</body>
+
 </html>

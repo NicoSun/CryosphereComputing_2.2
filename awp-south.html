@@ -8,8 +8,15 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/w3_content/w3.css">
-<link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
+
+<!--own styles-->
+<link rel="stylesheet" href="static/css/style.css">
+<script rel="javascript" src="static/js/functions.js"></script>
+
+<!--common style sheets -->
+<script rel="javascript" src="static/js/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="static/css/w3.css">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -17,59 +24,18 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+
+<script>
+  $(document).ready( function() {
+      darkmode();
+  } );
+</script>
+
 <style>
-body {font-family: "Lato";
-  sans-serif;
-  background-color: white;
-  color: black;
-}
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
-
-.mySlides {display: none}
-
-hr {
-  display: block;
-  border-width: 2px;
-  border-color: #666666;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
 
 * {box-sizing: border-box}
-img {vertical-align: middle;}
+img {vertical-align: middle;
+  padding: 10px;}
 
 img.ex {
   padding: 35px;
@@ -78,26 +44,12 @@ img.ex {
 p.ex {
   padding: 40px;
 }
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
-}
-
-.column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
 </style>
+
+<script>
+  more_info()
+  darkmode()
+</script>
 
 </head>
 <body>
@@ -118,13 +70,13 @@ p.ex {
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
        <div class="row">
-        <div class="column">
+        <div class="AWPcolumn">
           <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
           <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
           <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
           <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
         </div>
-        <div class="column">
+        <div class="AWPcolumn">
           <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
@@ -297,14 +249,6 @@ p.ex {
 </footer>
 
 <script>
-
-darkmode()
-function darkmode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-
-//-------------------------------------------
 
 // Dispalys Slider value
 var slider_A = document.getElementById("myRange_Arctic");
@@ -515,19 +459,6 @@ Highcharts.chart('Accumulated_AWP', {
         data: [5,10,15,20,25,31,36,42,48,54,60,67,73,80,87,94,101,108,116,124,132,140,148,156,165,174,183,192,201,211,221,231,241,251,262,272,283,294,306,317,329,341,354,366,379,393,406,420,434,448,462,477,492,507,523,539,555,571,588,605,622,640,658,676,694,713,731,751,770,790,810,830,850,871,892,913,935,957,979,1001,1024,1047,1070,1094,1118,1142,1166,1190,1215,1239,1264,1289,1314,1339,1365,1390,1416,1441,1467,1493,1519,1544,1570,1596,1622,1648,1674,1700,1725,1751,1777,1802,1828,1853,1879,1904,1929,1954,1979,2003,2028,2052,2076,2100,2124,2148,2171,2194,2217,2240,2263,2285,2307,2329,2351,2372,2393,2414,2435,2455,2475,2495,2514,2533,2552,2571,2589,2607,2625,2643,2660,2677,2693,2710,2726,2741,2757,2772,2786,2801,2815,2829,2842,2855,2868,2881,2893,2905,2917,2928,2939,2950,2960,2970,2980,2990,2999,3008,3017,3025,3033]
     }]
 });
-
-
-// ------------------------------------------
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 
 </script>
 
