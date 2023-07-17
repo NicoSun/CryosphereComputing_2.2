@@ -1,0 +1,172 @@
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<link rel="stylesheet" href="./static/css/nav.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
+        <span class="navbar-toggler-icon navbar-dark"></span>
+      </button>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!--AMSR2-->
+            <div class="dropdown">
+              <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
+              <div class="dropdown-menu" id="nav_amsr">
+              <a class="dropdown-item" href="sit.html">AMSR2 Ice Thickness </a>
+              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+            </div>
+            </div>
+
+            <!--AWP-->
+            <div class="dropdown">
+            <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
+            <div class="dropdown-menu" id="nav_awp">
+              <div class="AWPcolumn">
+                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+              </div>
+              <div class="AWPcolumn">
+                <a class="dropdown-item" href="melt-awp.html">Ice-Melt AWP</a>
+              <a class="dropdown-item" href="NRT-icemelt.html">Ice-Melt NRT</a>
+              </div>
+            </div>
+            </div>
+
+            <!--SNOW-->
+            <div class="dropdown">
+              <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
+            <div class="dropdown-menu" id="nav_snow">
+              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+            </div>
+            </div>
+            
+            <!--Icesheets-->
+            <div class="dropdown">
+            <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
+            <div class="dropdown-menu" id="nav_ice">
+              <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
+              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+            </div>
+            </div>
+
+            <!--Analysis-->
+            <div class="dropdown">
+            <a class="nav-item nav-button" href="#" role="button">Analysis </a>
+            <div class="dropdown-menu" id="nav_analysis">
+              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+            </div>
+            </div>
+
+
+            <!--Other-->
+            <a class="nav-item nav-button" href="doc.html">Documentation</a>
+            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+            
+        </div>
+        </div>
+        </div>
+        <span id="moon" onclick="darkmode()">
+          <i class="fa fa-moon-o"></i>
+      </span>
+    </nav>
+      
+  </header>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+
+
+// bootstrap container center
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>RegionWP</h2>
+        <p class="ex">AWfffffffffffffffffffffffffffffffffffffrors</p>
+  
+  
+        <button onclick="more_info(more_info)" class=" infostyle">Info</button>
+        <div id="more_info">
+        <p> Arctiggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggrctic
+        </p>
+        </div>
+
+      </div>
+      </div>
+
+      // bootstrap container two columns
+    <div class="row dblcol">
+      <div class="col-xl-6">
+      <img id="AWP_RegionD" src="AWP_regional/North_AWP_RegionD13.png" title="DakkkkkkkkkkkiWP">
+      </div>
+      <div class="col-xl-6">
+      <img id="AWP_RegionA" src="AWP_regional/North_AWP_RegionA13.png" title="AccumulatWP">
+      </div>
+      </div>
+
+
+      <div class="row trlcol">
+        <div class="col-xl-4">
+        <img src="Analy010s_001_Melt_Date.png" title="Arctic Earliest Melt Date">
+        </div>
+        <div class="col-xl-4">
+        <img src="Analysi0s_002_Melt_Date.png" title="Arctic Mean Melt Date">
+        </div>
+        <div class="col-xl-4">
+          <img src="Analysi0s_003_Melt_Date.png" title="Arctic Latest Melt Date">
+          </div>
+        </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10 text-center sliderdiv">
+          <span>Year:</span>
+          <span id="AWP_Regionselect" style="font-weight:bold;color:red">2000</span>
+          <input type="range" min="1979" max="2019" value="2000" class="slider" id="myRange_Arctic" style="width:66%">
+        </div>
+      </div>
+
+    </div>
+
+
+<script>
+const awpData = {
+      totalAcc,panDay,panAcc,highTotalAcc,highDay,highAcc
+  }
+  export default awpData;
+</script>
+    
+
+  <script type="module">
+    //Charts
+    import awpData from './Melt_AWP/data/melt_awp_charts.js';
+</script>
+
+<script>
+  setImageSRC("percentofmax",imageSRC);
+</script>

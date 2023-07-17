@@ -8,238 +8,171 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/w3_content/w3.css">
-<link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<link rel="stylesheet" href="./static/css/nav.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
 
-<style>
-body {font-family: "Lato";
-  sans-serif;
-  background-color: white;
-  color: black;
-}
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
-
-hr { 
-  display: block;
-  border-width: 2px;
-  border-color: #666666;
-} 
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-* {box-sizing: border-box}
-img {vertical-align: middle;}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
-}
-
-.column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-</style>
-
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
 </head>
 
 <body>
 <!-- Navbar -->
-<!-- div class="w3-top"-->
-   <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
+      <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <!--AMSR2-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
+            <div class="dropdown-menu" id="nav_amsr">
+            <a class="dropdown-item" href="sit.html">AMSR2 Ice Thickness </a>
+            <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+          </div>
+          </div>
+
+          <!--AWP-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
+          <div class="dropdown-menu" id="nav_awp">
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+            <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+            <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+            <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+            </div>
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="melt-awp.html">Ice-Melt AWP</a>
+            <a class="dropdown-item" href="NRT-icemelt.html">Ice-Melt NRT</a>
+            </div>
+          </div>
+          </div>
+
+          <!--SNOW-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
+          <div class="dropdown-menu" id="nav_snow">
+            <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+            <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+          </div>
+          </div>
+          
+          <!--Icesheets-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
+          <div class="dropdown-menu" id="nav_ice">
+            <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
+            <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+            <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+          </div>
+          </div>
+
+          <!--Analysis-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="#" role="button">Analysis </a>
+          <div class="dropdown-menu" id="nav_analysis">
+            <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+            <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+            <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+            <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+            <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+          </div>
+          </div>
+
+
+          <!--Other-->
+          <a class="nav-item nav-button" href="doc.html">Documentation</a>
+          <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+          <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+          
+      </div>
+      </div>
+      </div>
+      <span id="moon" onclick="darkmode()">
+        <i class="fa fa-moon-o"></i>
+    </span>
+  </nav>
     
-    <div class="w3-dropdown-hover">
-    <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
-        </div>
-        </div>
-    
-        <div class="w3-dropdown-hover w3-hide-small">
-      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       <div class="row">
-        <div class="column">
-          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        </div>
-        <div class="column">
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
+</header>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>NSIDC/NOAA Snow Extent</h2>
+        <p>half-monthly Northern Hemisphere Snow Extent Maps beginning in February 1997</p>
+
+      <img id="past_Arctic" src="Analysis/Past_Snow/NOAA_Snowmap_20120715.png" title="Northern Hemisphere Snow Extent">
+    </div>
+    </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10 text-center sliderdiv">
+          <span>Year:</span>
+          <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
+        <input type="range" min="1997" max="2020" value="2012" class="slider" id="yearRange" style="width:50%">
+      </div>
+
+        <div class="col-10 text-center sliderdiv">
+          <span>Month:</span>
+          <span id="Monthselect" style="font-weight:bold;color:red">9</span>
+          <input type="range" min="1" max="12.5" value="9" step="0.5" class="slider" id="monthRange" style="width:50%">
         </div>
 
-        </div>
-        </div>
-        </div>
+      </div>
         
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+          <p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and 24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.
+          </p>
         </div>
         </div>
-        
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
-        <a href="bedrock-antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
-        <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
-        </div>
-        </div>
-        
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
+
     </div>
-    </div>
-     <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-     <a href="volcano.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volcanos</a>
-        <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
-    <a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-hide-small w3-right">Data<i class="fa fa-caret-down"></i></a>
+
   </div>
-</div>
+</main>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
-    <div class="w3-dropdown-hover">
-  <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-  <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
-</div>
-</div>
-<a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-</div>
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
 
-
-    <!-- Arctic -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIC">
-    <h2 class="w3-wide">NSIDC/NOAA Snow Extent</h2>
-	<p class="w3-opacity"><i>half-monthly snow maps beginning in February 1997</i></p>
-	<div class="w3-row">
-		<img id="past_Arctic" src="Past_Snow/NOAA_Snowmap_20120715.png">
-		<div class="w3-row">
-		
-
-<div class="slidecontainer">
-    <span>Year:</span>
-    <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
-  <input type="range" min="1997" max="2020" value="2012" class="slider" id="myRange" style="width:50%">
-</div>
-
-<div class="slidecontainer">
-    <span>Month:</span>
-    <span id="Monthselect" style="font-weight:bold;color:blue">9</span>
-  <input type="range" min="1" max="12.5" step="0.5" value="9" class="slider" id="myRange2" style="width:50%">
-</div>
-</div>
-
-  <hr>
-  
-<div class="w3-center">
-<h2 class="w3-wide">Data used</h2>
-<p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and 24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.
-</p>
-</div>
-<!-- End Page Content -->
-</div>
-
+</body>
 <script>
-darkmode()
-function darkmode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-
-//-------------------------------------------
 
 var daystring = "01"
 var monthstring = "09"
 
 // Dispalys Slider value
-var slider = document.getElementById("myRange");
+var slider = document.getElementById("yearRange");
 var output = document.getElementById("Yearselect");
 output.innerHTML = slider.value; // Display the default slider value
 
-var slider2 = document.getElementById("myRange2");
+var slider2 = document.getElementById("monthRange");
 var output2 = document.getElementById("Monthselect");
 output2.innerHTML = slider2.value; // Display the default slider value
 
@@ -248,7 +181,7 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	var imageid = "Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
 	showimage(imageid);
 } 
 
@@ -260,7 +193,7 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	var imageid = "Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
 	showimage(imageid);
 } 
 
@@ -278,22 +211,7 @@ if(Number.isInteger(num)){
 	} 
 else{return "15";}
 }
-
-
-
-//------------------------------------------
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
 </script>
 
-</body>
+
 </html>

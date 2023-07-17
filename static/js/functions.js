@@ -1,28 +1,52 @@
 // Toggle dark mode
-darkmode()
 function darkmode() {
    var element = document.body;
-   element.classList.toggle("dark-mode");
+   element.classList.toggle("light-mode");
+   switchKey1();
 }
 
+function switchKey1() {
+  const key1 = localStorage.getItem("apperance");
+ if (key1 == "light"){
+  localStorage.setItem("apperance", "dark");
+ } else {
+  localStorage.setItem("apperance", "light");
+ }
+}
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function menuExpand() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-
-
-// Used to toggle Info
-function more_info() {
-  var x = document.getElementById("more_info");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+function checkAppearance() {
+  const key1 = localStorage.getItem("apperance");
+  if (key1){
+    if (key1 == "light"){
+      document.body.classList.add("light-mode");
+     }
+    return;
   } else {
-    x.style.display = "none";
+    localStorage.setItem("apperance", "dark");
+  }
+
+}
+
+
+function item_show (id) {
+  $(id).show();
+}
+function item_hide (id) {
+  $(id).hide();
+}
+  
+// Used to toggle Info
+function more_info(id) {
+  let info = document.getElementById(id);
+  if (info.style.display === "none") {
+    item_show(info);
+  } else {
+    item_hide(info);
   }
 }
+
+//used to chaneg images with sliders
+function setImageSRC (imageID,imageSRC){
+  document.getElementById(imageID).src = imageSRC;
+  }
+

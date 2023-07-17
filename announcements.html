@@ -3,161 +3,139 @@
 <title>CryosphereComputing Info</title>
 <head>
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
-<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+  <link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--own styles-->
-<link rel="stylesheet" href="static/css/style.css">
-<script rel="javascript" src="static/js/functions.js"></script>
+  <!--common frameworks -->
+  <script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+  <script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
 
-<!--common style sheets -->
-<script rel="javascript" src="static/js/jquery-3.6.4.min.js"></script>
-<link rel="stylesheet" href="static/css/w3.css">
-<link rel="stylesheet" href="static/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script>
-  darkmode()
-</script>
+  <!--own styles-->
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/nav.css">
+  <script rel="javascript" src="./static/js/functions.js"></script>
 
-<style>
+  <script>
+    $(document).ready( function() {
+      checkAppearance();
+    });
+  </script>
 
-</style>
 </head>
 
 <body>
 <!-- Navbar -->
-<!-- div class="w3-top"-->
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large">AMSR2 Ice Thickness</a>
-        <div class="w3-dropdown-hover w3-hide-small">
-      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       <div class="row">
-        <div class="AWPcolumn">
-          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        </div>
-        <div class="AWPcolumn">
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
+      <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <!--AMSR2-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
+            <div class="dropdown-menu" id="nav_amsr">
+            <a class="dropdown-item" href="sit.html">AMSR2 Ice Thickness </a>
+            <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+          </div>
+          </div>
 
-        </div>
-        </div>
-        </div>
-        
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="Snow-Cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        </div>
-        </div>
-        
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
-        <a href="Bedrock-Antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
-        <a href="Glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
-        </div>
-        </div>
-        
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic MeltFreezeDays</a>
-    </div>
-    </div>
-     <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-    <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
-  </div>
-</div>
+          <!--AWP-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
+          <div class="dropdown-menu" id="nav_awp">
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+            <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+            <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+            <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+            </div>
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="melt-awp.html">Ice-Melt AWP</a>
+            <a class="dropdown-item" href="NRT-icemelt.html">Ice-Melt NRT</a>
+            </div>
+          </div>
+          </div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
-    <div class="w3-dropdown-hover">
-  <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-      <a href="Snow-Cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-  <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-</div>
-</div>
-<a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-</div>
+          <!--SNOW-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
+          <div class="dropdown-menu" id="nav_snow">
+            <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+            <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+          </div>
+          </div>
+          
+          <!--Icesheets-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
+          <div class="dropdown-menu" id="nav_ice">
+            <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
+            <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+            <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+          </div>
+          </div>
 
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px">
+          <!--Analysis-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="#" role="button">Analysis </a>
+          <div class="dropdown-menu" id="nav_analysis">
+            <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+            <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+            <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+            <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+            <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+          </div>
+          </div>
 
-</div> 
 
-<hr>
-    <!-- Sea Ice Area -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1200px">
-    <h2 class="w3-wide">AMSR2 2021 Update</h2>    
-    <div class="col-sm-4">
-    </div>
-    <div class="col-sm-4">
-    <p class="w3-justify">The AMSR2 sea ice volume model has received it's biggest update since release.The regional data is available to download as csv. I'm not sure yet how many regional graphs I will add.</p>
-    <p class="w3-justify">The first major addition is a thickness anomaly map with an anomaly base of 2012-2020.
-     It will be updated every year because the current 8 years of available data is too short for a climatic baseline.</p>
-    <p class="w3-justify"> The second addition is a regional breakdown. The ADS region map is modelled after the NSIDC region map to keep it consistent with the AWP model.
-     In line with the region update the model also got an update to it's landmask. For an unknown reason the landmask in the daily data shifted around a bit and created
-      coastline error. From now on the model only counts gridcells with less than 40% landcover in the offically supplied landmask.
-       Also instead of all ice above 50N only sea ice in the shown regions will be considered in the volume and thickness data. Lake Ice will be ignored like in the NSIDC data. </p>
-       <p class="w3-justify">In the first image you can still see the coastline error which has been removed. The whole coastline is surrounded by white dots.</p>
-
-    <img src="w3_content/AMSR2_Mean_0201.png" class="w3-round" >
-    <img src="w3_content/AMSR2_SIT_Anomaly_2013-02-01.png" class="w3-round" >
-    <img src="w3_content/ADS_region_mask_40.png" class="w3-round" >
-</div>
-    <div class="col-sm-4">
-    </div>
-  
-  <div class="w3-row"></div>
-  
-    <!-- The Contact Section -->
-  <hr>
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
-    <p class="w3-opacity w3-center"><i>Any questions? Drop a note!</i></p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: cryocomputing@gmail.com<br>
+          <!--Other-->
+          <a class="nav-item nav-button" href="doc.html">Documentation</a>
+          <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+          <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+          
       </div>
+      </div>
+      </div>
+      <span id="moon" onclick="darkmode()">
+        <i class="fa fa-moon-o"></i>
+    </span>
+  </nav>
+    
+</header>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <h2>Summary</h2>
+              <p>All pages have been reprogrammed to be more maintainable</p>
+              <p>Any future style changes I want to do don't have to be manually coded into every webpage</p>
+              <p>The website is now in dark-mode by default, but with a single click on the moon the user can change it
+                 persistently for all pages. It will even remember the setting for the next visit.</p>
+
+            <p class="ex"><i>The High Resolution AMSR2 Sea Ice Concentration is now available over the navbar. By the end of the year it should be complete with graphs and anomaly maps</i></p>
+            <hr>
+              <h2>CONTACT</h2>
+              <p><i>Any questions? Drop a note!</i></p>
+              <span>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: cryocomputing@gmail.com<br>
+              </span>
+            </div>
+        </div>
     </div>
-  </div>
-  
+
+</main>
+
   
 <!-- End Page Content -->
 </div>

@@ -8,377 +8,281 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/w3_content/w3.css">
-<link rel="stylesheet" href="static/w3_content/css.css?family=Lato">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<link rel="stylesheet" href="./static/css/nav.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
-<style>
-body {font-family: "Lato";
-  sans-serif;
-  background-color: white;
-  color: black;
-}
-.dark-mode {
-  background-color: #00001a;
-  color: #e6e6e6;
-}
-
-.mySlides {display: none}
-
-hr { 
-  display: block;
-  border-width: 2px;
-  border-color: #666666;
-} 
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-
-* {box-sizing: border-box}
-img {vertical-align: middle;}
-
-img.ex {
-  padding: 35px;
-}
-
-p.ex {
-  padding: 40px;
-  text-align: left;
-}
-
-.buttonstyle {
-  background-color: #e6e6e6; 
-  color: black;
-  border-radius: 8px; 
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  background-color: #ffffff;
-  height: 190px;
-}
-
-.column a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-</style>
+<script>
+  $(document).ready( function() {
+      more_info('region_heatmap');
+      checkAppearance();
+  } );
+</script>
 
 </head>
+
 <body>
 <!-- Navbar -->
-<!-- div class="w3-top"-->
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    
-    <div class="w3-dropdown-hover">
-    <a href="sit.html" class="w3-padding-large w3-button">AMSR2 Ice Thickness <i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="past-sit.html" class="w3-bar-item w3-button">Past years</a>
-        </div>
-        </div>
-    
-        <div class="w3-dropdown-hover w3-hide-small">
-      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-       <div class="row">
-        <div class="column">
-          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        </div>
-        <div class="column">
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
+      <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <!--AMSR2-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
+            <div class="dropdown-menu" id="nav_amsr">
+            <a class="dropdown-item" href="sit.html">AMSR2 Ice Thickness </a>
+            <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+          </div>
+          </div>
 
+          <!--AWP-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
+          <div class="dropdown-menu" id="nav_awp">
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+            <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+            <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+            <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+            </div>
+            <div class="AWPcolumn">
+              <a class="dropdown-item" href="melt-awp.html">Ice-Melt AWP</a>
+            <a class="dropdown-item" href="NRT-icemelt.html">Ice-Melt NRT</a>
+            </div>
+          </div>
+          </div>
+
+          <!--SNOW-->
+          <div class="dropdown">
+            <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
+          <div class="dropdown-menu" id="nav_snow">
+            <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+            <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+          </div>
+          </div>
+          
+          <!--Icesheets-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
+          <div class="dropdown-menu" id="nav_ice">
+            <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
+            <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+            <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+          </div>
+          </div>
+
+          <!--Analysis-->
+          <div class="dropdown">
+          <a class="nav-item nav-button" href="#" role="button">Analysis </a>
+          <div class="dropdown-menu" id="nav_analysis">
+            <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+            <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+            <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+            <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+            <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+          </div>
+          </div>
+
+
+          <!--Other-->
+          <a class="nav-item nav-button" href="doc.html">Documentation</a>
+          <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+          <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+          
+      </div>
+      </div>
+      </div>
+      <span id="moon" onclick="darkmode()">
+        <i class="fa fa-moon-o"></i>
+    </span>
+  </nav>
+    
+</header>
+
+<main>
+
+  <div class="container-fluid" style="max-width: 1600px;">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Ice Melting Arctic Albedo-Warming Potential</h2>
+        <h4><i>Beta phase product. May change slightly</i></h4>
+      </div>
+      </div>
+
+      <section>
+        <div class="row dblcol"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+          <img id="Melt_AWP_A" src="Melt_AWP/final/AWP_melt_2000.png" title="Final Arctic Melt-AWP">
+          </div>
+          <div class="col-xl-6">
+          <img id="Melt_AWP_B" src="Melt_AWP/anom/AWP_anom_2000.png" title="Arctic Melt-AWP Anomaly">
+          </div>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-10 text-center sliderdiv">
+              <span>Year:</span>
+              <span id="Melt_AWP_Percentselect" style="font-weight:bold;color:red">2000</span>
+              <input type="range" min="1979" max="2022" value="2000" class="slider" id="Percentslider" style="width:66%">
+            </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row dblcol"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+          <img id="Melt_AWP_A" src="Melt_AWP/AWP_melt_Mean.png" title="Melt-AWP Mean">
+          </div>
+          <div class="col-xl-6">
+          <p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
+            as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in an absolute energy value Exajoule (EJ). This change better reflects the larger melting potential of large regions.<br>
+            Counting AWP only over sea ice results in low values appearing both in warm and cold regions. In a warm region there is no ice to melt at all. In cold regions with high ice concentration 
+            and a high albedo the ice doesn’t absorb much sunlight and melting from sunshine remains low throughout the summer.<br>
+            <br>
+            The conditions in regions with high values are dispersed sea ice, melt ponds and the ice edge. Due to the sensor limitations and large grid cell size the
+              sea ice edge does show exaggerated values. Grid cells near the coast experience a coastline measurement error. To reduce this noise the lower limit of
+              sea ice concentration was chosen to be 25% and not 15% as used in sea ice extent measurements.<br><br>
+            
+            Additionally, this model includes heat loss to space. Around 4-6 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen to be the same
+              as in my Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
+              of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s. In the model the late 2010s at around 410ppm have an 11% reduced heat loss
+                compared to the early 1980s 340ppm.<br>
+              
+            <a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june>see June 2020 forecast(Nico Sun) </a> <br>
+            <br>
+            Heatloss example (per day per m2):<br>
+            Temp(K):	MJ @ 400ppm CO2<br>
+            250:	4.14<br>
+            260:	4.82<br>
+            270:	5.60<br>
+            274: 	5.94
+            <br><br>
+            
+            The model’s main purpose is to visualise where melt happened and rank years accordingly. Apart from comparison to other years I would not put any other use case into 
+            the presented values. Especially relating negative values with freezing conditions. It is still not even close to a volume model. For sea ice volume we already have 
+            PIOMAS, Cryosat2 and my AMSR2 Snow & Ice Volume.<br>
+            <br>
+            Datasheets:<br>
+            https://github.com/NicoSun/ScienceData/tree/master/Ice_Melt_AWP
+            
+            </p>
+          </div>
+          </div>
+
+      </section>
+      </div> <!-- end container-fluid -->
+      <hr>
+      <div class="container-fluid" style="max-width: 1900px;">
+      <section>
+      <h2 class="text-center">Climatology charts</h2>
+      <div class="row dblcol"> <!-- Pan Arctic -->
+        <div class="col-xl-6">
+          <div id="Accumulated" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
+        </div>
+        <div class="col-xl-6">
+          <div id="Accumulated_central" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
         </div>
         </div>
+      </section>
+        <hr>
+        <section></section>
+        <h2 class="text-center">Regional charts</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+          <img id="Melt_AWP_RegionD" src="Melt_AWP/charts/Melt_AWP_Daily_Region13.png" title="Daily Regional Melt-AWP">
+          </div>
+          <div class="col-xl-6">
+          <img id="Melt_AWP_RegionA" src="Melt_AWP/charts/Melt_AWP_Accu_Region13.png" title="Accumulated Regional Melt-AWP">
+          </div>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-10 text-center sliderdiv">
+              <span>Year:</span>
+              <span id="Melt_AWP_Regionselect" style="font-weight:bold;color:red">13</span>
+              <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
+            </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <button onclick="more_info('region_heatmap')" class="buttonstyle">Region Heatmap</button>
+          </div>    
         </div>
         
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
+        <div class="row dblcol" id="region_heatmap"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+            <img  src="Melt_AWP/Region_Heatmap.png" style="height:100%">
+          </div>
+          <div class="col-xl-6">
+            <img src="Melt_AWP/Region_Heatmap_anom.png" style="height:100%">
+          </div>
+          </div>
+       </section>
+       <hr>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+          <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and 
+            DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active
+              Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
         </div>
         </div>
-        
-      <div class="w3-dropdown-hover w3-hide-small">
-      <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
-        <a href="bedrock-antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
-        <a href="glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
-        </div>
-        </div>
-        
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
-    </div>
-    </div>
-     <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-     <a href="volcano.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volcanos</a>
-        <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
-    <a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-hide-small w3-right">Data<i class="fa fa-caret-down"></i></a>
-  </div>
-</div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="icesheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
-    <div class="w3-dropdown-hover">
-  <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
-          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
-          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-      <a href="snow-cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
-        <a href="past-snow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
-        </div>
-        </div>
-        
-  <div class="w3-dropdown-hover">
-  <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="ice-free-days.html" class="w3-bar-item w3-button">Ice Free Days</a>
-        <a href="past-sic.html" class="w3-bar-item w3-button">Past Ice Maps</a>
-        <a href="MinMax.html" class="w3-bar-item w3-button">MinMax SIC</a>
-        <a href="MeltFreezeDays.html" class="w3-bar-item w3-button">Arctic Melt & FreezeDays</a>
-        <a href="MeltFreezeDays_south.html" class="w3-bar-item w3-button">Antarctic Melt & FreezeDays</a>
-</div>
-</div>
-<a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-</div>
+    </div> <!-- end container-fluid -->
 
-    <!-- Pan Arctic -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="AWP">
-    <h1 class="w3-wide">Ice Melting Arctic Albedo-Warming Potential</h1>
-    <h4 class="w3-opacity"><i>Beta phase product. May change slightly</i></h4>
-    <div class="w3-row w3-padding-12">
-    </div>
+</main>
 
-    
-    
-    <!-- Melt AWP Arctic NRT -->
-
-   </div>
-   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="AWP_more">
-   
-
-<div class="w3-row">
-
-
-
-<div class="w3-row">
-
-    <!-- AWP Arctic percent -->
-    
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="AWP">
-<div class="w3-half">
-<img id="Melt_AWP_A" src="Melt_AWP/AWP_melt_2000.png">
-</div>
-<div class="w3-half">
-<img id="Melt_AWP_B" src="Melt_AWP/AWP_anom_2000.png">
-</div>
-</div>
-
-
-<center>
-<div class="slidecontainer">
-    <span>Year:</span>
-    <span id="Melt_AWP_Percentselect" style="font-weight:bold;color:red">2000</span>
-  <input type="range" min="1979" max="2019" value="2000" class="slider" id="Percentslider" style="width:66%">
-</div>
-</center>
-
-<div class="w3-row">
-
-
-
-<div class="w3-half">
-  <img src="Melt_AWP/AWP_melt_Mean.png"  style="width:80%">
-</div>
-
-<div class="w3-half">
-
-<p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
-as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in an absolute energy value Exajoule (EJ). This change better reflects the larger melting potential of large regions.<br>
-Counting AWP only over sea ice results in low values appearing both in warm and cold regions. In a warm region there is no ice to melt at all. In cold regions with high ice concentration 
-and a high albedo the ice doesn’t absorb much sunlight and melting from sunshine remains low throughout the summer.<br>
-<br>
-The conditions in regions with high values are dispersed sea ice, melt ponds and the ice edge. Due to the sensor limitations and large grid cell size the
- sea ice edge does show exaggerated values. Grid cells near the coast experience a coastline measurement error. To reduce this noise the lower limit of
-  sea ice concentration was chosen to be 25% and not 15% as used in sea ice extent measurements.<br><br>
-
-Additionally, this model includes heat loss to space. Around 4-6 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen to be the same
- as in my Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
-  of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s. In the model the late 2010s at around 410ppm have an 11% reduced heat loss
-   compared to the early 1980s 340ppm.<br>
-  
-<a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june>see June 2020 forecast(Nico Sun) </a> <br>
-<br>
-Heatloss example (per day per m2):<br>
-Temp(K):	MJ @ 400ppm CO2<br>
-250:	4.14<br>
-260:	4.82<br>
-270:	5.60<br>
-274: 	5.94
-<br><br>
-
-The model’s main purpose is to visualise where melt happened and rank years accordingly. Apart from comparison to other years I would not put any other use case into 
-the presented values. Especially relating negative values with freezing conditions. It is still not even close to a volume model. For sea ice volume we already have 
-PIOMAS, Cryosat2 and my AMSR2 Snow & Ice Volume.<br>
-<br>
-Datasheets:<br>
-https://github.com/NicoSun/ScienceData/tree/master/Ice_Melt_AWP
-
-
-</p>
-
-
-</div>
-
-<div class="w3-row">
-
-
-
-
-<hr>
-<div class="w3-center">
-<h2 class="w3-wide">Climatology charts</h2>
-
-
-<div class="w3-row">
-<div class="w3-half">
-  <div id="Accumulated" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
-</div>
-
-<div class="w3-half">
-  <div id="Accumulated_central" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
-</div>
-
-<div class="w3-row">
-<hr>
-<div class="w3-center">
-<h2 class="w3-wide">Regional charts</h2>
-<div class="w3-row">
-
-<div class="w3-half">
-<img id="Melt_AWP_RegionD" src="Melt_AWP/Melt_AWP_Daily_Region13.png" style="width:100%">
-</div> 
-<div class="w3-half">
-<img id="Melt_AWP_RegionA" src="Melt_AWP/Melt_AWP_Accu_Region13.png" style="width:100%">
-</div>
-
-
-<div class="w3-row">
-<center>
-<div class="slidecontainer">
-    <span>Region:</span>
-    <span id="Melt_AWP_Regionselect" style="font-weight:bold;color:red">13</span>
-  <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
-</div>
-</center>
-
-<button onclick="showRegionheatmap()" class="w3-button buttonstyle w3-padding-large">Region Heatmap</button>
-<div class="w3-row">
-
-<div id="Regionheatmap">
-<div class="w3-half">
-<img  src="Melt_AWP/Region_Heatmap.png" style="height:100%">
-</div> 
-<div class="w3-half">
-<img src="Melt_AWP/Region_Heatmap_anom.png" style="height:100%">
-</div>
-
-</div>
-
-
-</div>
-
-<div class="w3-center">
-<hr>
-<h2 class="w3-wide">Data used</h2>
-<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and 
-DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active
- Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
 </div>
    
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
 
 <script>
-function darkmode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
+  // Accu Melt AWP map
+var slider = document.getElementById("Percentslider");
+var output = document.getElementById("Melt_AWP_Percentselect");
+output.innerHTML = slider.value; // Display the default slider value
 
-
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  
+  //update image
+	var imageid_D = "Melt_AWP/final/AWP_melt_" + slider.value + ".png";
+	var imageid_A = "Melt_AWP/anom/AWP_anom_" + slider.value + ".png";
+  setImageSRC("Melt_AWP_A",imageid_D);
+  setImageSRC("Melt_AWP_B",imageid_A);
+} 
 // ------------------------------------------
 // Melt AWP map region graphs
 
@@ -391,167 +295,21 @@ sliderR.oninput = function() {
   outputR.innerHTML = this.value;
   
   //update image
-	var imageid_D = "Melt_AWP/Melt_AWP_Daily_Region" + sliderR.value + ".png";
-	var imageid_A = "Melt_AWP/Melt_AWP_Accu_Region" + sliderR.value + ".png";
-	showimage_Regions(imageid_D,imageid_A);
-} 
-
-function showimage_Regions (imageid_D,imageid_A){
-document.getElementById("Melt_AWP_RegionD").src = imageid_D;
-document.getElementById("Melt_AWP_RegionA").src = imageid_A;
+	var imageid_D = "Melt_AWP/charts/Melt_AWP_Daily_Region" + sliderR.value + ".png";
+	var imageid_A = "Melt_AWP/charts/Melt_AWP_Accu_Region" + sliderR.value + ".png";
+  setImageSRC("Melt_AWP_RegionD",imageid_D);
+  setImageSRC("Melt_AWP_RegionA",imageid_A);
 }
+</script>
 
-// ------------------------------------------
-// Accu Melt AWP map
+<script type="module">
+    //Charts
+    import awpData from './Melt_AWP/data/melt_awp_charts.js';
 
-var slider = document.getElementById("Percentslider");
-var output = document.getElementById("Melt_AWP_Percentselect");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-  
-  //update image
-	var imageid = "Melt_AWP/AWP_melt_" + slider.value + ".png";
-	var imageid_anom = "Melt_AWP/AWP_anom_" + slider.value + ".png";
-	showimage_precent(imageid,imageid_anom);
-} 
-
-function showimage_precent (imageid,imageid_anom){
-document.getElementById("Melt_AWP_A").src = imageid;
-document.getElementById("Melt_AWP_B").src = imageid_anom;
-}
-
-
-// ---------------------------------------------------------------------------------
-
-Highcharts.chart('Accumulated', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Pan Arctic Melt AWP'
-    },
-    xAxis: {
-        categories: ['1979','1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997',
-        '1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        title: {
-            text: 'AWP (EJ)',
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' EJ'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'AWP',
-        data: [-792,-646,-280,-886,-560,-551,-324,-717,-463,-434,-576,-34,-237,-374,193,-137,69,-498,-94,384,367,457,176,182,516,
-        57,317,463,1100,855,484,952,908,1416,786,584,1024,1174,715,699,1103
-]
-    },{
-        name: 'Anomaly Base 2000-2019',
-        data: [-1490,-1345,-978,-1585,-1258,-1250,-1023,-1415,-1162,-1132,-1274,-733,-935,-1072,-505,-836,-630,
-			   -1196,-793,-314,-332,-241,-523,-516,-182,-642,-381,-236,402,156,-214,254,210,717,88,-114,326,476,17,0,404]
-    }]
-    
-});
-
-
-Highcharts.chart('Accumulated_central', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'High Arctic Melt AWP'
-    },
-    xAxis: {
-        categories: ['1979','1980','1981','1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997',
-        '1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019'],
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        title: {
-            text: 'AWP (EJ)',
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' EJ'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'AWP',
-        data: [-2063,-1864,-1556,-2150,-1870,-1812,-1612,-1881,-1823,-1703,-1758,-1481,-1498,-1633,-1056,-1399,-1114,-1742,-1341,-1014,-948,
-        -824,-1128,-1000,-808,-1077,-895,-654,-170,-311,-719,-256,-289,150,-433,-659,-147,126,-460,-403,-30
-]
-    },{
-        name: 'Anomaly Base 2000-2019',
-        data: [-1564,-1364,-1056,-1651,-1371,-1313,-1113,-1382,-1324,-1203,-1259,-981,-999,-1134,-557,-899,-615,-1243,-842,-515,-449,-325,
-        -628,-501,-308,-578,-395,-155,329,188,-220,244,211,649,66,-159,352,625,39,96,469
-]
-    }]
-    
-});
-
-
-
-
-
-// ------------------------------------------
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-showRegionheatmap()
-// Used to toggle the region heatmap
-function showRegionheatmap() {
-  var x = document.getElementById("Regionheatmap");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+Highcharts.chart('Accumulated', awpData.Accumulated);
+Highcharts.chart('Accumulated_central', awpData.Accumulated_central);
 
 </script>
 
-</body>
+
 </html>

@@ -1,15 +1,38 @@
 nav {
-    background-color: black;
+    background-color: rgb(8, 0, 22);
     color: #e6e6e6;
-    margin-bottom: 5em;
 }
 
 .nav-button {
     padding: .5em;
     color: white;
     text-decoration: none;
-
 }
+
+.favicon img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.favicon {
+  padding: 0;
+}
+
+#moon {
+  background-color: rgb(6, 0, 20);
+  color: #e6e6e6;
+  font-size: 1.33em;
+  padding: .2em;
+  margin-right: 3em;
+  border-radius: .5em;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* nav hover functions */
+#moon:hover {background-color: #e6e6e6;color: black;}
+.nav-item:hover {background-color: #e6e6e6;color: black;}
+.dropdown:hover .dropdown-menu {display: block;}
+.dropdown-menu{position: absolute;z-index: 1; }
 
 
 
