@@ -39,16 +39,15 @@ nav {
 /* Create two equal columns that floats next to each other */
 .AWPcolumn {
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     background-color: #ffffff;
-    height: 230px;
   }
   
   .AWPcolumn a {
     float: none;
     color: black;
-    padding: 16px;
+    padding: 10px;
     text-decoration: none;
     display: block;
     text-align: left;
