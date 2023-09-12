@@ -22,10 +22,10 @@
 <script rel="javascript" src="./static/js/functions.js"></script>
 
 <!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/maps.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-<script src="static/js/worldLow.js"></script>
+<script rel="javascript" src="./static/am5/index.js"></script>
+<script rel="javascript" src="./static/am5/Animated.js"></script>
+<script rel="javascript" src="./static/am5/map.js"></script>
+<script rel="javascript" src="./static/am5/worldRegionsHigh.js"></script>
 
 <script>
   $(document).ready( function() {
@@ -218,11 +218,16 @@
 
 
 <!-- Chart code -->
-<script rel="javascript" src="./static/js/amWorldChart.js"></script>
+<script rel="javascript" src="./static/am5/iceberg_northness.js"></script>
 <script>
-imageSeries.dataSource.url = "https://nrt.cryospherecomputing.com/icebergs/iceberg_northness.json";
-imageSeries.dataSource.parser = new am4core.JParser();
-imageSeries.dataSource.parser.options.emptyAs = 0;
+    am5.net.load("./static/am5/data/iceberg_northness.json").then(function(result) {
+    // This gets executed when data finishes loading
+    pointSeries.data.setAll(am5.JSONParser.parse(result.response));
+    }).catch(function(result) {
+    // This gets executed if there was an error loading URL
+    // ... handle error
+    console.log("Error loading " + result.xhr.responseURL);
+});
 </script>
 
 </html>
