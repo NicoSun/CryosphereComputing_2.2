@@ -46,6 +46,31 @@ hr {
   color: black;
 }
 
+.pill-nav p {
+  display: inline-block;
+  background-color: rgb(185, 234, 252);
+  color: black;
+  text-align: center;
+  padding: .8em;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+/* Change the color of links on mouse-over */
+.pill-nav p:hover {
+  background-color: #ffffff;
+  color: black;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+/* Add a color to the active/current link */
+.pill-nav p.active {
+  background-color: dodgerblue;
+  color: white;
+} 
+
 .buttonstyle {
   background-color: #e6e6e6;
   color: black;
@@ -55,12 +80,14 @@ hr {
 }
 
 .infostyle {
+  display: inline-block;
   background-color: #e6e6e6;
   color: black;
   border-radius: .5em;
   padding: .33em;
   margin: 1em;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .infolist{

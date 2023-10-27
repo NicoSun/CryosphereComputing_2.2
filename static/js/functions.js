@@ -27,7 +27,6 @@ function checkAppearance() {
 
 }
 
-
 function item_show (id) {
   $(id).show();
 }
@@ -45,7 +44,7 @@ function more_info(id) {
   }
 }
 
-//used to chaneg images with sliders
+//used to change images with sliders
 function setImageSRC (imageID,imageSRC){
   document.getElementById(imageID).src = imageSRC;
   }
