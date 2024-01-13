@@ -13,11 +13,17 @@ const nh_image_anom = $("#amsr_nh_img_anom");
 const sh_image = $("#amsr_sh_img");
 const sh_image_anom = $("#amsr_sh_img_anom");
 
-const src_sh = "https://drive.google.com/uc?id=174TwoIX72UHx60TfRxiAKQYvkNCoUX8l&export=download";
-const src_sh_anom = "https://drive.google.com/uc?id=1-gpTigVKMYUSzg_Me83BlOnzRYhBM0ki&export=download";
+// const src_sh = "https://drive.google.com/uc?id=174TwoIX72UHx60TfRxiAKQYvkNCoUX8l&export=download";
+// const src_sh_anom = "https://drive.google.com/uc?id=1-gpTigVKMYUSzg_Me83BlOnzRYhBM0ki&export=download";
 
-const src_nh = 'https://drive.google.com/uc?id=1aDWSQaIwTRcAUP63XaExQ6zD_NJawwvi&export=download';
-const src_nh_anom ="https://drive.google.com/uc?id=1sl3SWwBBRh3_5WlB8UifrbNLWjGh4Yyq&export=download";
+// const src_nh = 'https://drive.google.com/uc?id=1aDWSQaIwTRcAUP63XaExQ6zD_NJawwvi&export=download';
+// const src_nh_anom ="https://drive.google.com/uc?id=1sl3SWwBBRh3_5WlB8UifrbNLWjGh4Yyq&export=download";
+
+const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
+const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
+
+const src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-1.png";
+const src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-1.png";
 
 const data_switcher = (value) => {
     if (value === data_source){
