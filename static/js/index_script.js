@@ -13,12 +13,6 @@ const nh_image_anom = $("#amsr_nh_img_anom");
 const sh_image = $("#amsr_sh_img");
 const sh_image_anom = $("#amsr_sh_img_anom");
 
-// const src_sh = "https://drive.google.com/uc?id=174TwoIX72UHx60TfRxiAKQYvkNCoUX8l&export=download";
-// const src_sh_anom = "https://drive.google.com/uc?id=1-gpTigVKMYUSzg_Me83BlOnzRYhBM0ki&export=download";
-
-// const src_nh = 'https://drive.google.com/uc?id=1aDWSQaIwTRcAUP63XaExQ6zD_NJawwvi&export=download';
-// const src_nh_anom ="https://drive.google.com/uc?id=1sl3SWwBBRh3_5WlB8UifrbNLWjGh4Yyq&export=download";
-
 const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
 const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
 
@@ -60,11 +54,11 @@ const button_switcher = (value) => {
 }
 
 const dmi_data = () => {
-  const temp = "https://drive.google.com/uc?id=1tpbVfUL5D8TDSUn6kV7-833u64qcHvNY&export=download";
-  const fdd = "https://drive.google.com/uc?id=0B1HTR0ONiUmEaU1oX21WcFBxc00&export=download";
-  const fdd_anom = "https://drive.google.com/uc?id=0B1HTR0ONiUmEMFZiLWwxUW15QUk&export=download";
-  const fdd_season = "https://drive.google.com/uc?id=0B1HTR0ONiUmEbVU3SmZsOHd0dE0&export=download";
-  const fdd_season_anom = "https://drive.google.com/uc?id=0B1HTR0ONiUmEMGowLTFRZUtCYnc&export=download";
+  const temp = "https://nrt.cryospherecomputing.com/DMI/DMI_Temp_graph.png";
+  const fdd = "https://nrt.cryospherecomputing.com/DMI/DMI_FDD_Year.png";
+  const fdd_anom = "https://nrt.cryospherecomputing.com/DMI/DMI_FDD_Year_Anom.png";
+  const fdd_season = "";
+  const fdd_season_anom = "";
 
   $("#temp").attr("src",temp);
   $("#fdd").attr("src",fdd);
