@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         data.forEach(item => {
             const row = document.createElement('tr');
+            const area = item.Length * item.Width * 0.88;
             row.innerHTML = `
                 <td>${item.Iceberg}</td>
                 <td>${item.Latitude}</td>
                 <td>${item.Longitude}</td>
                 <td>${item.Length}</td>
                 <td>${item.Width}</td>
+                <td>${area}</td>
             `;
             tableBody.appendChild(row);
         });
@@ -41,9 +43,13 @@ function sortTable(columnIndex) {
         const aText = a.cells[columnIndex].textContent.trim();
         const bText = b.cells[columnIndex].textContent.trim();
 
-        return isAscending 
-            ? aText.localeCompare(bText) 
-            : bText.localeCompare(aText);
+         // Check if the content is numeric
+         const aValue = isNaN(aText) ? aText : parseFloat(aText);
+         const bValue = isNaN(bText) ? bText : parseFloat(bText);
+ 
+         return isAscending 
+             ? (aValue > bValue ? 1 : -1) 
+             : (aValue < bValue ? 1 : -1);
     });
 
     // Clear the existing rows and append the sorted rows

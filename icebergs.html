@@ -134,25 +134,30 @@
           <div id="worldChartanimated"></div>
         </center>
         <hr>
-        <div>
+
+        <table id="sortableTable">
+          <thead>
+              <tr>
+                  <th onclick="sortTable(0)">Iceberg</th>
+                  <th onclick="sortTable(1)">Lat</th>
+                  <th onclick="sortTable(2)">Lon</th>
+                  <th onclick="sortTable(3)">Length</th>
+                  <th onclick="sortTable(4)">Width</th>
+                  <th onclick="sortTable(5)">Area (approx)</th>
+              </tr>
+          </thead>
+          <tbody id="tableBody">
+              <!-- Data will be loaded here -->
+          </tbody>
+      </table>
+
+      <hr>
+
+      <div>
         <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" style="width:100%" title="weekly iceberg travel distance">
         <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_size.png" style="width:100%" title="current top iceberg sizes">
       </div>
 
-      <table id="sortableTable">
-        <thead>
-            <tr>
-                <th onclick="sortTable(0)">Iceberg</th>
-                <th onclick="sortTable(1)">Lat</th>
-                <th onclick="sortTable(2)">Lon</th>
-                <th onclick="sortTable(3)">Length</th>
-                <th onclick="sortTable(4)">Width</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-            <!-- Data will be loaded here -->
-        </tbody>
-    </table>
   
       <hr>
       <h2 >Data used</h2>
