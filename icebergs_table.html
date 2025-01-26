@@ -34,6 +34,7 @@
     checkAppearance();
   });
 </script>
+
 </head>
 
 <body>
@@ -126,18 +127,6 @@
 
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-10 text-center">
-        <h2>Antarctic Icebergs</h2>
-        <p class="ex">Iceberg locations, speed and size updated every Saturday</p>
-
-        <center>
-          <div id="worldChartanimated"></div>
-        </center>
-        <hr>
-        <div>
-        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" style="width:100%" title="weekly iceberg travel distance">
-        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_size.png" style="width:100%" title="current top iceberg sizes">
-      </div>
 
       <table id="sortableTable">
         <thead>
@@ -161,7 +150,6 @@
 
       </div>
       </div>
-    </div>
 </main>
   
   <!-- Footer -->
@@ -173,22 +161,6 @@
       </div>
   </footer>
 
-
-
-<!-- Chart code -->
-<script rel="javascript" src="./static/am5/iceberg_nrt.js"></script>
-<script>
-    const jsonURL = "https://nrt.cryospherecomputing.com/icebergs/icebergs.json";
-    am5.net.load(jsonURL).then(function(result) {
-    // This gets executed when data finishes loading
-    pointSeries.data.setAll(am5.JSONParser.parse(result.response));
-    }).catch(function(result) {
-    // This gets executed if there was an error loading URL
-    // ... handle error
-    console.log("Error loading " + result.xhr.responseURL);
-    })
-
-</script>
 
 </body>
 </html>
