@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         data.forEach(item => {
             const row = document.createElement('tr');
-            const area = item.Length * item.Width * 0.88;
+            const area = Math.round(item.Length * item.Width * 0.88);
             row.innerHTML = `
                 <td>${item.Iceberg}</td>
                 <td>${item.Latitude}</td>
