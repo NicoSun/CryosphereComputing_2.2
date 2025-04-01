@@ -48,4 +48,3 @@ function more_info(id) {
 function setImageSRC (imageID,imageSRC){
   document.getElementById(imageID).src = imageSRC;
   }
-

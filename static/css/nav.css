@@ -3,6 +3,10 @@ nav {
     color: #e6e6e6;
 }
 
+#navbar-container{
+  margin-bottom: 66px;
+}
+
 .nav-button {
     padding: .5em;
     color: white;
@@ -10,8 +14,8 @@ nav {
 }
 
 .favicon img {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 48px;
+  max-height: 48px;
 }
 .favicon {
   padding: 0;

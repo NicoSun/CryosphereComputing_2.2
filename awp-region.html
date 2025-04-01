@@ -18,7 +18,6 @@
 
 <!--own styles-->
 <link rel="stylesheet" href="./static/css/style.css">
-<link rel="stylesheet" href="./static/css/nav.css">
 <script rel="javascript" src="./static/js/functions.js"></script>
 
 <script>
@@ -35,91 +34,7 @@
 
 <body>
 
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
-        <span class="navbar-toggler-icon navbar-dark"></span>
-      </button>
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <!--AMSR2-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
-              <div class="dropdown-menu" id="nav_amsr">
-              <a class="dropdown-item" href="amsr2-sit.html">AMSR2 Ice Thickness </a>
-              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
-            </div>
-            </div>
-
-            <!--AWP-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
-            <div class="dropdown-menu" id="nav_awp">
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
-              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
-              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
-              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
-              </div>
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="melt-awp.html">Arctic Ice-Melt AWP</a>
-                <a class="dropdown-item" href="melt-awp-south.html">Antarctic Ice-Melt AWP</a>
-              <a class="dropdown-item" href="NRT-icemelt.html">Arctic Ice-Melt NRT</a>
-              <a class="dropdown-item" href="NRT-icemelt-south.html">Antarctic Ice-Melt NRT</a>
-              </div>
-            </div>
-            </div>
-
-            <!--SNOW-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
-            <div class="dropdown-menu" id="nav_snow">
-              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
-              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
-            </div>
-            </div>
-            
-            <!--Icesheets-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
-            <div class="dropdown-menu" id="nav_ice">
-              <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
-              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
-              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
-            </div>
-            </div>
-
-            <!--Analysis-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="#" role="button">Analysis </a>
-            <div class="dropdown-menu" id="nav_analysis">
-              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
-              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
-              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
-              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
-              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
-            </div>
-            </div>
-
-
-            <!--Other-->
-            <a class="nav-item nav-button" href="doc.html">Documentation</a>
-            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
-            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
-            
-        </div>
-        </div>
-        </div>
-        <span id="moon" onclick="darkmode()">
-          <i class="fa fa-moon-o"></i>
-      </span>
-    </nav>
-      
-  </header>
-
-
+  <div id="navbar-container"></div>
     <main>
 
       <!-- Regional Arctic -->
@@ -143,10 +58,10 @@
         <section>
           <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="AWP_RegionD" src="AWP/regional/North_AWP_RegionD13.png" title="Daily Arctic Regional AWP">
+            <img id="AWP_RegionD" src="data/AWP/regional/North_AWP_RegionD13.png" title="Daily Arctic Regional AWP">
             </div>
             <div class="col-xl-6">
-            <img id="AWP_RegionA" src="AWP/regional/North_AWP_RegionA13.png" title="Accumulated Arctic Regional AWP">
+            <img id="AWP_RegionA" src="data/AWP/regional/North_AWP_RegionA13.png" title="Accumulated Arctic Regional AWP">
             </div>
             
             </div>
@@ -176,10 +91,10 @@
       </div>
       <div class="row dblcol">
         <div class="col-xl-6">
-          <img id="AWP_RegionD_south" src="AWP_south/regional/South_AWP_RegionD5.png" title="Daily Antarctic Regional AWP">
+          <img id="AWP_RegionD_south" src="data/AWP_south/regional/South_AWP_RegionD5.png" title="Daily Antarctic Regional AWP">
         </div>
         <div class="col-xl-6">
-          <img id="AWP_RegionA_south" src="AWP_south/regional/South_AWP_RegionA5.png" title="Accumulated Antarctic Regional AWP">
+          <img id="AWP_RegionA_south" src="data/AWP_south/regional/South_AWP_RegionA5.png" title="Accumulated Antarctic Regional AWP">
         </div>
       </div>
 
@@ -201,10 +116,10 @@
         </div>
         <div class="row">
           <div class="col-xxl-8">
-            <img  src="AWP/Region_Heatmap.png" style="height:100%" title="Arctic AWP Heatmap">
+            <img  src="data/AWP/Region_Heatmap.png" style="height:100%" title="Arctic AWP Heatmap">
           </div>
           <div class="col-xxl-4">
-            <img src="AWP_south/Region_Heatmap_south.png" style="height:100%" title="Arctic AWP Heatmap">
+            <img src="data/AWP_south/Region_Heatmap_south.png" style="height:100%" title="Arctic AWP Heatmap">
           </div>
          </div>
     </section>
@@ -222,6 +137,7 @@
 
 </body>
 
+<script rel="javascript" src="./static/js/navbar.js"></script>
 <script>
 // Melt AWP map region graphs
 
@@ -234,8 +150,8 @@ sliderR.oninput = function() {
   outputR.innerHTML = this.value;
 
   //update image
-	let imageSRC_D = "AWP/regional/North_AWP_RegionD" + sliderR.value + ".png";
-	let imagSRC_A = "AWP/regional/North_AWP_RegionA" + sliderR.value + ".png";
+	let imageSRC_D = "data/AWP/regional/North_AWP_RegionD" + sliderR.value + ".png";
+	let imagSRC_A = "data/AWP/regional/North_AWP_RegionA" + sliderR.value + ".png";
 
 	setImageSRC("AWP_RegionD",imageSRC_D);
   setImageSRC("AWP_RegionA",imagSRC_A);
@@ -253,8 +169,8 @@ sliderR_south.oninput = function() {
   outputR_south.innerHTML = this.value;
 
   //update image
-	var imageSRC_D_south = "AWP_south/regional/South_AWP_RegionD" + sliderR_south.value + ".png";
-	var imageSRC_A_south = "AWP_south/regional/South_AWP_RegionA" + sliderR_south.value + ".png";
+	var imageSRC_D_south = "data/AWP_south/regional/South_AWP_RegionD" + sliderR_south.value + ".png";
+	var imageSRC_A_south = "data/AWP_south/regional/South_AWP_RegionA" + sliderR_south.value + ".png";
 
   setImageSRC("AWP_RegionD_south",imageSRC_D_south);
   setImageSRC("AWP_RegionA_south",imageSRC_A_south);

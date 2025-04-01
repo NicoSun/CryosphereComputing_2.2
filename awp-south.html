@@ -18,9 +18,11 @@
 
 <!--own styles-->
 <link rel="stylesheet" href="./static/css/style.css">
-<link rel="stylesheet" href="./static/css/nav.css">
 <script rel="javascript" src="./static/js/functions.js"></script>
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <script>
   $(document).ready( function() {
@@ -32,89 +34,7 @@
 
 </head>
 <body>
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
-        <span class="navbar-toggler-icon navbar-dark"></span>
-      </button>
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <!--AMSR2-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
-              <div class="dropdown-menu" id="nav_amsr">
-              <a class="dropdown-item" href="amsr2-sit.html">AMSR2 Ice Thickness </a>
-              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
-            </div>
-            </div>
-
-            <!--AWP-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
-            <div class="dropdown-menu" id="nav_awp">
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
-              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
-              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
-              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
-              </div>
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="melt-awp.html">Arctic Ice-Melt AWP</a>
-                <a class="dropdown-item" href="melt-awp-south.html">Antarctic Ice-Melt AWP</a>
-              <a class="dropdown-item" href="NRT-icemelt.html">Arctic Ice-Melt NRT</a>
-              <a class="dropdown-item" href="NRT-icemelt-south.html">Antarctic Ice-Melt NRT</a>
-              </div>
-            </div>
-            </div>
-
-            <!--SNOW-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
-            <div class="dropdown-menu" id="nav_snow">
-              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
-              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
-            </div>
-            </div>
-            
-            <!--Icesheets-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
-            <div class="dropdown-menu" id="nav_ice">
-              <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
-              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
-              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
-            </div>
-            </div>
-
-            <!--Analysis-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="#" role="button">Analysis </a>
-            <div class="dropdown-menu" id="nav_analysis">
-              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
-              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
-              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
-              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
-              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
-            </div>
-            </div>
-
-
-            <!--Other-->
-            <a class="nav-item nav-button" href="doc.html">Documentation</a>
-            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
-            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
-            
-        </div>
-        </div>
-        </div>
-        <span id="moon" onclick="darkmode()">
-          <i class="fa fa-moon-o"></i>
-      </span>
-    </nav>
-      
-  </header>
+  <div id="navbar-container"></div>
 
       <main>
            <!-- Antarctic info -->
@@ -135,10 +55,10 @@
         <!-- Antarctic images -->
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="normal" src="AWP_south/final/Final_2000_south.png" title="Daily Arctic AWP">
+            <img id="normal" src="data/AWP_south/final/Final_2000_south.png" title="Daily Arctic AWP">
             </div>
             <div class="col-xl-6">
-            <img id="anomaly" src="AWP_south/anom/AWP_anom_2000_south.png" title="Accumulated Arctic AWP">
+            <img id="anomaly" src="data/AWP_south/anom/AWP_anom_2000_south.png" title="Accumulated Arctic AWP">
             </div>
         </div>
 
@@ -155,7 +75,7 @@
         <!-- Antarctic Mean-->
         <div class="row dblcol">
           <div class="col-xl-6">
-            <img src="AWP_south/Final_Icefree.png"  style="width:100%">
+            <img src="data/AWP_south/Final_Icefree.png"  style="width:100%">
           </div>
           <div class="col-xl-6">
             <p class="ex">Select individual years with the slider to view the difference with the new millenia baseline of 2000-2019.</p>
@@ -182,7 +102,7 @@
 
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="percentofmax" src="AWP_south/percent/AWP_percent_2000_south.png" title="AWP percent of maximum">
+            <img id="percentofmax" src="data/AWP_south/percent/AWP_percent_2000_south.png" title="AWP percent of maximum">
             </div>
             <div class="col-xl-6">
                 <p class="ex"> The maximum accumulated solar radiation varies greatly by latitude when taken over the whole astronomical summer.
@@ -226,7 +146,7 @@
 </footer>
 </body>
 
-
+<script rel="javascript" src="./static/js/navbar.js"></script>
 <script>
 // image sliders
 var slider_A = document.getElementById("myRange_Antarctic");
@@ -238,8 +158,8 @@ slider_A.oninput = function() {
   output_A.innerHTML = (this.value-1)+"-"+this.value;
 
   //update image
-	var imageSRC_D = "AWP_south/final/Final_" + slider_A.value + "_south.png";
-	var imagSRC_A = "AWP_south/anom/AWP_anom_" + slider_A.value + "_south.png";
+	var imageSRC_D = "data/AWP_south/final/Final_" + slider_A.value + "_south.png";
+	var imagSRC_A = "data/AWP_south/anom/AWP_anom_" + slider_A.value + "_south.png";
 	setImageSRC("normal",imageSRC_D);
     setImageSRC("anomaly",imagSRC_A);
 }
@@ -255,7 +175,7 @@ slider.oninput = function() {
   output.innerHTML = (this.value-1)+"-"+this.value;
 
   //update image
-	var imageid = "AWP_south/percent/AWP_percent_" + slider.value + "_south.png";
+	var imageid = "data/AWP_south/percent/AWP_percent_" + slider.value + "_south.png";
 	setImageSRC("percentofmax",imageid);
 }
 </script>
@@ -263,7 +183,7 @@ slider.oninput = function() {
 
 <script type="module">
     //Charts
-    import awp_South_Data from './AWP_south/data/awp_south_charts.js';
+    import awp_South_Data from './data/AWP_south/data/awp_south_charts.js';
     Highcharts.chart('Accumulated',awp_South_Data.totalAcc );
     Highcharts.chart('Daily_AWP', awp_South_Data.panDay);
     Highcharts.chart('Accumulated_AWP',awp_South_Data.panAcc );

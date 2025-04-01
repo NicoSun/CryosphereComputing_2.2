@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="./static/css/nav.css">
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
+    <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+    <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <!--AMSR2-->
+        <div class="dropdown">
+            <a class="nav-item nav-button" href="sit-model.html" role="button">Ice Thickness</a>
+            <div class="dropdown-menu" id="nav_amsr">
+            <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
+        </div>
+        </div>
+
+        <!--AWP-->
+        <div class="dropdown">
+        <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
+        <div class="dropdown-menu" id="nav_awp">
+            <div class="AWPcolumn">
+            <a class="dropdown-item" href="awp-region.html">AWP regional</a>
+            <a class="dropdown-item" href="awp-south.html">Antarctic</a>
+            <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
+            <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
+            </div>
+            <div class="AWPcolumn">
+            <a class="dropdown-item" href="melt-awp.html">Arctic Ice-Melt AWP</a>
+            <a class="dropdown-item" href="melt-awp-south.html">Antarctic Ice-Melt AWP</a>
+            <a class="dropdown-item" href="NRT-icemelt.html">Arctic Ice-Melt NRT</a>
+            <a class="dropdown-item" href="NRT-icemelt-south.html">Antarctic Ice-Melt NRT</a>
+            </div>
+        </div>
+        </div>
+
+        <!--SNOW-->
+        <div class="dropdown">
+            <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
+        <div class="dropdown-menu" id="nav_snow">
+            <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
+            <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
+        </div>
+        </div>
+        
+        <!--Icesheets-->
+        <div class="dropdown">
+        <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
+        <div class="dropdown-menu" id="nav_ice">
+            <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
+            <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
+            <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
+        </div>
+        </div>
+
+        <!--Analysis-->
+        <div class="dropdown">
+        <a class="nav-item nav-button" href="#" role="button">Analysis </a>
+        <div class="dropdown-menu" id="nav_analysis">
+            <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
+            <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
+            <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
+            <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
+            <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
+        </div>
+        </div>
+
+
+        <!--Other-->
+        <a class="nav-item nav-button" href="doc.html">Documentation</a>
+        <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
+        <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
+        
+    </div>
+    </div>
+    </div>
+    <span id="moon" onclick="darkmode()">
+        <i class="fa fa-moon-o"></i>
+    </span>
+</nav>

@@ -18,7 +18,6 @@
 
 <!--own styles-->
 <link rel="stylesheet" href="./static/css/style.css">
-<link rel="stylesheet" href="./static/css/nav.css">
 <script rel="javascript" src="./static/js/functions.js"></script>
 
 
@@ -36,89 +35,7 @@
 </head>
 
 <body>
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
-        <span class="navbar-toggler-icon navbar-dark"></span>
-      </button>
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <!--AMSR2-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
-              <div class="dropdown-menu" id="nav_amsr">
-              <a class="dropdown-item" href="amsr2-sit.html">AMSR2 Ice Thickness </a>
-              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
-            </div>
-            </div>
-
-            <!--AWP-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
-            <div class="dropdown-menu" id="nav_awp">
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
-              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
-              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
-              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
-              </div>
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="melt-awp.html">Arctic Ice-Melt AWP</a>
-                <a class="dropdown-item" href="melt-awp-south.html">Antarctic Ice-Melt AWP</a>
-              <a class="dropdown-item" href="NRT-icemelt.html">Arctic Ice-Melt NRT</a>
-              <a class="dropdown-item" href="NRT-icemelt-south.html">Antarctic Ice-Melt NRT</a>
-              </div>
-            </div>
-            </div>
-
-            <!--SNOW-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
-            <div class="dropdown-menu" id="nav_snow">
-              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
-              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
-            </div>
-            </div>
-            
-            <!--Icesheets-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
-            <div class="dropdown-menu" id="nav_ice">
-              <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
-              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
-              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
-            </div>
-            </div>
-
-            <!--Analysis-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="#" role="button">Analysis </a>
-            <div class="dropdown-menu" id="nav_analysis">
-              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
-              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
-              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
-              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
-              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
-            </div>
-            </div>
-
-
-            <!--Other-->
-            <a class="nav-item nav-button" href="doc.html">Documentation</a>
-            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
-            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
-            
-        </div>
-        </div>
-        </div>
-        <span id="moon" onclick="darkmode()">
-          <i class="fa fa-moon-o"></i>
-      </span>
-    </nav>
-      
-  </header>
+  <div id="navbar-container"></div>
 
 <main>
 
@@ -133,10 +50,10 @@
       <section>
         <div class="row dblcol"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-          <img id="Melt_AWP_A" src="Melt_AWP/final/AWP_melt_2000.png" title="Final Arctic Melt-AWP">
+          <img id="Melt_AWP_A" src="data/Melt_AWP/final/AWP_melt_2000.png" title="Final Arctic Melt-AWP">
           </div>
           <div class="col-xl-6">
-          <img id="Melt_AWP_B" src="Melt_AWP/anom/AWP_anom_2000.png" title="Arctic Melt-AWP Anomaly">
+          <img id="Melt_AWP_B" src="data/Melt_AWP/anom/AWP_anom_2000.png" title="Arctic Melt-AWP Anomaly">
           </div>
           </div>
     
@@ -152,7 +69,7 @@
       <section>
         <div class="row dblcol"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-          <img id="Melt_AWP_A" src="Melt_AWP/AWP_melt_Mean.png" title="Melt-AWP Mean">
+          <img id="Melt_AWP_A" src="data/Melt_AWP/AWP_melt_Mean.png" title="Melt-AWP Mean">
           </div>
           <div class="col-xl-6">
           <p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
@@ -210,10 +127,10 @@
         <h2 class="text-center">Regional charts</h2>
         <div class="row dblcol">
           <div class="col-xl-6">
-          <img id="Melt_AWP_RegionD" src="Melt_AWP/charts/Melt_AWP_Daily_Region13.png" title="Daily Regional Melt-AWP">
+          <img id="Melt_AWP_RegionD" src="data/Melt_AWP/charts/Melt_AWP_Daily_Region13.png" title="Daily Regional Melt-AWP">
           </div>
           <div class="col-xl-6">
-          <img id="Melt_AWP_RegionA" src="Melt_AWP/charts/Melt_AWP_Accu_Region13.png" title="Accumulated Regional Melt-AWP">
+          <img id="Melt_AWP_RegionA" src="data/Melt_AWP/charts/Melt_AWP_Accu_Region13.png" title="Accumulated Regional Melt-AWP">
           </div>
           </div>
     
@@ -235,10 +152,10 @@
         
         <div class="row dblcol" id="region_heatmap"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-            <img  src="Melt_AWP/Region_Heatmap.png" style="height:100%">
+            <img  src="data/Melt_AWP/Region_Heatmap.png" style="height:100%">
           </div>
           <div class="col-xl-6">
-            <img src="Melt_AWP/Region_Heatmap_anom.png" style="height:100%">
+            <img src="data/Melt_AWP/Region_Heatmap_anom.png" style="height:100%">
           </div>
           </div>
        </section>
@@ -268,6 +185,7 @@
   </footer>
 </body>
 
+<script rel="javascript" src="./static/js/navbar.js"></script>
 <script>
   // Accu Melt AWP map
 var slider = document.getElementById("Percentslider");
@@ -279,8 +197,8 @@ slider.oninput = function() {
   output.innerHTML = this.value;
   
   //update image
-	var imageid_D = "Melt_AWP/final/AWP_melt_" + slider.value + ".png";
-	var imageid_A = "Melt_AWP/anom/AWP_anom_" + slider.value + ".png";
+	var imageid_D = "data/Melt_AWP/final/AWP_melt_" + slider.value + ".png";
+	var imageid_A = "data/Melt_AWP/anom/AWP_anom_" + slider.value + ".png";
   setImageSRC("Melt_AWP_A",imageid_D);
   setImageSRC("Melt_AWP_B",imageid_A);
 } 
@@ -296,8 +214,8 @@ sliderR.oninput = function() {
   outputR.innerHTML = this.value;
   
   //update image
-	var imageid_D = "Melt_AWP/charts/Melt_AWP_Daily_Region" + sliderR.value + ".png";
-	var imageid_A = "Melt_AWP/charts/Melt_AWP_Accu_Region" + sliderR.value + ".png";
+	var imageid_D = "data/Melt_AWP/charts/Melt_AWP_Daily_Region" + sliderR.value + ".png";
+	var imageid_A = "data/Melt_AWP/charts/Melt_AWP_Accu_Region" + sliderR.value + ".png";
   setImageSRC("Melt_AWP_RegionD",imageid_D);
   setImageSRC("Melt_AWP_RegionA",imageid_A);
 }
@@ -305,7 +223,7 @@ sliderR.oninput = function() {
 
 <script type="module">
     //Charts
-    import awpData from './Melt_AWP/data/melt_awp_charts.js';
+    import awpData from './data/Melt_AWP/data/melt_awp_charts.js';
 
 Highcharts.chart('Accumulated', awpData.Accumulated);
 Highcharts.chart('Accumulated_central', awpData.Accumulated_central);

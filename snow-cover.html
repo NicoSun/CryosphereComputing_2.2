@@ -18,7 +18,6 @@
 
 <!--own styles-->
 <link rel="stylesheet" href="./static/css/style.css">
-<link rel="stylesheet" href="./static/css/nav.css">
 <script rel="javascript" src="./static/js/functions.js"></script>
 
 <script>
@@ -29,89 +28,7 @@
 </head>
 
 <body>
-  <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a class="nav-item nav-button favicon" href="index.html"><img src="./static/favicon.ico"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar">
-        <span class="navbar-toggler-icon navbar-dark"></span>
-      </button>
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <!--AMSR2-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="amsr2.html" role="button">AMSR2 </a>
-              <div class="dropdown-menu" id="nav_amsr">
-              <a class="dropdown-item" href="amsr2-sit.html">AMSR2 Ice Thickness </a>
-              <a class="dropdown-item" href="past-sit.html">Past Thickness</a>
-            </div>
-            </div>
-
-            <!--AWP-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="awp.html" role="button">Albedo-Warming Potential (AWP) </a>
-            <div class="dropdown-menu" id="nav_awp">
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="awp-region.html">AWP regional</a>
-              <a class="dropdown-item" href="awp-south.html">Antarctic</a>
-              <a class="dropdown-item" href="NRTawp.html">Arctic NRT</a>
-              <a class="dropdown-item" href="NRTawp-south.html">Antarctic NRT</a>
-              </div>
-              <div class="AWPcolumn">
-                <a class="dropdown-item" href="melt-awp.html">Arctic Ice-Melt AWP</a>
-                <a class="dropdown-item" href="melt-awp-south.html">Antarctic Ice-Melt AWP</a>
-              <a class="dropdown-item" href="NRT-icemelt.html">Arctic Ice-Melt NRT</a>
-              <a class="dropdown-item" href="NRT-icemelt-south.html">Antarctic Ice-Melt NRT</a>
-              </div>
-            </div>
-            </div>
-
-            <!--SNOW-->
-            <div class="dropdown">
-              <a class="nav-item nav-button" href="snow-cover.html" role="button" >Snow</a>
-            <div class="dropdown-menu" id="nav_snow">
-              <a class="dropdown-item" href="snow-regional.html">Snow-Regional</a>
-              <a class="dropdown-item" href="past-snow.html">Past Snow Maps</a>
-            </div>
-            </div>
-            
-            <!--Icesheets-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="icesheets.html" role="button">Ice Sheets </a>
-            <div class="dropdown-menu" id="nav_ice">
-              <a class="dropdown-item" href="bedrock.html">Greenland Bedrock</a>
-              <a class="dropdown-item" href="bedrock-antarctica.html">Antarctica Bedrock</a>
-              <a class="dropdown-item" href="glacier-size.html">Glacier Size</a>
-            </div>
-            </div>
-
-            <!--Analysis-->
-            <div class="dropdown">
-            <a class="nav-item nav-button" href="#" role="button">Analysis </a>
-            <div class="dropdown-menu" id="nav_analysis">
-              <a class="dropdown-item" href="ice-free-days.html">Ice Free Days</a>
-              <a class="dropdown-item" href="past-sic.html">Past Ice Maps</a>
-              <a class="dropdown-item" href="MinMax.html">MinMax SIC</a>
-              <a class="dropdown-item" href="MeltFreezeDays.html">Arctic Melt & FreezeDays</a>
-              <a class="dropdown-item" href="MeltFreezeDays_south.html">Antarctic Melt & FreezeDays</a>
-            </div>
-            </div>
-
-
-            <!--Other-->
-            <a class="nav-item nav-button" href="doc.html">Documentation</a>
-            <a class="nav-item nav-button" href="volcano.html">Volcanos</a>
-            <a class="nav-item nav-button" href="https://github.com/NicoSun/ScienceData" target="_blank">Data</a>
-            
-        </div>
-        </div>
-        </div>
-        <span id="moon" onclick="darkmode()">
-          <i class="fa fa-moon-o"></i>
-      </span>
-    </nav>
-      
-  </header>
+  <div id="navbar-container"></div>
 
 <main>
   <div class="container-fluid">
@@ -125,10 +42,10 @@
       <section> <!--24km Snow Covered Days-->
         <div class="row dblcol">
           <div class="col-xl-6">  <!-- Snow Cover normal -->
-          <img id="normal" src="Snow_Cover/24km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days">
+          <img id="normal" src="data/Snow_Cover/24km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days">
           </div>
           <div class="col-xl-6">  <!-- Snow Cover anomaly -->
-          <img id="anomaly" src="Snow_Cover/24km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly">
+          <img id="anomaly" src="data/Snow_Cover/24km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly">
           </div>
           </div>
     
@@ -147,7 +64,7 @@
       <section>
         <div class="row dblcol justify-content-between">
           <div class="col-xl-6">  <!-- Snow Cover normal -->
-            <img src="Snow_Cover/NOAA_Snowmap_Mean_24km_1998-2022.png" title="NOAA Snow Covered Days Mean 24km res">
+            <img src="data/Snow_Cover/NOAA_Snowmap_Mean_24km_1998-2022.png" title="NOAA Snow Covered Days Mean 24km res">
           </div>
           <div class="col-xl-6">  <!-- Snow Cover anomaly -->
             <p class="ex">
@@ -156,7 +73,7 @@
               However, having a longer record gives a better view of changes over time and a few missing days do not impact the decadal mean much. 
             The baseline for anomaly calculation is 2000-2019<br></p>
             <center>
-              <img src="Snow_Cover/NOAA_Snowmap_Mean_200km.png" style="max-width: 450px;" title="NOAA Snow Covered Days Mean 200km res">
+              <img src="data/Snow_Cover/NOAA_Snowmap_Mean_200km.png" style="max-width: 450px;" title="NOAA Snow Covered Days Mean 200km res">
             </center>
           </div>
           </div>
@@ -167,10 +84,10 @@
           <div class="col-8 text-center">
             <div class="row dblcol"> <!--200km Snow Covered Days-->
               <div class="col-xl-6">  <!-- Snow Cover normal -->
-              <img id="normal_low" src="Snow_Cover/200km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days 200km resolution">
+              <img id="normal_low" src="data/Snow_Cover/200km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days 200km resolution">
               </div>
               <div class="col-xl-6">  <!-- Snow Cover anomaly -->
-              <img id="anomaly_low" src="Snow_Cover/200km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly 200km resolution">
+              <img id="anomaly_low" src="data/Snow_Cover/200km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly 200km resolution">
               </div>
               </div>
               
@@ -190,7 +107,7 @@
             <option value="3">Europe</option>
             <option value="4">Asia</option>
         </select>
-        <img id="decade_mean" src="Snow_Cover/Low_res_Region1.png" style="width:100%">
+        <img id="decade_mean" src="data/Snow_Cover/Low_res_Region1.png" style="width:100%">
         </div>
       </div>
       </section>
@@ -216,8 +133,8 @@
   </footer>
 </body>
 
+<script rel="javascript" src="./static/js/navbar.js"></script>
 <script>
-
 // Dispalys Slider value
 var slider = document.getElementById("myRange_24km");
 var output = document.getElementById("Yearselect");
@@ -235,8 +152,8 @@ output_low.innerHTML = slider_low.value;
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value;  
-	var imageSRC = "Snow_Cover/24km/NOAA_Snowmap_" + slider.value + ".png";
-	var imageSRC_A = "Snow_Cover/24km/NOAA_Snowmap_anomaly_" + slider.value + ".png";
+	var imageSRC = "data/Snow_Cover/24km/NOAA_Snowmap_" + slider.value + ".png";
+	var imageSRC_A = "data/Snow_Cover/24km/NOAA_Snowmap_anomaly_" + slider.value + ".png";
 	im_elem = "normal";
 	im_elem_anom = "anomaly";
 	setImageSRC(im_elem,imageSRC);
@@ -245,8 +162,8 @@ slider.oninput = function() {
 
 slider_low.oninput = function() {
   output_low.innerHTML = this.value;  
-	var imageSRC = "Snow_Cover/200km/NOAA_Snowmap_" + slider_low.value + ".png";
-	var imageSRC_A = "Snow_Cover/200km/NOAA_Snowmap_anomaly_" + slider_low.value + ".png";
+	var imageSRC = "data/Snow_Cover/200km/NOAA_Snowmap_" + slider_low.value + ".png";
+	var imageSRC_A = "data/Snow_Cover/200km/NOAA_Snowmap_anomaly_" + slider_low.value + ".png";
 	im_elem = "normal_low";
 	im_elem_anom = "anomaly_low";
 	setImageSRC(im_elem,imageSRC);
@@ -254,7 +171,7 @@ slider_low.oninput = function() {
 } 
 
 input.oninput = function() {
-	var imageSRC = "Snow_Cover/Low_res_Region" + input.value + ".png";
+	var imageSRC = "data/Snow_Cover/Low_res_Region" + input.value + ".png";
 	im_elem = "decade_mean";
 	setImageSRC(im_elem,imageSRC);
 } 
