@@ -7,17 +7,21 @@ const amsr2_sh = $("#AMSR2_sh");
 amsr2_nh.hide();
 amsr2_sh.hide();
 
+const nh_chart = $("#amsr_nh_chart");
 const nh_image = $("#amsr_nh_img");
 const nh_image_anom = $("#amsr_nh_img_anom");
 
+const sh_chart = $("#amsr_sh_chart");
 const sh_image = $("#amsr_sh_img");
 const sh_image_anom = $("#amsr_sh_img_anom");
 
-const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
-const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
-
+const src_nh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/nh_Area_Graph_full.png";
 const src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-1.png";
 const src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-1.png";
+
+const src_sh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/sh_Area_Graph_full.png";
+const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
+const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
 
 const data_switcher = (value) => {
     if (value === data_source){
@@ -35,8 +39,10 @@ const data_switcher = (value) => {
             nsidc_sh.hide();    
             amsr2_nh.show();
             amsr2_sh.show();
+            nh_chart.attr("src",src_nh_chart);
             nh_image.attr("src",src_nh);
             nh_image_anom.attr("src",src_nh_anom);
+            sh_chart.attr("src",src_sh_chart);
             sh_image.attr("src",src_sh);
             sh_image_anom.attr("src",src_sh_anom);
             }
