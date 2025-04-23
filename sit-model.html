@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>AMSR2 Sea Ice Thickness</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>AMSR2 Snow & Ice Volume</h2>
+        <p class="ex"><i>A High Resolution Sea Ice & Snow Thickness estimation</i></p>
+
+      </div>
+      </div>
+
+     <section> <!-- Maps -->
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_SIT_Last_Day.png" title="AMSR2 Sea Ice Thickness">
+        </div>
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_SIT_Last_Day_Anomaly.png" title="AMSR2 Sea Ice Thickness Anomaly">
+        </div>
+      </div>
+     </section>
+     <hr>
+     <section> <!-- Graphs -->
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_Sea_Ice_Volume.png" title="AMSR2 Sea Ice Volume chart">
+        </div>
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_Sea_Ice_Thickness.png" title="AMSR2 Sea Ice Thickness chart">
+        </div>
+      </div>
+     </section>
+     <hr>
+     <section>
+      <div class="row dblcol"> <!-- Movies -->
+        <div class="col-xl-6">
+          <video width="900" height="765" controls>
+            <source src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_SIT_Last_month.webm" type="video/webm">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col-xl-6">
+          <video width="900" height="765" controls>
+            <source src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_SIT_Last_month_anomaly.webm" type="video/webm">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+     </section>
+     <hr>
+     <div class="row justify-content-center">
+      <div class="col-10 text-center">
+     <section style="max-width:1200px"> <!-- Graph -->
+      <img src="https://nrt.cryospherecomputing.com/ADS_SIT/AMSR2_thickness_distribution.png" title="AMSR2 Sea Ice Thickness Histogram">
+     </section>
+     <hr>
+     <h2>Data used</h2>
+    <p>Hori, M., H. Yabuki, T. Sugimura, T. Terui, 2012, AMSR2 Level 3 product of Daily Polar Brightness Temperatures and Product, 1.00, Arctic Data archive System (ADS), Japan, https://ads.nipr.ac.jp/dataset/A20170123-003</p>
+      </div>
+    </div>  
+  </div>
+    
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+</html>

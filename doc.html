@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Documentation</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+<div id="navbar-container"></div>
+
+<main>
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center" style="padding: 1em;">
+      <!-- local navigation -->
+      <div class="col-8 text-center">
+        <a href="#SIA" class="buttonstyle" >Sea Ice Area</a>
+        <a href="#AWP" class="buttonstyle" >Albedo-Warming Potential</a>
+        <a href="#AMSR2" class="buttonstyle" >AMSR2 Snow & Ice Volume</a>
+        <a href="#80N" class="buttonstyle" >80N Region</a>
+        
+      </div>
+      </div>
+
+      <section>  <!--  Sea Ice Area  -->
+        <h2 class="text-center">Sea Ice Area</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+            <p> Most official institutions use "sea ice extent" instead of "sea ice area". So why does CryosphereComputing use sea ice area?
+              The most important reason for using extent is probably tradition. The first passive microwave measurements were taken in the 1970s when the world wasn't
+               concerned about climate change. During that time the bigger concern was ships getting stuck in sea ice. With passive microwave measurements 
+               scientists were able to produce daily ice maps for the whole Arctic, which is a big step forward from aircraft or ground based reports.
+                To get a reasonable ice edge (dangerous zone) a grid cell concentration of 15% was chosen. For the aim of providing safe passage for sea
+                 faring vessels sea ice extent is a reasonable metric, but for climate change analysis it is not an accurate description of the ocean surface.</p>
+                 
+                 <p> Sea ice extent is a binary system, stating either there is ice in a grid cell or there isn't ice in a grid cell. The concentration threshold at which a grid cell is counted as ice covered is typically 15%. 
+       One grid cell in NSIDC 25km grid has an area of 625 km2
+       At 15% concentration the true ice area is 93.75 km2
+       So the extent metric can overestimate the true area by 666%  (625 km2  / 93.75 km2 )
+       This is rarely the case, but in summer and autumn 200% overestimations are not untypical.
+       Both grid cells below fulfill the 15% threshold and are counted as completely ice covered using the extent metric.
+                 </p>
+                 
+               <img src="Documentation/0.15_ice concentration.png" title="Different Sea Ice Distritutions">
+          </div>
+          <div class="col-xl-6">
+            <p> The articifcal area increase hides how close to an ice-free state the Arctic really is. The 2016 September daily minimum 
+              was announched as 4.14 million km2, but the true sea ice area was only 2.34 million km2. A good description of the minimum 
+              would be: The 2016 September minimum ice cover was 2.34 million km2 spread out over an area of 4.14 million km2. If we have a completely ice free ocean then the additional area soaking up solar energy is just 2.34 million km2 and not 4.14 million km2. 
+            </p>
+            <p> 
+            If this picture were a "grid cell" it would be counted as an intact rainforest using the extent metric. (23% rainforest concentration)
+            </p>
+          <img src="Documentation/0.23_rain forest.png" title="Photo with 23% covered rainforest">
+          </div>
+          </div>
+
+      </section>
+      <hr>
+      <section> <!--  Winter conditions -->
+        <h4 class="text-center"> Winter conditions</h4>
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img  src="Documentation/Winter_refreeze.png" title="Satellite color image of freezing ocean">
+        <p> 26 Jan 2017, Sea of  Okhotsk, NASA (EOSDIS) Worldview</p>
+        </div>
+        <div class="col-xl-6">
+        <img  src="Documentation/26_Jan_SoO.png" title="Sea Ice Concentration of freezing ocean">
+        <p> In winter, new sea ice is very thin and not a solid ice pack. Sometimes it forms so-called Pancake_ice, which is very prone to melt in stormy conditions. In recent years this type of ice cover has increased dramatically over the Arctic. You don't need to be a climate scientist to see that this type of ice cover has different thermodynamic properties (heat exchange between bodies) than a solid ice pack. The albedo (absorption of sunlight) and energy exchange between ocean-atmosphere is somewhere between an ice free ocean and a solid ice pack. So thermodynamically 50% ice concentration is quite accurate even though visually the ice concentration is close to 90%.</p>
+        </div>
+        </div>
+      </section>
+      <hr>
+      <section> <!--  Summer conditions -->
+        <h4 class="text-center"> Summer conditions</h4>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+          <img  src="Documentation/23_Jul_2012_Arctic Ocean.png" title="Satellite color image of melting ice">
+          <p> 23 Jul 2012, Arctic Ocean, NASA (EOSDIS) Worldview</p>
+          </div>
+          <div class="col-xl-6">
+          <img  src="Documentation/23_Jul_2012_Arctic Ocean_con.png" title="Sea Ice Concentration of melting ice">
+          <p> During the melting season melt ponds lower the sea ice albedo and change thermodynamic interactions with the atmosphere.
+            The measured sea ice concentration reflects this change. The low concentration areas have high melting potential, either 
+            from melt ponds' low albedo, a very dispersed ice pack or both combined. Their high surface-area to volume ratio results in
+             a high energy transfer from ocean, atmosphere or direct sunlight. (law of surface-area-to-volume) For the whole ice-pack the 
+             compaction ratio (Area / Extent) gives a very good indication of how quickly the sea ice will melt. </p>
+          </div>
+          </div>
+      </section>
+      <hr>
+      <section> <!-- Albedo-Warming Potential -->
+        <h2 class="text-center">Albedo-Warming Potential</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+            <p> The Albedo-Warming Potential (AWP) quantifies the additional ocean warming from a lower ice cover at the poles.
+              These calculations don't include cloud cover, therefore it is called "Warming Potential" and not actual warming.
+               However, over the six-month period weather tends to average out and warm areas correlate well with low ice extent in September.
+                The basis of all calculations is a global surface radiation model and NSIDC Sea Ice Concentration data.</p>
+                <p><u>Formula per gridcell</u><br>
+                AWP Daily = ((1-SIC) * MJ) + 0.15 * MJ * SIC<br>
+                AWP Accumulated = sum(AWPdaily)<br>
+                MJ = incoming surface radiation per square meter<br>
+                SIC = Sea Ice Concentration</p>
+                <p>
+                 The calculated values are arithmetic averages over the whole maximum possible ice extent (shown in light blue). All lakes and some marginal seas 
+                 (Baltic Sea, Gulf of St. Lawrence) are not considered because their coastline to total area ratio is too high. Coastline measurement errors 
+                  introduce just random noise.</p>
+            <img src="Documentation/Arctic_max_ice_extent.png" title="Arctic maximum ice extent">
+          </div>
+          <div class="col-xl-6">
+            <p> 
+              The next graph shows the solar surface radiation per square meter for different latitudes. Unlike
+               "top of the Atmosphere solar radiation" the high latitudes don't experience the highest surface radiation during peak summer. The low angle of solar
+                radiation in high latitudes means more energy is absorbed by the atmosphere. This energy can also raise the surface 
+                temperature but is not relevant for surface albedo: ice vs water.</p>
+                        <p>  Astronomical summer: 20 March to 22 September</p>
+              <img src="Documentation/Solar_surface_radiation_per_latitude.png" title="chart surface radiation">
+              <img src="Documentation/Solar_energy_astronomical_summer.png" title="chart solar energy during summer in percent from whole year" >
+          </div>
+          
+          </div>
+
+      </section>
+      <hr>
+      <section> <!-- AMSR2 Snow & Ice Volume -->
+        <h2 class="text-center">AMSR2 Snow & Ice Volume</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+            <p> The AMSR2 sea  ice thickness is a product by the "Arctic Data archive System". The exact algorithm is unknown to me, 
+              but it probably estimates the thickness from the AMSR2 channels (e.g. 6, 7, 10, 18, 23, 36 GHz) in either horizontal and/or vertical polarization. 
+              Like CryoSat  it can't estimate sea ice thickness beneath melt ponds or the thickness of newly frozen ice slush. Instead ADS shows a melt 
+              concentration percentage (20-50%). My algorithm  estimates the ice thinning during the melt season and new ice thickness during the freezing season.
+              It has a higher spatial resolution (10km) than PIOMAS and higher temporal resolution for the entire Arctic than CryoSat and runs year round.
+               It is also sensitive to snow cover and melt pond refreezing, which gives a better picture on the current melting or freezing conditions.</p>
+          </div>
+          <div class="col-xl-6">
+            <p>Due to the lack of a region mask all ice above 50 degree north is included in the product. It includes the Canadian lakes, Baikal lake and Baltic sea.
+              It excludes the Great lakes, Caspian Sea, Aral sea, most of Gulf of St Lawrence, Yellow Sea, Sea of Japan and southern Sea of Okhotsk. 
+              The maximum ice thickness change is 5 cm per day, expect for ice drift. (grid-cell suddenly ice-covered or ice-free)
+              The map is cropped to the Arctic Basin and shows 0-350 cm. The thickness is calculated up to 400 cm and the map is simply saturated 
+              above 350 cm to show more detail in the thin ice areas.
+              </p>
+              <p>current Algorithm(v1.1): max ice thickness: 400 cm
+              new ice thickness(first freeze): 20 cm
+              minimum ice thickness (during melt algorithm): 25 cm
+              maximum thickness change(measured ice thickness): 6.6 cm
+              meltfactor: 5 freezefactor: 2.2</p>
+          </div>
+          <img src="Documentation/ADS_Melt_Algorithim vs PIOMAS.PNG" title="ADS thickness vs PIOMAS" style="width:100%">
+          </div>
+      </section>
+      <hr>
+      <section>  <!-- 80N Region -->
+        <h2 class="text-center">80N Region</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+            <p> North of 80°N is the the last place where spring starts. Temperatures remain below freezing until June.
+              - The region holds the thickest sea ice
+              - FDD indicate how thick the ice can grow over the winter
+              - Currently (2010s) this is the only region where sea ice survives the summer melt. 
+              Topographical map (Google Earth)</p>
+          </div>
+          <div class="col-xl-6">
+          <img  src="Documentation/80N_Area.jpg" title="80N Latitude">
+          </div>
+          
+          </div>
+          <div class="row dblcol">
+            <div class="col-xl-6">
+              <p> 2nd April 2015: Ocean and Continents are frozen up to around 50°N. Only the Atlantic Ocean is ice free up to 80°N near Svalbard.</p>
+            <img  src="Documentation/North_Pole_2_April_2015.JPG" title="Arctic at max Winter Sea Ice Extent">
+            </div>
+            <div class="col-xl-6">
+              <p>28th Aug 2012: Close to a record low minimum sea ice area. The only sea ice left is north of 80°N.  </p>
+            <img  src="Documentation/North_Pole_28_Aug_2012.JPG" title="Arctic at Sea Ice Minimum">
+            </div>
+            </div>
+      </section>
+        
+  </div>
+</main>
+
+ <!-- Footer -->
+ <footer>
+  <hr>
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <p>CryosphereComputing</p>
+    </div>
+</footer>
+
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+</html>

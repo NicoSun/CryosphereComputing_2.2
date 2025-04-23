@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>AWP Regional</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+      more_info('more_info');
+      more_info('more_info2');
+      checkAppearance();
+  } );
+
+</script>
+
+
+</head>
+
+<body>
+
+  <div id="navbar-container"></div>
+    <main>
+
+      <!-- Regional Arctic -->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Regional Arctic AWP</h2>
+          <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
+    
+    
+          <button onclick="more_info('more_info')" class=" infostyle">Info</button>
+          <div id="more_info">
+          <p> Arctic Regions: Sea of Okhotsk,	Bering Sea,	Hudson Bay,	Baffin Bay,	East Greenland Sea,
+              Barents Sea,	Kara Sea,	Laptev Sea,	East Siberian Sea,	Chukchi Sea,	Beaufort Sea,	Canadian Archipelago,	Central Arctic
+          </p>
+          </div>
+
+        </div>
+        </div>
+
+        <section>
+          <div class="row dblcol">
+            <div class="col-xl-6">
+            <img id="AWP_RegionD" src="data/AWP/regional/North_AWP_RegionD13.png" title="Daily Arctic Regional AWP">
+            </div>
+            <div class="col-xl-6">
+            <img id="AWP_RegionA" src="data/AWP/regional/North_AWP_RegionA13.png" title="Accumulated Arctic Regional AWP">
+            </div>
+            
+            </div>
+    
+            <div class="row justify-content-center">
+              <div class="col-10 text-center sliderdiv">
+                <span>Region:</span>
+                <span id="AWP_Regionselect" style="font-weight:bold;color:red">13</span>
+              <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
+              </div>
+            </div>
+          </div>
+        </section>  
+      <hr>
+      <section>
+         <!--Antarctic Region-->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2 class="">Regional Antarctic AWP</h2>
+          <button onclick="more_info('more_info2')" class=" infostyle">Info</button>
+          <div id="more_info2">
+          <p class=""> Antarctic Regions: Weddel Sea,	Indian Ocean,	Pacific Ocean,	Ross Sea,	Bell-Amundsen Sea
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row dblcol">
+        <div class="col-xl-6">
+          <img id="AWP_RegionD_south" src="data/AWP_south/regional/South_AWP_RegionD5.png" title="Daily Antarctic Regional AWP">
+        </div>
+        <div class="col-xl-6">
+          <img id="AWP_RegionA_south" src="data/AWP_south/regional/South_AWP_RegionA5.png" title="Accumulated Antarctic Regional AWP">
+        </div>
+      </div>
+
+    <div class="row justify-content-center">
+      <div class="col-10 text-center sliderdiv">
+        <span>Region:</span>
+        <span id="AWP_Regionselect_south" style="font-weight:bold;color:red">13</span>
+      <input type="range" min="1" max="5" value="5" class="slider" id="Regionslider_south" style="width:66%">
+      </div>
+    </div>
+      </section>
+    <hr>
+    <section>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2 class="">AWP Heatmap</h2>
+        <p class="ex">AWP in percent of Icefree conditions</p>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-xxl-8">
+            <img  src="data/AWP/Region_Heatmap.png" style="height:100%" title="Arctic AWP Heatmap">
+          </div>
+          <div class="col-xxl-4">
+            <img src="data/AWP_south/Region_Heatmap_south.png" style="height:100%" title="Arctic AWP Heatmap">
+          </div>
+         </div>
+    </section>
+      </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+// Melt AWP map region graphs
+
+let sliderR = document.getElementById("Regionslider");
+let outputR = document.getElementById("AWP_Regionselect");
+outputR.innerHTML = sliderR.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderR.oninput = function() {
+  outputR.innerHTML = this.value;
+
+  //update image
+	let imageSRC_D = "data/AWP/regional/North_AWP_RegionD" + sliderR.value + ".png";
+	let imagSRC_A = "data/AWP/regional/North_AWP_RegionA" + sliderR.value + ".png";
+
+	setImageSRC("AWP_RegionD",imageSRC_D);
+  setImageSRC("AWP_RegionA",imagSRC_A);
+}
+
+// ------------------------------------------
+// Melt AWP map region graphs south
+
+var sliderR_south = document.getElementById("Regionslider_south");
+var outputR_south = document.getElementById("AWP_Regionselect_south");
+outputR_south.innerHTML = sliderR_south.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderR_south.oninput = function() {
+  outputR_south.innerHTML = this.value;
+
+  //update image
+	var imageSRC_D_south = "data/AWP_south/regional/South_AWP_RegionD" + sliderR_south.value + ".png";
+	var imageSRC_A_south = "data/AWP_south/regional/South_AWP_RegionA" + sliderR_south.value + ".png";
+
+  setImageSRC("AWP_RegionD_south",imageSRC_D_south);
+  setImageSRC("AWP_RegionA_south",imageSRC_A_south);
+}
+</script>
+
+</html>

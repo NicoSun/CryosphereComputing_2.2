@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Icebergs</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<link rel="stylesheet" href="./static/css/table.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+<script rel="javascript" src="./static/js/table.js"></script>
+
+<!-- Resources -->
+<script rel="javascript" src="./static/am5/index.js"></script>
+<script rel="javascript" src="./static/am5/Animated.js"></script>
+<script rel="javascript" src="./static/am5/map.js"></script>
+<script rel="javascript" src="./static/am5/worldRegionsHigh.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Antarctic Icebergs</h2>
+        <p class="ex">Iceberg locations, speed and size updated every Saturday</p>
+
+        <center>
+          <div id="worldChartanimated"></div>
+        </center>
+        <hr>
+
+        <table id="sortableTable">
+          <thead>
+              <tr>
+                  <th onclick="sortTable(0)">Iceberg</th>
+                  <th onclick="sortTable(1)">Lat</th>
+                  <th onclick="sortTable(2)">Lon</th>
+                  <th onclick="sortTable(3)">Length</th>
+                  <th onclick="sortTable(4)">Width</th>
+                  <th onclick="sortTable(5)">Area (approx)</th>
+              </tr>
+          </thead>
+          <tbody id="tableBody">
+              <!-- Data will be loaded here -->
+          </tbody>
+      </table>
+
+      <hr>
+
+      <div>
+        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" style="width:100%" title="weekly iceberg travel distance">
+        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_size.png" style="width:100%" title="current top iceberg sizes">
+      </div>
+
+  
+      <hr>
+      <h2 >Data used</h2>
+      <p> U.S. National Ice Center (NIC); https://usicecenter.gov/pub/Iceberg_Tabular.csv </p>
+
+
+      </div>
+      </div>
+    </div>
+</main>
+  
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+
+<!-- Chart code -->
+<script rel="javascript" src="./static/am5/iceberg_nrt.js"></script>
+<script>
+    const jsonURL = "https://nrt.cryospherecomputing.com/icebergs/icebergs.json";
+    am5.net.load(jsonURL).then(function(result) {
+    // This gets executed when data finishes loading
+    pointSeries.data.setAll(am5.JSONParser.parse(result.response));
+    }).catch(function(result) {
+    // This gets executed if there was an error loading URL
+    // ... handle error
+    console.log("Error loading " + result.xhr.responseURL);
+    })
+
+</script>
+
+</body>
+</html>

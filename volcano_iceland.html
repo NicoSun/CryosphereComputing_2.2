@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Geldingadalir Volcano </title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+
+<style>
+.img-comp-container {
+  position: relative;
+  height: 942px; /*should be the same height as the images*/
+}
+
+.img-comp-container2 {
+  position: relative;
+  height: 1387px; /*should be the same height as the images*/
+}
+</style>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h1>Geldingadalir Volcano 2021</h1>
+        <p><i>Sentinel2 RGB colour image with an infrared overlay. Infrared reveals active lava flows beneath the dark surface.</i></p>
+  
+        Opacity(%): <input type="number" id="opacitySlider" value="66" min="0" max="100">
+        <button onclick="setOpacity()">Set</button>
+
+        <!-- Image -->
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+           <img src="./other_data/Volcano/Volcano_20210808_RGB.png" width="1471" height="942">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+           <img id="aaa" src="./other_data/Volcano/Volcano_20210808_Infra.png" width="1471" height="942">
+         </div>
+         </div>
+         <p><i>Date: 2021-08-08</i></p>
+         <hr>
+         <!-- Image2 -->
+        <div class="img-comp-container2">
+          <div class="img-comp-img">
+           <img src="./other_data/Volcano/Volcano_20210626_RGB.png" width="1716" height="1387">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+           <img id="aaa" src="./other_data/Volcano/Volcano_20210626_Infra.png" width="1716" height="1387">
+         </div>
+         </div>
+         <p><i>Date: 2021-06-26</i></p>
+         <hr>
+         <!-- Image3 -->
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+           <img src="./other_data/Volcano/Volcano_20210509_RGB.png" width="1199" height="923">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+           <img id="aaa" src="./other_data/Volcano/Volcano_20210509_Infra.png" width="1199" height="923">
+         </div>
+         </div>
+         <p><i>Date: 2021-05-09</i></p>
+         <hr>
+         <!-- Image4 -->
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+           <img src="./other_data/Volcano/Volcano_20210504_RGB.png" width="1199" height="923">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+           <img id="aaa" src="./other_data/Volcano/Volcano_20210504_Infra.png" width="1199" height="923">
+         </div>
+         </div>
+         <p><i>Date: 2021-05-04</i></p>
+         <hr>
+
+         <h2>Data used</h2>
+          <p>Copernicus Sentinel2 data 2021, processed by ESA.</p>
+
+      </div>
+      </div>
+
+</main>
+      
+  
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script type="module">
+import {initComparisons} from './static/js/img-comparison.js';
+initComparisons();
+</script>
+<script>
+
+  var opacityvalueA = document.getElementById("aaa");
+  opacityvalueA.style.opacity = 0.66;
+  
+  function setOpacity() {
+    var Useropacity = document.getElementById("opacitySlider");
+    opacityvalueA.style.opacity = Useropacity.value/100;
+  }
+  </script>
+
+</html>

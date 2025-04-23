@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Antarctic Melt & Freeze Dates</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Antarctic Melt & Freeze Dates</h2>
+        <p> These maps show the variability of melting and freezing of sea ice over the last four decades.<br>
+          On the earliest freeze map is significant noise from coastal measurement error, to a minor degree also present on the latest melt map. 
+         </i></p>
+
+         <select id="Melt_Freeze">
+          <option value="Melt">Melt</option>
+          <option value="Freeze">Freeze</option>
+        </select>
+
+      </div>
+      </div>
+
+    <div class="row trlcol">
+      <div class="col-xl-4">
+      <img id="Arctic_Min" src="data/Analysis/Antarctic_melt_freeze/2010s_001_Melt_Date.png" title="Antarctic Earliest Melt Date">
+      </div>
+      <div class="col-xl-4">
+      <img id="Arctic_Mean" src="data/Analysis/Antarctic_melt_freeze/2010s_002_Melt_Date.png" title="Antarctic Mean Melt Date">
+      </div>
+      <div class="col-xl-4">
+        <img id="Arctic_Max" src="data/Analysis/Antarctic_melt_freeze/2010s_003_Melt_Date.png" title="Antarctic Latest Melt Date">
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10 text-center sliderdiv">
+          <span>Decade:</span>
+          <span id="Monthselect" style="font-weight:bold;color:red">2010</span>
+          <input type="range" min="1980" max="2010" value="2010" step="10" class="slider" id="myRange2" style="width:50%">
+        </div>
+      </div>
+      <hr>
+
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+          <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
+        </div>
+        </div>
+
+    </div>
+
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+var fileending = "Melt"
+var decade = "2010"
+
+
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("Monthselect");
+output2.innerHTML = slider2.value; // Display the default slider value
+
+
+// Update for month slider
+slider2.oninput = function() {
+output2.innerHTML = this.value;
+decade = this.value;
+
+	//update image
+	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.png";
+	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.png";
+	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.png";
+	showimage(imageMax,imageMean,imageMin);
+} 
+
+var Hemisphere = document.getElementById("Melt_Freeze");
+Hemisphere.onchange = function() {
+  if (this.value=="Melt"){
+	fileending = "Melt"
+  }
+  else{
+	  fileending = "Freeze"
+  }
+  //update image
+	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.png";
+	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.png";
+	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.png";
+	showimage(imageMax,imageMean,imageMin);
+}
+
+function showimage (imageMax,imageMean,imageMin){
+
+document.getElementById("Arctic_Max").src = imageMax;
+document.getElementById("Arctic_Mean").src = imageMean;
+document.getElementById("Arctic_Min").src = imageMin;
+
+}
+
+</script>
+
+</html>

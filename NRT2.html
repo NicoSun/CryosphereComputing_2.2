@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Extent & Compaction</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Sea Ice Extent</h2>
+  
+        <button onclick="more_info('more_info')" class=" infostyle">Info</button>
+        <div id="more_info">
+        <p> This pages shows Sea Ice Extent charts, Sea Ice Compaction and Global Sea Ice Area.
+          Refer to the documentation for an explantion of the terms.
+        </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+      
+      <!----- Extent ----->
+      <h2 >Extent</h2>
+    <div class="row dblcol">
+      <div class="col-xl-6">
+      <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Arctic_Graph_Extent.png" title="Arctic Sea Ice Extent">
+      </div>
+      <div class="col-xl-6">
+      <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Antarctic_Graph_Extent.png" title="Antarctic Sea Ice Extent">
+      </div>
+      </div>
+
+      <!----- Compaction ----->
+      <h2 >Compaction</h2>
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Arctic_Graph_Compaction.png" title="Arctic Sea Ice Compaction">
+        </div>
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Antarctic_Graph_Compaction.png" title="Antarctic Sea Ice Compaction">
+        </div>
+        </div>
+
+        <!----- Full Year Area ----->
+      <h2 >Full Year Area</h2>
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Arctic_Graph_full.png" title="Full Year Srctic Sea Ice Area">
+        </div>
+        <div class="col-xl-6">
+        <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Antarctic_Graph_full.png" title="Full Year Srctic Sea Ice Extent">
+        </div>
+        </div>
+
+         <!----- Global ----->
+      <h2 >Global</h2>
+      <img  src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Global_Graph_full.png" title="Global Sea Ice Area">
+
+    </div>
+    </div>
+  </div>
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+</body>
+<script rel="javascript" src="./static/js/navbar.js"></script>
+</html>

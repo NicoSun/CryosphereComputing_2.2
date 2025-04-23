@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Glacier size</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+    <main>
+
+    <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Glacier Size</h2>  
+  
+        <button onclick="more_info('more_info')" class=" infostyle">Info</button>
+        <div id="more_info">
+        <p> A size comparison between glaciers in terms of height and width of the terminus. The glacier thickness is not necessarily
+            the difference between the surface and bedrock. This is only true for grounded ice.
+             Defining the edges of Antarctic glaciers is difficult because most of the western ice sheet is below sea level, but they still exhibt an underwater glacier valley.
+        </p>
+        </div>
+        <p><i>All of Greenlands major glaciers would fit into Pine Island Glacier from a width perspective.
+            The adjacent Thwaites Glacier is another 60% wider.</i></p>
+
+            <div id="All_Glacier_Bedrock" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
+        <hr>
+        <p ><i>The surface data is just an estimation from the time when the measurements for the model were made.
+         Since then they could have changed significantly. </i></p>
+
+         <div id="Antarctic_Glacier_Front" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
+
+        <hr>
+         <p><i>The surface data is just an estimation from the time when the measurements for the model were made.
+          Since then they could have changed significantly.</i></p>
+         <div id="Greenland_Glacier_Front" style="min-width: 600px; max-width: 1000px; height: 600px; margin: 0 auto"></div>
+
+         <hr>
+         <h2 class="">Data used</h2>
+         <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
+         <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>
+ 
+      </div>
+      </div>
+    </div>
+
+    </main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script type="module">
+    //Charts
+    import glacierData from './data/Glacier/data/glacierSize.js';
+    Highcharts.chart('All_Glacier_Bedrock', glacierData.chart1);
+    Highcharts.chart('Antarctic_Glacier_Front',glacierData.chart2);
+    Highcharts.chart('Greenland_Glacier_Front',glacierData.chart3);
+</script>
+</html>

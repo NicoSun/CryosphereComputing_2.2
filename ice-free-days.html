@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Ice Free Days</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid" style="max-width: 1600px;">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <section>
+          <h2>Arctic and Antarctic Ice Free Days</h2>
+          <p class="ex">Total number of days a gridcell is icefree</p>
+        </div>
+        </div>
+        <div class="row dblcol">
+        <div class="col-xl-6">
+          <img id="normal" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_2000.png" style="width:100%" title="Arctic Ice Free Days">
+        </div>
+        <div class="col-xl-6">
+          <img id="anomaly" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_2000.png" style="width:100%" title="Arctic Ice Free Days Anomaly">
+        </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-10 text-center sliderdiv">
+            <span>Year:</span>
+            <span id="Arctic_Yearselect" style="font-weight:bold;color:red">2000</span>
+            <input type="range" min="1979" max="2022" value="2000" class="slider" id="myRange_Arctic" style="width:66%">
+          </div>
+        </div>
+        </section>
+        <hr>
+      <section>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+            <img src="data/Analysis/IceFreeDays/Arctic_IceFreeDays_Mean.png" style="width:100%" title="Arctic Ice Free Days Mean">
+          </div>
+          <div class="col-xl-6">
+            <p class="ex">Select individual years with the slider to view the difference with the long term mean.
+              Ice Free is defined as having an ice concentration below 15%.  The baseline for anomaly calculation is 1979-2019
+            </p>
+            <img src="data/Analysis/IceFreeDays/Antarctic_IceFreeDays_Mean.png" style="width:100%" title="Antarctic Ice Free Days Mean">
+          </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row dblcol">
+          <div class="col-xl-6"> <!-- Icefree Antarctic normal -->
+            <img id="normal_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_2000.png" style="width:100%" title="Antarctic Ice Free Days">
+          </div>
+          <div class="col-xl-6"> <!-- Icefree Antarctic anomaly -->
+            <img id="anomaly_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_2000.png" style="width:100%" title="Antarctic Ice Free Days Anomaly">
+          </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-10 text-center sliderdiv">
+              <span>Year:</span>
+              <span id="Yearselect_south" style="font-weight:bold;color:red">2000</span>
+              <input type="range" min="1979" max="2022" value="2000" class="slider" id="myRange_south" style="width:66%">
+            </div>
+          </div>
+
+      </section>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+        <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.
+        </p>
+        </div>
+      </div>
+      </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+// Dispalys Slider value
+var slider_A = document.getElementById("myRange_Arctic");
+var output_A = document.getElementById("Arctic_Yearselect");
+output_A.innerHTML = slider_A.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider_A.oninput = function() {
+  output_A.innerHTML = this.value;
+  
+  //update image
+	var imageSRC_D = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_" + slider_A.value + ".png";
+	var imagSRC_A = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_" + slider_A.value + ".png";
+  setImageSRC("normal",imageSRC_D);
+  setImageSRC("anomaly",imagSRC_A);
+} 
+
+
+// ------------------------------------------
+
+var slider = document.getElementById("myRange_south");
+var output = document.getElementById("Yearselect_south");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  
+  //update image
+	var imageSRC_D = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_" + slider.value + ".png";
+	var imagSRC_A = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_" + slider.value + ".png";
+  setImageSRC("normal_south",imageSRC_D);
+  setImageSRC("anomaly_south",imagSRC_A);
+} 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Antarctica Bedrock</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+
+<style>
+.img-comp-container {
+  position: relative;
+  height: 1150px; /*should be the same height as the images*/
+}
+
+.img-comp-container_long {
+  position: relative;
+  height: 1482px; /*should be the same height as the images*/
+}
+
+.img-comp-container_short {
+  position: relative;
+  height: 777px; /*should be the same height as the images*/
+}
+</style>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+<div id="navbar-container"></div>>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h1>Antarctica Bedrock Elevation</h1>
+        <p><i>Colour image: 2019-01-25</i></p>
+        Opacity(%): <input type="number" id="opacitySlider" value="33" min="0" max="100">
+        <button onclick="setOpacity()">Set</button><br>
+        <img src="data/Glacier/Bedmap2_legend_discrete.png" title="Antarctica Bedrock Legend">
+      <section> <!-- all Antarctica -->
+        <div class="img-comp-container_long">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Antarctica.png" width="1920" height="1482">
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+            <img id="ddd" src="data/Glacier/Antarctica_bed.png" width="1920" height="1482">
+          </div>
+          </div>
+        </section>
+        <hr>
+        <section><!-- Pine Island Glacier -->
+          <h1>Pine Island Glacier</h1>
+          <p><i>Colour image: 2019-02-02</i></p>
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="data/Glacier/PIG.png" width="988" height="1150">
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+            <img id="aaa" src="data/Glacier/PIG_bed.png" width="988" height="1150">
+          </div>
+          </div>
+         
+        </section>
+        <hr>
+        <section> <!-- Thwaites -->
+        <h1>Thwaites Glacier</h1>
+        <p><i>Colour image: 2019-02-02</i></p>
+        <div class="img-comp-container_short">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Thawties.png" width="1118" height="777">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+          <img id="bbb" src="data/Glacier/Thawties_bed.png" width="1118" height="777">
+         </div>
+         </div>
+        </section>
+        <hr>
+        <section> <<!-- Crossen & Dotson Ice shelf -->
+          <h1>Crossen & Dotson Ice shelf</h1>
+        <p><i>Colour image: 2019-02-02</i></p>
+        <div class="img-comp-container_short">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Crossen.png" width="1274" height="777">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+          <img id="ccc" src="data/Glacier/Crossen_bed.png" width="1274" height="777">
+         </div>
+         </div>
+
+        </section>
+        <hr>
+         <h2>Data used</h2>
+         <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
+         <p>Terra / MODIS from NASA Worldview.</p>
+    </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <hr>
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <p>CryosphereComputing</p>
+    </div>
+</footer>
+
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script type="module">
+import {initComparisons} from './static/js/img-comparison.js';
+initComparisons();
+</script>
+
+<script>
+var opacityvalueA = document.getElementById("aaa");
+var opacityvalueB = document.getElementById("bbb");
+var opacityvalueC = document.getElementById("ccc");
+var opacityvalueD = document.getElementById("ddd");
+opacityvalueA.style.opacity = 0.33;
+opacityvalueB.style.opacity = 0.33;
+opacityvalueC.style.opacity = 0.33;
+opacityvalueD.style.opacity = 0.33;
+
+function setOpacity() {
+  var Useropacity = document.getElementById("opacitySlider");
+  opacityvalueA.style.opacity = Useropacity.value/100;
+  opacityvalueB.style.opacity = Useropacity.value/100;
+  opacityvalueC.style.opacity = Useropacity.value/100;
+  opacityvalueD.style.opacity = Useropacity.value/100;
+}
+
+</script>
+
+</html>

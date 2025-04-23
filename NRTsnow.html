@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Snow Cover Statistics</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8 text-center">
+        <h2>Northern Hemisphere Snow Cover</h2>
+        <p>The following two charts show the variance in Snow Cover over the early 21t century.
+           In the standard deviation chart it is seen the highest variance is in fall from October to late Novermber.
+        </p>
+         <p>In summer when only Greenland and a few Mountains contain snow the variance between years is very small. Consequently
+           on the histogram, days with near zero anomaly occur most.
+         </p>
+
+      </div>
+      </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+
+         <!-- charts -->
+    <div class="row dblcol">
+      <div class="col-xl-6">
+        <div id="Stdv" style="min-width: 400px; max-width: 900px; height: 600px; margin: 0 auto"></div>
+      </div>
+      <div class="col-xl-6">
+        <div id="Histogram" style="min-width: 400px; max-width: 900px; height: 600px; margin: 0 auto"></div>
+      </div>
+      </div>
+      <hr>
+       <!-- movies -->
+      <div class="row dblcol">
+        <div class="col-xl-6">
+          <video width="800" height="1000" controls>
+            <source src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/Snow_map_10days.webm" type="video/webm">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col-xl-6">
+          <video width="800" height="1000" controls>
+            <source src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/Snow_map_anomaly_10days.webm" type="video/webm">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        </div>
+
+      </div>
+    </div>
+</main>
+</body>
+
+ <!-- Footer -->
+ <footer>
+  <hr>
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <p>CryosphereComputing</p>
+    </div>
+</footer>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script type="module">
+  //Charts
+  import snowData from './Snow_cover/data/snowStatistics.js';
+
+Highcharts.chart('Stdv', snowData.stdv);
+Highcharts.chart('Histogram', snowData.histogram);
+
+
+</script>
+
+
+</html>

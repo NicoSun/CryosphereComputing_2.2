@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Chart Test</title>
+<head>
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Styles -->
+<style>
+    #worldChartanimated {
+      width: 1000px;
+      height: 1000px;
+    }
+    body {
+        background-color: rgb(46, 46, 74);
+    }
+    </style>
+
+    <script rel="javascript" src="./static/am5/index.js"></script>
+    <script rel="javascript" src="./static/am5/Animated.js"></script>
+    <script rel="javascript" src="./static/am5/map.js"></script>
+    <script rel="javascript" src="./static/am5/worldRegionsHigh.js"></script>
+</head>
+  
+  <!-- HTML -->
+  <div id="worldChartanimated"></div>
+  <!-- <script rel="javascript" src="./static/am5/globeWithArrows.js"></script> -->
+
+  <script rel="javascript" src="./static/am5/iceberg_nrt.js"></script>
+
+    <script>
+        const jsonURL = "https://nrt.cryospherecomputing.com/icebergs/icebergs.json";
+        am5.net.load("./static/am5/data/icebergs_old.json").then(function(result) {
+        // This gets executed when data finishes loading
+        pointSeries.data.setAll(am5.JSONParser.parse(result.response));
+        }).catch(function(result) {
+        // This gets executed if there was an error loading URL
+        // ... handle error
+        console.log("Error loading " + result.xhr.responseURL);
+        })
+
+    </script>

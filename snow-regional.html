@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Regional Snow Extent</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Regional Snow Extent</h2>
+        <p"><i>Data from Feb1997 to Dec2019</i></p>
+         <p>The exact region extents can seens on the map.</p>
+
+      </div>
+      </div>
+
+      <section>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+          <img src="data/Snow_Cover/SubRegion_mask_labeled.png" title="Northern Hemisphere Snow Cover Regions">
+          </div>
+          <div class="col-xl-6">
+            <p class="ex">Only the high resolution data since 1997 is good enough for a detailed regional analysis. <br><br>
+              The first chart shows the changes of average snow extent over the year for the Regions of Arctic Ocean, USA, Canada, Europe and Asia. </p>
+
+              <center>
+                <select id="region_select" class="selectstyle">
+                  <option value="1">Arctic Ocean</option>
+                  <option value="2">USA</option>
+                  <option value="3">Canada</option>
+                  <option value="4">Europe</option>
+                  <option value="5">Asia</option>
+              </select>
+              </center>
+              
+              <img id="Mean_extent" src="data/Snow_Cover/Regional/Mean_extent_Region1.png" style="width:100%">
+          </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <h2 class="w3-wide">Snow Extent change over time</h2>
+            <p>
+              The limited timespan of 23 years would only allow two true decadal means. Instead we created 
+              three 10 year means with a slight overlap. Over time they will drift apart until we get three true decades.
+              <br></p>
+
+              <h3 class="w3-wide">North America</h3>
+              <p>Regions: Greenland, Eastern Canada, Central Canada, Canadian Rockies, Northern Canada, Alaska, US NE, US SE, 
+                      US MidWest, US SW, US Pacific, US Rockies
+            <br></p>
+
+
+            <img id="NorthAmerica"   src="data/Snow_Cover/Regional/NorthAmerica_Region1.png">
+              <div class="sliderdiv">
+                <span>Region:</span>
+                <span id="NorthAmerica_slider" style="font-weight:bold;color:red">12</span>
+              <input type="range" min="1" max="12" value="12" class="slider" id="NARange" style="width:50%">
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <h3 class="w3-wide">Europe</h3>
+            <p>Regions: North Europe, West Europe, Central Europe, Southern Europe, Eastern Europe<br></p>
+          <img id="Europe"   src="data/Snow_Cover/Regional/Europe_Region1.png">
+
+          <div class="sliderdiv">
+              <span>Region:</span>
+              <span id="Europe_slider" style="font-weight:bold;color:red">5</span>
+            <input type="range" min="1" max="5" value="5" class="slider" id="EURange" style="width:50%">
+          </div>
+
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <h3 class="w3-wide">Asia</h3>
+            <p>Regions: East Siberia, Central Siberia, West Siberia, Central Asia, Central Mountain Asia, Eastern Asia, Tibet, Western Asia, Persia<br></p>
+
+
+
+          <img id="Asia"   src="data/Snow_Cover/Regional/Asia_Region1.png">
+
+          <div class="sliderdiv">
+              <span>Region:</span>
+              <span id="Asia_slider" style="font-weight:bold;color:red">9</span>
+            <input type="range" min="1" max="9" value="9" class="slider" id="AsiaRange" style="width:50%">
+          </div>
+
+          </div>
+        </div>
+
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <h2>Data used</h2>
+            <p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and 24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.
+            </p>
+
+          </div>
+        </div>
+      </section>
+</main>
+  
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+var input = document.getElementById("region_select");
+var slider_NA = document.getElementById("NARange");
+var output_NA = document.getElementById("NorthAmerica_slider");
+var slider_EU = document.getElementById("EURange");
+var output_EU = document.getElementById("Europe_slider");
+var slider_Asia = document.getElementById("AsiaRange");
+var output_Asia = document.getElementById("Asia_slider");
+
+
+// Display the default slider value
+output_NA.innerHTML = slider_NA.value;
+output_EU.innerHTML = slider_EU.value;
+output_Asia.innerHTML = slider_Asia.value;
+//-------------------------------------------
+// Update the current slider value (each time you drag the slider handle)
+
+input.oninput = function() {
+	var imageSRC = "data/Snow_Cover/Regional/Mean_extent_Region" + input.value + ".png";
+	imageelement = "Mean_extent";
+  setImageSRC(imageelement,imageSRC);
+} 
+
+slider_NA.oninput = function() {
+  output_NA.innerHTML = this.value;
+  
+  //update image
+	var imageSRC = "data/Snow_Cover/Regional/NorthAmerica_Region" + slider_NA.value + ".png";
+	imageelement = "NorthAmerica";
+	setImageSRC(imageelement,imageSRC);
+} 
+
+slider_EU.oninput = function() {
+  output_EU.innerHTML = this.value;
+  
+  //update image
+	var imageSRC = "data/Snow_Cover/Regional/Europe_Region" + slider_EU.value + ".png";
+	imageelement = "Europe";
+	setImageSRC(imageelement,imageSRC);
+} 
+
+slider_Asia.oninput = function() {
+  output_Asia.innerHTML = this.value;
+  
+  //update image
+	var imageSRC = "data/Snow_Cover/Regional/Asia_Region" + slider_Asia.value + ".png";
+	imageelement = "Asia";
+	setImageSRC(imageelement,imageSRC);
+} 
+</script>
+
+</html>

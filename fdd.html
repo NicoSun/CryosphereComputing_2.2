@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>FDD calculator</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+
+<body>
+  <div id="navbar-container"></div>
+
+  <main>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <h2>FDD calculator</h2>
+          <div style="padding: 2em;">
+            Starting Thickness (cm): <input style="margin: .5em;" onChange=setconditions() type="number" id="thickness" value="50" min="0" max="500">
+            <br>
+            FDDs (°C): <input style="margin: .5em;" onChange=setconditions() type="number" id="fdds" value="4000" min="0" max="10000" step="10">
+          
+          <p style="margin: 1em;">-------------------------------------------------</p>
+          <p id="finalfdd"></p>
+      
+          <p>-------------------------------------------------</p>
+          <div>initialFDD = ("Starting thickness"/1.33)^(1/0.58)</div>
+          <div>FDDs = initialFDD+newFDD</div>
+          <div>new Thickness (cm) = 1.33 * FDDs (°C)^0.58</div>
+          
+        </div>
+  
+        </div>
+        </div>
+    </div>
+    <hr>
+
+  </main>
+
+ 
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+setconditions()
+
+function setconditions() {
+  var thickness = document.getElementById("thickness");
+  var fddss = document.getElementById("fdds");
+  var initialfdd = (thickness.value/1.33)**(1/0.58);
+  var totalfdds = Number(fddss.value) + initialfdd;
+  var finalthickness = 1.33 * totalfdds**0.58;
+  document.getElementById("finalfdd").innerHTML = "new thickness: " + finalthickness.toFixed(1) + "cm";
+}
+</script>
+
+
+</html>

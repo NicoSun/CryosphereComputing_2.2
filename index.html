@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CryosphereComputing</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  
+<main>
+  <section>
+    <div class="container-fluid" style="max-width:1200px">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <div class="row trlcol">
+            <div class="col-xl-2">
+              <a href="https://cointr.ee/sunlight" class="buttonstyle">Donations</a>
+            </div>
+            <div class="col-xl-8">
+              <h1 >CryosphereComputing</h1>
+              <p ><i>by Nico Sun</i></p>
+              <p style="color: red">CryosphereComputing will be on a break until early August.</p>
+              <!-- <a href="" class="infostyle" style="color:red"></a> -->
+                  <p class="ex">The Website is dedicated to monitoring and analysing changes in the polar regions. Daily updated products include
+              Sea Ice Area, Snow Cover, High Arctic Temperature data and a quantification of ocean warming from reduced sea ice (AWP).
+              </p>
+              <p onclick="more_info('cryoIntro')" class=" infostyle">Read more</p>
+
+              <div id="cryoIntro">
+
+              <p >  Weekly updated are Antarctic Iceberg locations, speed and size. The Arctic also gets monthly Sea Ice Thickness updates
+                  with the AMSR2 product. The Analysis section covers long term trends, extremes and special visualizations.
+                  </p>
+                  <p > For Earth's ice sheets current products include a thickness distribution, bedrock elevation overlayed on a true colorimage
+                    and a size comparison between glaciers.
+                  </p>
+                </div>
+            
+            </div>
+            <div class="col-xl-2">
+              <h4>Sections</h4>
+                  <div class="infolist"><a href="#Antarctic" class="infostyle" >Antarctic</a></div>
+                  <div class="infolist"><a href="#Snow" class="infostyle">Snow Cover</a></div>
+                  <div class="infolist"><a href="#FDD" class="infostyle">FDD</a></div>
+              </div>
+            </div>
+  
+        </div>
+        </div>
+    </div>
+  </section>
+  <hr>
+  <!-- NRT Images -->
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+
+    <div class="pill-nav">
+      <p id="nsidc_button" onclick="data_switcher('nsidc')" class="active" href="#news">NSIDC 25km</p>
+      <p id="amsr_button" onclick="data_switcher('amsr2')" href="#contact">AMSR2 3.125km</p>
+    </div>
+
+    <section>
+      <!-- Arctic Sea Ice -->
+          <h2 >Arctic Sea Ice</h2>
+          <div style="margin: 1em 0em;">
+            <a href="NRT2.html" class="infostyle">Extent & Compaction</a>
+            <a href="regional.html" class="infostyle">Regional Area</a>
+            <a href="regional-extent.html" class="infostyle">Regional Extent</a>
+          </div>
+        
+        <div id="NSIDC_nh" class="row trlcol g-0">
+          <div class="col-xl-4">
+          <img src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Arctic_Graph.png" title="Arctic Sea Ice Area">
+          <p class="ex">lowests minimum: 2.241 (2012), 2.477 (2016)<br>
+          lowests maximum = 12.668 (2016), 12.761 (2017)</p>
+          <div class="slidecontainer">
+            <span>Past Day(s):</span>
+             <span id="Dayselect" style="font-weight:bold;color:red">1</span>
+             <input type="range" min="1" max="7" value="1" class="slider" id="myRange" style="width:50%">
+             </div>
+          </div>
+          <div class="col-xl-4">
+          <img id="Arcticmap" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic-1.png" title="Arctic Sea Ice Concentration">
+          </div>
+          <div class="col-xl-4">
+            <img id="Arcticmap_anom" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic_anom-1.png" title="Arctic Sea Ice Anomaly">
+            </div>
+          </div>
+          <div id="AMSR2_nh" class="row dblcol g-0">
+            <p>AMSR2 anomaly base is July 2012 to June 2023</p>
+            <div class="col-xl-6">
+              <img id="amsr_nh_img" src="" title="Arctic Sea Ice Concentration">
+            </div>
+            <div class="col-xl-6">
+              <img id="amsr_nh_img_anom" src="" title="Arctic Sea Ice Anomaly">
+            </div>
+          </div>
+
+        
+    </section>
+    <hr>
+    <section id="Antarctic">
+       <!-- Antarctic Sea Ice -->
+       <h2 >Antarctic Sea Ice</h2>
+       <div style="margin: 1em 0em;">
+        <a href="icebergs.html" class="infostyle">Icebergs</a>
+        <a href="iceberg-records.html" class="infostyle">Icebergs records</a>
+      </div>
+        
+      <div id="NSIDC_sh" class="row trlcol g-0">
+        <div class="col-xl-4">
+          <img src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Antarctic_Graph.png" title="Antarctic Sea Ice Area">
+        <p class="ex">lowest minimum = 1.05 (2023 NRT), 1.246 (1993)<br>
+            lowests maximum = 14.162 (1986), 14.195 (2017)<br>
+            highest minimum = 2.438 (2015)<br>
+            highest maximum = 16.324 (2014)<br>
+        <div class="slidecontainer">
+          <span>Past Day(s):</span>
+           <span id="Dayselect_south" style="font-weight:bold;color:red">1</span>
+           <input type="range" min="1" max="7" value="1" class="slider" id="myRange_south" style="width:50%">
+           </div>
+        </div>
+        <div class="col-xl-4">
+        <img id="Antarcticmap" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-1.png" title="Antarctic Sea Ice Concentration">
+        </div>
+        <div class="col-xl-4">
+          <img id="Antarcticmap_anom" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic_anom-1.png" title="Antarctic Sea Ice Anomaly">
+          </div>
+        </div>
+        <div id="AMSR2_sh" class="row dblcol g-0">
+          <div class="col-xl-6">
+            <img id="amsr_sh_img"  src="" title="Antarctic Sea Ice Concentration">
+          </div>
+          <div class="col-xl-6">
+            <img id="amsr_sh_img_anom" src="" title="Antarctic Sea Ice Anomaly">
+          </div>
+        </div>
+
+    </section>
+    <hr>
+    <section id="Snow">
+      <!-- Northern Hemisphere Snow Cover -->
+      <h2 >Northern Hemisphere Snow Cover</h2>
+    <p class="ex">Highest Anomaly = +6.57 (2002-10-15), +6.54 (2009-02-14)<br>
+    Lowest Anomaly = -6.86 (2005-11-13), -5.73 (2001-11-23)</p>
+
+    <a href="NRTsnow.html" class="infostyle" style="margin: 1em 0em;">Animations & Statistics</a>
+    <br>
+
+    <img src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/NOAA_SnowCover.png" style="width:80%" title="Northern Hemisphere Snow Cover Extent">
+    <div class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/NOAA_Snowmap.png" title="Northern Hemisphere Snow Cover">
+      </div>
+      <div class="col-xl-6">
+      <img src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/NOAA_Snowmap_anomaly.png" title="Northern Hemisphere Snow Cover Anomaly">
+      </div>
+      </div>
+      
+    </section>
+    <hr>
+    <!-- Freezing Degree Days -->
+    <section id="FDD">
+      <h2 >Freezing Degree Days</h2>
+    <a href="FDD.html" class=" infostyle" style="margin: 1em 0em;">FDD calculator</a>
+    <p class="ex">The graphs show the Freezing Degree days over the whole freezing season. <br>
+       The sea ice thickness can be estimated based on the following formula (Lebedev 1938)<br>
+       Thickness (cm) = 1.33 * FDD (°C)^0.58</p>
+
+    <img id="temp" src="" style="width:75%" title="DMI 80N Temp">
+    <div id="dmiCharts" class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img id="fdd" src="" title="80N FDD Season">
+      </div>
+      <div class="col-xl-6">
+      <img id="fdd_anom" src="" title="80N FDD Season Anomaly">
+      </div>
+      </div>
+
+      <!-- <div class="row dblcol g-0">
+        <div class="col-xl-6">
+        <img id="fdd_season" src="" title="80N FDD Yearly">
+        </div>
+        <div class="col-xl-6">
+        <img id="fdd_season_anom" src="" title="80N FDD Yearly Anomlay">
+        </div>
+        </div> -->
+      
+    </section>
+  </div>
+  </div>
+  <hr>
+      <div class="row justify-content-center">
+        <div class="col-8 text-center">
+          <h2>Data used</h2>
+          <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from
+            Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and
+            Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
+            <p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and
+            24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.</p>
+        </div>
+  </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <h2>CryosphereComputing</h2>
+        <br>
+        <h4>CONTACT</h4>
+        <p><i>Any questions? Drop a note!</i><br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: cryocomputing@gmail.com<br>
+      </p>
+      </div>
+  </footer>
+
+  <script rel="javascript" src="./static/js/functions.js"></script>
+  <script rel="javascript" src="./static/js/index_script.js"></script>
+  <script rel="javascript" src="./static/js/navbar.js"></script>
+</body>
+
+</html>

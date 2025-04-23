@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Antarctic Ice Melt AWP NRT</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+  
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h2>Antarctic Ice Melt AWP</h2>
+        <p class="ex">updated September to March</p>
+    
+        <!-- Antarctic -->
+    <div class="row dblcol">
+      <div class="col-xl-6">
+      <img src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Map1.png" title="Antarctic Daily AWP">
+      </div>
+      <div class="col-xl-6">
+      <img src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Map2.png" title="Antarctic Accumulated AWP">
+      </div>
+      </div>
+
+
+        <!-- Pan Antarctic anomaly -->
+      <hr>
+      <h2>Pan Antarctic anomaly</h2>
+       <p><i>includes all major sea ice regions</i></p>
+      <div class="row dblcol">
+        <div class="col-xl-6">
+        <img src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Graph1.png" title="Antarctic Daily AWP Anomaly chart">
+        </div>
+        <div class="col-xl-6">
+        <img src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Graph2.png" title="Antarctic Accumulated AWP Anomaly chart">
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <hr>
+        <h2>Regional anomaly</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+          <img id="AWP_RegionD" src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Graph_Region2.png" title="Regional Antarctic AWP Anomaly">
+          </div>
+          <div class="col-xl-6">
+          <img id="AWP_RegionA" src="https://nrt.cryospherecomputing.com/Melt_AWP/charts/South_Melt_AWP_Graph_Region1.png" title="Regional Antarctic AWP Anomaly Accumulated">
+          </div>
+          </div>
+          
+      </div>
+      <div class="col-8 text-center">
+        <hr>
+      <h2>Data used</h2>
+      <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR
+         and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active
+          Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <hr>
+  <div class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <p>CryosphereComputing</p>
+    </div>
+  </footer>
+
+  <script rel="javascript" src="./static/js/navbar.js"></script>
+</body>
+</html>

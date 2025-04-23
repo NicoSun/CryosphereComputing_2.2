@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Iceheet Histograms</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+  <main>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <h2>Ice Sheet Main page</h2>
+            <button onclick="more_info('more_info')" class=" infostyle">Info</button>
+            <div id="more_info">
+            <p> This page shows the distribution of Greenland's and Antarctica's ice thickness, surface elevation and bedrock elevation.
+            </p>
+            </div>
+            <hr>
+            <h3>Greenland</h3>
+            <div id="Greenland_thickness" style="min-width: 800px; max-width: 1200px; height: 800px; margin: 0 auto"></div>
+            <div id="Greenland_surface" style="min-width: 800px; max-width: 1200px; height: 800px; margin: 0 auto"></div>
+            <div id="Greenland_bedrock" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
+            <hr>
+            <h3>Antarctica including ice shelves</h3>
+            <div id="Antarctic_thickness" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
+            <div id="Antarctic_surface" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
+            <div id="Antarctic_bedrock" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
+            <hr>
+            <h2>Data used</h2>
+            <h4>Greenland</h4>
+            <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>
+
+            <h4>Antarctica</h4>
+            <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
+
+          </div>
+          </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+
+<script type="module">
+//Charts
+import histData from './data/Glacier/data/histograms.js';
+Highcharts.chart('Greenland_thickness', histData.chart1);
+Highcharts.chart('Greenland_surface', histData.chart2);
+Highcharts.chart('Greenland_bedrock', histData.chart3);
+
+Highcharts.chart('Antarctic_thickness', histData.chart4);
+Highcharts.chart('Antarctic_surface', histData.chart5);
+Highcharts.chart('Antarctic_bedrock', histData.chart6);
+</script>
+
+</body>
+</html>

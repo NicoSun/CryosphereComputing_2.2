@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Historic Snow Extent</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>NSIDC/NOAA Snow Extent</h2>
+        <p>half-monthly Northern Hemisphere Snow Extent Maps beginning in February 1997</p>
+
+      <img id="past_Arctic" src="data/Analysis/Past_Snow/NOAA_Snowmap_20120715.png" title="Northern Hemisphere Snow Extent">
+    </div>
+    </div>
+
+      <div class="row justify-content-center">
+        <div class="col-10 text-center sliderdiv">
+          <span>Year:</span>
+          <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
+        <input type="range" min="1997" max="2020" value="2012" class="slider" id="yearRange" style="width:50%">
+      </div>
+
+        <div class="col-10 text-center sliderdiv">
+          <span>Month:</span>
+          <span id="Monthselect" style="font-weight:bold;color:red">9</span>
+          <input type="range" min="1" max="12.5" value="9" step="0.5" class="slider" id="monthRange" style="width:50%">
+        </div>
+
+      </div>
+        
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+          <p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and 24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.
+          </p>
+        </div>
+        </div>
+
+    </div>
+
+  </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+var daystring = "01"
+var monthstring = "09"
+
+// Dispalys Slider value
+var slider = document.getElementById("yearRange");
+var output = document.getElementById("Yearselect");
+output.innerHTML = slider.value; // Display the default slider value
+
+var slider2 = document.getElementById("monthRange");
+var output2 = document.getElementById("Monthselect");
+output2.innerHTML = slider2.value; // Display the default slider value
+
+// Update for year slider
+slider.oninput = function() {
+output.innerHTML = this.value;
+
+	//update image
+	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	showimage(imageid);
+} 
+
+// Update for month slider
+slider2.oninput = function() {
+output2.innerHTML = this.value;
+daystring = checkInteger(parseFloat(this.value));
+monthstring = String(parseInt(this.value));
+monthstring = monthstring.padStart(2, '0');
+
+	//update image
+	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	showimage(imageid);
+} 
+
+
+function showimage (imageid){
+
+
+document.getElementById("past_Arctic").src = imageid;
+//document.write(imageid);
+}
+
+function checkInteger (num){
+if(Number.isInteger(num)){
+	return "01";
+	} 
+else{return "15";}
+}
+</script>
+
+
+</html>

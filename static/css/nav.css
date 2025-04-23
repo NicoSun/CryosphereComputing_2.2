@@ -1,0 +1,59 @@
+nav {
+    background-color: rgb(8, 0, 22);
+    color: #e6e6e6;
+}
+
+#navbar-container{
+  margin-bottom: 66px;
+}
+
+.nav-button {
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.favicon img {
+  max-width: 48px;
+  max-height: 48px;
+}
+.favicon {
+  padding: 0;
+}
+
+#moon {
+  background-color: rgb(6, 0, 20);
+  color: #e6e6e6;
+  font-size: 1.33em;
+  padding: .2em;
+  margin-right: 3em;
+  border-radius: .5em;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* nav hover functions */
+#moon:hover {background-color: #e6e6e6;color: black;}
+.nav-item:hover {background-color: #e6e6e6;color: black;}
+.dropdown:hover .dropdown-menu {display: block;}
+.dropdown-menu{position: absolute;z-index: 1; }
+
+
+
+/* Create two equal columns that floats next to each other */
+.AWPcolumn {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+  }
+  
+  .AWPcolumn a {
+    float: none;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  

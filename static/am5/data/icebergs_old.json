@@ -1,0 +1,373 @@
+[
+    {
+        "Iceberg": "A23A",
+        "Length": 74.1,
+        "Width": 59.3,
+        "Latitude": -65.72,
+        "Longitude": -53.48
+    },
+    {
+        "Iceberg": "A74A",
+        "Length": 55.6,
+        "Width": 33.3,
+        "Latitude": -73.65,
+        "Longitude": -56.16
+    },
+    {
+        "Iceberg": "A74B",
+        "Length": 14.8,
+        "Width": 7.4,
+        "Latitude": -70.76,
+        "Longitude": -55.73
+    },
+    {
+        "Iceberg": "A76A",
+        "Length": 29.6,
+        "Width": 7.4,
+        "Latitude": -51.82,
+        "Longitude": -36.07
+    },
+    {
+        "Iceberg": "A76B",
+        "Length": 37.0,
+        "Width": 13.0,
+        "Latitude": -65.38,
+        "Longitude": -58.72
+    },
+    {
+        "Iceberg": "A76C",
+        "Length": 29.6,
+        "Width": 13.0,
+        "Latitude": -65.41,
+        "Longitude": -59.64
+    },
+    {
+        "Iceberg": "A76D",
+        "Length": 35.2,
+        "Width": 9.3,
+        "Latitude": -52.71,
+        "Longitude": -39.0
+    },
+    {
+        "Iceberg": "A76F",
+        "Length": 88.9,
+        "Width": 9.3,
+        "Latitude": -51.12,
+        "Longitude": -36.13
+    },
+    {
+        "Iceberg": "A76G",
+        "Length": 31.5,
+        "Width": 20.4,
+        "Latitude": -53.36,
+        "Longitude": -41.21
+    },
+    {
+        "Iceberg": "A76H",
+        "Length": 51.9,
+        "Width": 5.6,
+        "Latitude": -52.68,
+        "Longitude": -38.65
+    },
+    {
+        "Iceberg": "A76J",
+        "Length": 31.5,
+        "Width": 5.6,
+        "Latitude": -51.95,
+        "Longitude": -40.98
+    },
+    {
+        "Iceberg": "A76K",
+        "Length": 18.5,
+        "Width": 5.6,
+        "Latitude": -53.37,
+        "Longitude": -37.4
+    },
+    {
+        "Iceberg": "A76L",
+        "Length": 31.5,
+        "Width": 3.7,
+        "Latitude": -51.61,
+        "Longitude": -41.5
+    },
+    {
+        "Iceberg": "A77",
+        "Length": 50.0,
+        "Width": 7.4,
+        "Latitude": -74.94,
+        "Longitude": -56.04
+    },
+    {
+        "Iceberg": "A78",
+        "Length": 33.3,
+        "Width": 7.4,
+        "Latitude": -63.79,
+        "Longitude": -37.95
+    },
+    {
+        "Iceberg": "A80A",
+        "Length": 20.4,
+        "Width": 16.7,
+        "Latitude": -66.43,
+        "Longitude": -57.72
+    },
+    {
+        "Iceberg": "A80D",
+        "Length": 11.1,
+        "Width": 9.3,
+        "Latitude": -66.6,
+        "Longitude": -57.34
+    },
+    {
+        "Iceberg": "A81",
+        "Length": 51.9,
+        "Width": 46.3,
+        "Latitude": -77.17,
+        "Longitude": -44.74
+    },
+    {
+        "Iceberg": "B09B",
+        "Length": 50.0,
+        "Width": 18.5,
+        "Latitude": -66.17,
+        "Longitude": 143.43
+    },
+    {
+        "Iceberg": "B09G",
+        "Length": 22.2,
+        "Width": 13.0,
+        "Latitude": -68.19,
+        "Longitude": 41.7
+    },
+    {
+        "Iceberg": "B15AB",
+        "Length": 20.4,
+        "Width": 7.4,
+        "Latitude": -71.67,
+        "Longitude": -12.51
+    },
+    {
+        "Iceberg": "B22A",
+        "Length": 81.5,
+        "Width": 44.4,
+        "Latitude": -71.58,
+        "Longitude": -112.42
+    },
+    {
+        "Iceberg": "B29",
+        "Length": 20.4,
+        "Width": 9.3,
+        "Latitude": -73.73,
+        "Longitude": -110.57
+    },
+    {
+        "Iceberg": "B38",
+        "Length": 11.1,
+        "Width": 7.4,
+        "Latitude": -76.84,
+        "Longitude": -155.28
+    },
+    {
+        "Iceberg": "B39",
+        "Length": 14.8,
+        "Width": 7.4,
+        "Latitude": -73.74,
+        "Longitude": -54.98
+    },
+    {
+        "Iceberg": "B45",
+        "Length": 14.8,
+        "Width": 11.1,
+        "Latitude": -72.49,
+        "Longitude": -111.44
+    },
+    {
+        "Iceberg": "B46",
+        "Length": 33.3,
+        "Width": 9.3,
+        "Latitude": -65.21,
+        "Longitude": -150.45
+    },
+    {
+        "Iceberg": "B47",
+        "Length": 35.2,
+        "Width": 9.3,
+        "Latitude": -73.88,
+        "Longitude": -133.94
+    },
+    {
+        "Iceberg": "C15",
+        "Length": 25.9,
+        "Width": 18.5,
+        "Latitude": -65.93,
+        "Longitude": 143.18
+    },
+    {
+        "Iceberg": "C18B",
+        "Length": 37.0,
+        "Width": 7.4,
+        "Latitude": -65.89,
+        "Longitude": 81.81
+    },
+    {
+        "Iceberg": "C21B",
+        "Length": 22.2,
+        "Width": 14.8,
+        "Latitude": -64.99,
+        "Longitude": 95.86
+    },
+    {
+        "Iceberg": "C24",
+        "Length": 20.4,
+        "Width": 5.6,
+        "Latitude": -64.84,
+        "Longitude": 96.02
+    },
+    {
+        "Iceberg": "C29",
+        "Length": 13.0,
+        "Width": 9.3,
+        "Latitude": -66.06,
+        "Longitude": 142.75
+    },
+    {
+        "Iceberg": "C30",
+        "Length": 16.7,
+        "Width": 5.6,
+        "Latitude": -64.78,
+        "Longitude": 96.29
+    },
+    {
+        "Iceberg": "C31",
+        "Length": 16.7,
+        "Width": 5.6,
+        "Latitude": -64.68,
+        "Longitude": 96.5
+    },
+    {
+        "Iceberg": "C33",
+        "Length": 20.4,
+        "Width": 7.4,
+        "Latitude": -65.28,
+        "Longitude": 125.96
+    },
+    {
+        "Iceberg": "C35",
+        "Length": 14.8,
+        "Width": 9.3,
+        "Latitude": -66.27,
+        "Longitude": 142.99
+    },
+    {
+        "Iceberg": "C36",
+        "Length": 42.6,
+        "Width": 29.6,
+        "Latitude": -67.92,
+        "Longitude": 147.48
+    },
+    {
+        "Iceberg": "C38B",
+        "Length": 14.8,
+        "Width": 13.0,
+        "Latitude": -65.06,
+        "Longitude": 98.58
+    },
+    {
+        "Iceberg": "C39",
+        "Length": 27.8,
+        "Width": 14.8,
+        "Latitude": -64.74,
+        "Longitude": 98.36
+    },
+    {
+        "Iceberg": "D15A",
+        "Length": 94.5,
+        "Width": 40.7,
+        "Latitude": -66.63,
+        "Longitude": 81.91
+    },
+    {
+        "Iceberg": "D15B",
+        "Length": 59.3,
+        "Width": 22.2,
+        "Latitude": -66.97,
+        "Longitude": 81.57
+    },
+    {
+        "Iceberg": "D20A",
+        "Length": 25.9,
+        "Width": 9.3,
+        "Latitude": -66.38,
+        "Longitude": -50.44
+    },
+    {
+        "Iceberg": "D23",
+        "Length": 13.0,
+        "Width": 11.1,
+        "Latitude": -69.43,
+        "Longitude": 74.7
+    },
+    {
+        "Iceberg": "D27",
+        "Length": 14.8,
+        "Width": 9.3,
+        "Latitude": -73.9,
+        "Longitude": -41.87
+    },
+    {
+        "Iceberg": "D28",
+        "Length": 55.6,
+        "Width": 35.2,
+        "Latitude": -60.45,
+        "Longitude": -52.25
+    },
+    {
+        "Iceberg": "D29A",
+        "Length": 38.9,
+        "Width": 16.7,
+        "Latitude": -61.34,
+        "Longitude": -29.01
+    },
+    {
+        "Iceberg": "D29B",
+        "Length": 24.1,
+        "Width": 13.0,
+        "Latitude": -60.0,
+        "Longitude": -54.14
+    },
+    {
+        "Iceberg": "D29C",
+        "Length": 24.1,
+        "Width": 11.1,
+        "Latitude": -61.7,
+        "Longitude": -40.91
+    },
+    {
+        "Iceberg": "D30A",
+        "Length": 72.2,
+        "Width": 20.4,
+        "Latitude": -61.59,
+        "Longitude": -53.66
+    },
+    {
+        "Iceberg": "D30B",
+        "Length": 27.8,
+        "Width": 9.3,
+        "Latitude": -61.66,
+        "Longitude": -46.4
+    },
+    {
+        "Iceberg": "D31",
+        "Length": 29.6,
+        "Width": 3.7,
+        "Latitude": -62.83,
+        "Longitude": -44.34
+    },
+    {
+        "Iceberg": "D32",
+        "Length": 18.5,
+        "Width": 16.7,
+        "Latitude": -65.64,
+        "Longitude": 55.56
+    }
+]

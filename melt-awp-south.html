@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Ice Melt AWP</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+  $(document).ready( function() {
+      more_info('region_heatmap');
+      checkAppearance();
+  } );
+</script>
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+
+  <div class="container-fluid" style="max-width: 1600px;">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+        <h2>Ice Melting Antarctic Albedo-Warming Potential</h2>
+        <h4><i>Beta phase product. May change slightly</i></h4>
+      </div>
+      </div>
+
+      <section>
+        <div class="row dblcol"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+          <img id="Melt_AWP_A" src="data/Melt_AWP_south/final/Melt_Final_2000_south.png" title="Final Antarctic Melt-AWP">
+          </div>
+          <div class="col-xl-6">
+          <img id="Melt_AWP_B" src="data/Melt_AWP_south/anom/Melt_anom_2000_south.png" title="Antarctic Melt-AWP Anomaly">
+          </div>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-10 text-center sliderdiv">
+              <span>Year:</span>
+              <span id="Melt_AWP_Percentselect" style="font-weight:bold;color:red">2000</span>
+              <input type="range" min="1980" max="2022" value="2000" class="slider" id="Percentslider" style="width:66%">
+            </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row dblcol"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+          <img id="Melt_AWP_A" src="data/Melt_AWP_south/Melt_Final_Mean_south.png" title="Melt-AWP Mean">
+          </div>
+          <div class="col-xl-6">
+          <p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
+            as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in an absolute energy value Exajoule (EJ). This change better reflects the larger melting potential of large regions.<br>
+            Counting AWP only over sea ice results in low values appearing both in warm and cold regions. In a warm region there is no ice to melt at all. In cold regions with high ice concentration 
+            and a high albedo the ice doesn’t absorb much sunlight and melting from sunshine remains low throughout the summer.<br>
+            <br>
+            The conditions in regions with high values are dispersed sea ice, melt ponds and the ice edge. Due to the sensor limitations and large grid cell size the
+              sea ice edge does show exaggerated values.<br><br>
+            
+            Additionally, this model includes heat loss to space. Around 5-7 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen to be the same
+              as in my Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
+              of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s. In the model the late 2010s at around 410ppm have an 9% reduced heat loss
+                compared to the early 1980s 340ppm.<br>
+              
+            <a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june>see June 2020 forecast(Nico Sun) </a> <br>
+            <br>
+            Heatloss example (per day per m2):<br>
+            Temp(K):	MJ @ 400ppm CO2<br>
+            250:	4.87<br>
+            260:	5.70<br>
+            270:	6.64<br>
+            274: 	7.03<br><br>
+            
+            The model’s main purpose is to visualise where melt happened and rank years accordingly. Apart from comparison to other years I would not put any other use case into 
+            the presented values. Especially relating negative values with freezing conditions. It is still not even close to a volume model. For sea ice volume we already have 
+            PIOMAS, Cryosat2 and my AMSR2 Snow & Ice Volume.<br>
+            <br>
+            Datasheets:<br>
+            https://github.com/NicoSun/ScienceData/tree/master/Ice_Melt_AWP
+            
+            </p>
+            <div id="Accumulated" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
+          </div>
+          </div>
+
+      </section>
+      </div> <!-- end container-fluid -->
+      <hr>
+      <div class="container-fluid" style="max-width: 1900px;">
+      <section>
+      <h2 class="text-center">Climatology charts</h2>
+        <!-- Charts -->
+        <div class="row dblcol">
+          <div class="col-xl-6">
+              <div id="Daily_AWP" style="min-width: 400px; max-width: 900px; height: 600px; margin: 0 auto"></div>
+          </div>
+          <div class="col-xl-6">
+              <div id="Accumulated_AWP" style="min-width: 400px; max-width: 900px; height: 600px; margin: 0 auto"></div>
+          </div>
+      </div>
+      </section>
+        <hr>
+        <section></section>
+        <h2 class="text-center">Regional charts</h2>
+        <div class="row dblcol">
+          <div class="col-xl-6">
+          <img id="Melt_AWP_RegionD" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionD1.png" title="Daily Regional Melt-AWP">
+          </div>
+          <div class="col-xl-6">
+          <img id="Melt_AWP_RegionA" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionA1.png" title="Accumulated Regional Melt-AWP">
+          </div>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-10 text-center sliderdiv">
+              <span>Year:</span>
+              <span id="Melt_AWP_Regionselect" style="font-weight:bold;color:red">13</span>
+              <input type="range" min="1" max="5" value="1" class="slider" id="Regionslider" style="width:66%">
+            </div>
+          </div>
+      </section>
+      <hr>
+      <section>
+        <div class="row justify-content-center">
+          <div class="col-10 text-center">
+            <button onclick="more_info('region_heatmap')" class="buttonstyle">Region Heatmap</button>
+          </div>    
+        </div>
+        
+        <div class="row dblcol" id="region_heatmap"> <!-- Pan Arctic -->
+          <div class="col-xl-6">
+            <img  src="data/Melt_AWP_south/Region_Heatmap.png" style="height:100%">
+          </div>
+          <div class="col-xl-6">
+            <img src="data/Melt_AWP_south/Region_Heatmap_anom.png" style="height:100%">
+          </div>
+          </div>
+       </section>
+       <hr>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <h2>Data used</h2>
+          <p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and 
+            DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active
+              Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
+        </div>
+        </div>
+
+    </div> <!-- end container-fluid -->
+
+</main>
+
+</div>
+   
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script>
+  // Accu Melt AWP map
+var slider = document.getElementById("Percentslider");
+var output = document.getElementById("Melt_AWP_Percentselect");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  
+  //update image
+	var imageid_D = "data/Melt_AWP_south/final/Melt_Final_" + slider.value + "_south.png";
+	var imageid_A = "data/Melt_AWP_south/anom/Melt_anom_" + slider.value + "_south.png";
+  setImageSRC("Melt_AWP_A",imageid_D);
+  setImageSRC("Melt_AWP_B",imageid_A);
+} 
+// ------------------------------------------
+// Melt AWP map region graphs
+
+var sliderR = document.getElementById("Regionslider");
+var outputR = document.getElementById("Melt_AWP_Regionselect");
+outputR.innerHTML = sliderR.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderR.oninput = function() {
+  outputR.innerHTML = this.value;
+  
+  //update image
+	var imageid_D = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionD" + sliderR.value + ".png";
+	var imageid_A = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionA" + sliderR.value + ".png";
+  setImageSRC("Melt_AWP_RegionD",imageid_D);
+  setImageSRC("Melt_AWP_RegionA",imageid_A);
+}
+</script>
+
+<script type="module">
+    //Charts
+    import awpData from './data/Melt_AWP_south/data/melt_awp_south_charts.js';
+
+Highcharts.chart('Accumulated', awpData.Accumulated);
+Highcharts.chart('Daily_AWP', awpData.panDay);
+Highcharts.chart('Accumulated_AWP',awpData.panAcc );
+
+</script>
+
+
+</html>

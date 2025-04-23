@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Greenland Bedrock</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+
+<style>
+.img-comp-container {
+  position: relative;
+  height: 1150px; /*should be the same height as the images*/
+}
+
+.img-comp-container_long {
+  position: relative;
+  height: 2750px; /*should be the same height as the images*/
+}
+</style>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+
+</head>
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h1>Greenland Bedrock Elevation</h1>
+        <p><i>Colour image: 2015-07-15</i></p>
+        Opacity(%): <input type="number" id="opacitySlider" value="33" min="0" max="100">
+        <button onclick="setOpacity()">Set</button><br>
+        <img src="data/Glacier/All_Greenland_Legend.png" title="Greenland Bedrock Legend">
+         
+      <section> <!-- all Greenland -->
+        <div class="img-comp-container_long">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Greenland_2015_07_15.png" width="1630" height="2750">
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+          <img id="eee" src="data/Glacier/Greenland_bed2.png" width="1630" height="2750">
+          </div>
+          </div>
+        </section>
+        <hr>
+        <section> <!-- Jakobshavn -->
+          <h1>Jakobshavn Glacier</h1>
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="data/Glacier/Jakobshavn_Record_RGB.png" width="1900" height="1150">
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+            <img id="aaa" src="data/Glacier/Jakobshavn_Record+Bedrock.png" width="1900" height="1150">
+          </div>
+          </div>
+         
+        </section>
+        <hr>
+        <section> <!-- Petermann -->
+        <h1>Petermann Glacier</h1>
+        <p><i>Colour image: 2018-08-20</i></p>
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Petermann_S2A.png" width="1150" height="1153">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+          <img id="bbb" src="data/Glacier/Petermann+Bedrock.png" width="1150" height="1153">
+         </div>
+         </div>
+        </section>
+        <hr>
+        <section> <!-- 79N -->
+          <h1>Nioghalvfjerdsfjorden / Zachariae Isstrom  Glacier</h1>
+        <p><i>Colour image: 2016-08-16</i></p>
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+            <img src="data/Glacier/Zach_S2A.png" width="1900" height="1150">
+         </div>
+         <div class="img-comp-img img-comp-overlay">
+          <img id="ccc" src="data/Glacier/Zach_S2A+Bedrock.png" width="1900" height="1150">
+         </div>
+         </div>
+
+        </section>
+        <hr>
+        <section> <!-- Helheim -->
+          <h1>Helheim Glacier</h1>
+          <p><i>Colour image: 2018-08-04</i></p>
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="data/Glacier/Helheim_S2A.png" width="1835" height="1145">
+           </div>
+           <div class="img-comp-img img-comp-overlay">
+            <img id="ddd" src="data/Glacier/Helheim_S2A+Bedrock.png" width="1835" height="1145">
+           </div>
+           </div>
+
+        </section>
+        <hr>
+         
+
+         <h2>Data used</h2>
+        <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>
+        <p>Copernicus Sentinel data 2015-2018, processed by ESA.</p>
+        <p>Terra / MODIS from NASA Worldview.</p>
+    </div>
+    </div>
+  </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script type="module">
+import {initComparisons} from './static/js/img-comparison.js';
+initComparisons();
+</script>
+
+<script>
+var opacityvalueA = document.getElementById("aaa");
+var opacityvalueB = document.getElementById("bbb");
+var opacityvalueC = document.getElementById("ccc");
+var opacityvalueD = document.getElementById("ddd");
+var opacityvalueE = document.getElementById("eee");
+opacityvalueA.style.opacity = 0.33;
+opacityvalueB.style.opacity = 0.33;
+opacityvalueC.style.opacity = 0.33;
+opacityvalueD.style.opacity = 0.33;
+opacityvalueE.style.opacity = 0.33;
+
+function setOpacity() {
+  var Useropacity = document.getElementById("opacitySlider");
+  opacityvalueA.style.opacity = Useropacity.value/100;
+  opacityvalueB.style.opacity = Useropacity.value/100;
+  opacityvalueC.style.opacity = Useropacity.value/100;
+  opacityvalueD.style.opacity = Useropacity.value/100;
+  opacityvalueE.style.opacity = Useropacity.value/100;
+}
+</script>
+</html>

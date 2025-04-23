@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+th {
+    cursor: pointer;
+    background-color: #1e1e3e;
+}
+
+th:hover {
+    background-color: #251f59;
+}
