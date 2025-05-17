@@ -15,11 +15,11 @@ const sh_chart = $("#amsr_sh_chart");
 const sh_image = $("#amsr_sh_img");
 const sh_image_anom = $("#amsr_sh_img_anom");
 
-const src_nh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/nh_Area_Graph_full.png";
+const src_nh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/nh_Area_Graph.png";
 const src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-1.png";
 const src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-1.png";
 
-const src_sh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/sh_Area_Graph_full.png";
+const src_sh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/sh_Area_Graph.png";
 const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
 const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
 
