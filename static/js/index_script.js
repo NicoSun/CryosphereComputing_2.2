@@ -4,8 +4,8 @@ const amsr2_nh = $("#AMSR2_nh");
 const nsidc_sh = $("#NSIDC_sh");
 const amsr2_sh = $("#AMSR2_sh");
 
-amsr2_nh.hide();
-amsr2_sh.hide();
+// amsr2_nh.hide();
+// amsr2_sh.hide();
 
 const nh_chart = $("#amsr_nh_chart");
 const nh_image = $("#amsr_nh_img");
@@ -73,7 +73,7 @@ const dmi_data = () => {
   $("#fdd_season_anom").attr("src",fdd_season_anom);
 }
 
-
+data_switcher('amsr2');
 more_info('cryoIntro');
 
 // Dispalys Slider value

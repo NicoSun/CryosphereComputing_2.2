@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetrachromacy High FPS Simulation</title>
+    <link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--common frameworks -->
+    <script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+    <script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--own styles-->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script rel="javascript" src="./static/js/functions.js"></script>
+
+    <style>
+        .slider {
+            width: 700px; /* Set the width of the slider */
+        }
+    </style>
+
+    <script>
+    $(document).ready( function() {
+        checkAppearance();
+    });
+    </script>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8 text-center">
+                    <h1>Tetrachromacy on High Refresh Display</h1>
+                <p>This is a simple webpage to simulate red Tetrachromacy on one display.
+                    Instead of showing two seperate images in a VR headset this site 
+                    utilizes the high refresh rate of modern monitors, alternating images
+                    at a high frequency. While colors merge on a 60Hz screen, they are not
+                    stable. A 120Hz screen or faster is recommended.
+                    Use the slider to find a stable FPS for your display.</p>
+                <p></p>
+                <a href="https://www.color-in-color.info/tetrachromacy_1/non-retinal-tetrachromacy">Images are from the website: Color in Color</a>
+                <br>
+                <button onclick="changeImag(1)" class=" infostyle">Image1</button>
+                <button onclick="changeImag(2)" class=" infostyle">Image2</button>
+                <button onclick="changeImag(3)" class=" infostyle">Image3</button>
+                </div>
+            </div>
+        </div>
+        <img id="flashingImage" src="" alt="Flashing Image" width="600px" />
+        <img id="stillImage" src="" alt="Still Image" width="1200px" />
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8 text-center">
+                    <input type="range" min="0" max="500" value="120" class="slider" id="mySlider">
+                    <p>Refresh: <span id="sliderValue">120</span></p>
+                    <button onclick="startFlashing()" class=" buttonstyle">Start Flashing</button>
+                    <button onclick="stopFlashing()" class=" buttonstyle">Stop</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+</body>
+
+<script rel="javascript" src="./static/js/navbar.js"></script>
+<script src="static/js/tetrachromacy.js"></script>
+<script>changeImag(1)</script>
+</html>
