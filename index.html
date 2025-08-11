@@ -91,12 +91,7 @@
           <div class="col-xl-4">
           <img src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Arctic_Graph.png" title="Arctic Sea Ice Area">
           <p class="ex">lowests minimum: 2.241 (2012), 2.477 (2016)<br>
-          lowests maximum = 12.668 (2016), 12.761 (2017)</p>
-          <div class="slidecontainer">
-            <span>Past Day(s):</span>
-             <span id="Dayselect" style="font-weight:bold;color:red">1</span>
-             <input type="range" min="1" max="7" value="1" class="slider" id="myRange" style="width:50%">
-             </div>
+          lowests maximum = 12.76 (2017), 12.78 (2016)</p>
           </div>
           <div class="col-xl-4">
           <img id="Arcticmap" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic-1.png" title="Arctic Sea Ice Concentration">
@@ -117,6 +112,11 @@
               </div>
             </div>
           </div>
+          <div class="slidecontainer">
+          <span>Past Day(s):</span>
+            <span id="Dayselect" style="font-weight:bold;color:red">1</span>
+            <input type="range" min="1" max="7" value="1" class="slider" id="day_slider" style="width:50%">
+            </div>
 
         
     </section>
@@ -132,15 +132,10 @@
       <div id="NSIDC_sh" class="row trlcol g-0">
         <div class="col-xl-4">
           <img src="https://nrt.cryospherecomputing.com/NSIDC_Area/charts/Antarctic_Graph.png" title="Antarctic Sea Ice Area">
-        <p class="ex">lowest minimum = 1.05 (2023 NRT), 1.246 (1993)<br>
-            lowests maximum = 14.162 (1986), 14.195 (2017)<br>
+        <p class="ex">lowest minimum = 1.09 (2023), 1.246 (1993)<br>
+            lowests maximum = 13.48 (2023), 13.54 (2024)<br>
             highest minimum = 2.438 (2015)<br>
             highest maximum = 16.324 (2014)<br>
-        <div class="slidecontainer">
-          <span>Past Day(s):</span>
-           <span id="Dayselect_south" style="font-weight:bold;color:red">1</span>
-           <input type="range" min="1" max="7" value="1" class="slider" id="myRange_south" style="width:50%">
-           </div>
         </div>
         <div class="col-xl-4">
         <img id="Antarcticmap" src="https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-1.png" title="Antarctic Sea Ice Concentration">
@@ -160,6 +155,11 @@
           </div>
         </div>
         </div>
+        <div class="slidecontainer">
+          <span>Past Day(s):</span>
+           <span id="Dayselect_south" style="font-weight:bold;color:red">1</span>
+           <input type="range" min="1" max="7" value="1" class="slider" id="day_slider_south" style="width:50%">
+           </div>
 
     </section>
     <hr>

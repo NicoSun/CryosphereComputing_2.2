@@ -15,13 +15,20 @@ const sh_chart = $("#amsr_sh_chart");
 const sh_image = $("#amsr_sh_img");
 const sh_image_anom = $("#amsr_sh_img_anom");
 
+//AMSR2 images
 const src_nh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/nh_Area_Graph.png";
-const src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-1.png";
-const src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-1.png";
+let src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-1.png";
+let src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-1.png";
 
 const src_sh_chart = "https://nrt.cryospherecomputing.com/AMSR/charts/sh_Area_Graph.png";
-const src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
-const src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
+let src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-1.png";
+let src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-1.png";
+
+//NSIDC images
+let nsidc_nh_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic-1.png";
+let nsidc_nh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic_anom-1.png";
+let nsidc_sh_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-1.png";
+let nsidc_sh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic_anom-1.png";
 
 const data_switcher = (value) => {
     if (value === data_source){
@@ -77,7 +84,7 @@ data_switcher('amsr2');
 more_info('cryoIntro');
 
 // Dispalys Slider value
-var slider = document.getElementById("myRange");
+var slider = document.getElementById("day_slider");
 var output = document.getElementById("Dayselect");
 output.innerHTML = slider.value; // Display the default slider value
 
@@ -85,16 +92,21 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() {
 output.innerHTML = this.value;
 	//update image
-	var imageSRC_SIC = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic-" + this.value + ".png";
-	var imagSRC_Anom = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic_anom-" + this.value + ".png";
-  setImageSRC("Arcticmap",imageSRC_SIC);
-  setImageSRC("Arcticmap_anom",imagSRC_Anom);
+	nsidc_nh_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic-" + this.value + ".png";
+	nsidc_nh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic_anom-" + this.value + ".png";
+  src_nh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh-" + this.value + ".png";
+  src_nh_anom ="https://nrt.cryospherecomputing.com/AMSR/AMSR2_nh_anom-" + this.value + ".png";
+  setImageSRC("Arcticmap",nsidc_nh_map);
+  setImageSRC("Arcticmap_anom",nsidc_nh_anom_map);
+  setImageSRC("amsr_nh_img",src_nh);
+  setImageSRC("amsr_nh_img_anom",src_nh_anom);
+  
 	
 }
 
 //-------------------------------------------
 
-var slider_south = document.getElementById("myRange_south");
+var slider_south = document.getElementById("day_slider_south");
 var output_south = document.getElementById("Dayselect_south");
 output_south.innerHTML = slider_south.value; // Display the default slider value
 
@@ -102,8 +114,12 @@ slider_south.oninput = function() {
 output_south.innerHTML = this.value;
 
 	//update image
-	var imageSRC_SIC = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-" + this.value + ".png";
-	var imagSRC_Anom = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic_anom-" + this.value + ".png";
-  setImageSRC("Antarcticmap",imageSRC_SIC);
-  setImageSRC("Antarcticmap_anom",imagSRC_Anom);
+	nsidc_sh_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-" + this.value + ".png";
+	nsidc_sh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic_anom-" + this.value + ".png";
+  src_sh = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh-" + this.value + ".png";
+  src_sh_anom = "https://nrt.cryospherecomputing.com/AMSR/AMSR2_sh_anom-" + this.value + ".png";
+  setImageSRC("Antarcticmap",nsidc_sh_map);
+  setImageSRC("Antarcticmap_anom",nsidc_sh_anom_map);
+  setImageSRC("amsr_sh_img",src_sh);
+  setImageSRC("amsr_sh_img_anom",src_sh_anom);
 }
