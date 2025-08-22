@@ -1,4 +1,5 @@
-let data_source = 'nsidc';
+let ice_data = 'nsidc';
+let temp_hemi = 'nh';
 const nsidc_nh = $("#NSIDC_nh");
 const amsr2_nh = $("#AMSR2_nh");
 const nsidc_sh = $("#NSIDC_sh");
@@ -30,11 +31,11 @@ let nsidc_nh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Arctic_a
 let nsidc_sh_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic-1.png";
 let nsidc_sh_anom_map = "https://nrt.cryospherecomputing.com/NSIDC_Area/Antarctic_anom-1.png";
 
-const data_switcher = (value) => {
-    if (value === data_source){
+const ice_data_switcher = (value) => {
+    if (value === ice_data){
         return;
     } else {
-        data_source = value;
+        ice_data = value;
         button_switcher(value);
         if(value === 'nsidc'){
             nsidc_nh.show();
@@ -66,6 +67,29 @@ const button_switcher = (value) => {
   }
 }
 
+const button_switcher2 = (value) => {
+  if (value === 'nh') {
+      $("#temp_arctic").addClass("active");
+      $("#temp_antarctic").removeClass("active");
+  } else if (value === 'sh') {
+      $("#temp_antarctic").addClass("active");
+      $("#temp_arctic").removeClass("active");
+  }
+}
+
+const temp_hemi_switcher = (value) => {
+  if (value === temp_hemi){
+        return;
+    } else {
+      temp_hemi = value;
+      button_switcher2(value);
+      $('#surface_temp').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_${temp_hemi}.png`)
+      $('#surface_temp_anom').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_${temp_hemi}_anom.png`)
+
+    }
+
+}
+
 const dmi_data = () => {
   const temp = "https://nrt.cryospherecomputing.com/DMI/DMI_Temp_graph.png";
   const fdd = "https://nrt.cryospherecomputing.com/DMI/DMI_FDD_Year.png";
@@ -80,7 +104,7 @@ const dmi_data = () => {
   $("#fdd_season_anom").attr("src",fdd_season_anom);
 }
 
-data_switcher('amsr2');
+ice_data_switcher('amsr2');
 more_info('cryoIntro');
 
 // Dispalys Slider value

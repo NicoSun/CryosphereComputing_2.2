@@ -74,8 +74,8 @@
       <div class="col-12 text-center">
 
     <div class="pill-nav">
-      <p id="nsidc_button" onclick="data_switcher('nsidc')" class="active" href="#news">NSIDC 25km</p>
-      <p id="amsr_button" onclick="data_switcher('amsr2')" href="#contact">AMSR2 3.125km</p>
+      <p id="nsidc_button" onclick="ice_data_switcher('nsidc')" class="active" href="#news">NSIDC 25km</p>
+      <p id="amsr_button" onclick="ice_data_switcher('amsr2')" href="#contact">AMSR2 3.125km</p>
     </div>
 
     <section>
@@ -184,6 +184,30 @@
       
     </section>
     <hr>
+    <!-- Temperature -->
+    <section id="temp">
+      <h2 >Surface Temperature</h2>
+    <p class="ex">NCEP/NCAR Surface Temperature reanalysis. Mean temperature of last 7 days</p>
+    <p style="color:red">under construction</p>
+
+    <div class="pill-nav">
+      <p id="temp_arctic" onclick="temp_hemi_switcher('nh')" class="active">Arctic</p>
+      <p id="temp_antarctic" onclick="temp_hemi_switcher('sh')">Antarctic</p>
+    </div>
+
+    <img id="temp" src="" style="width:75%" title="DMI 80N Temp">
+    <div id="NOAA_NECP_maps" class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img id="surface_temp" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_nh.png" title="surface temp">
+      </div>
+      <div class="col-xl-6">
+      <img id="surface_temp_anom" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_nh_anom.png" title="surface temp anomaly">
+      </div>
+      </div>
+      
+    </section>
+
+    <hr>
     <!-- Freezing Degree Days -->
     <section id="FDD">
       <h2 >Freezing Degree Days</h2>
@@ -201,17 +225,9 @@
       <img id="fdd_anom" src="" title="80N FDD Season Anomaly">
       </div>
       </div>
-
-      <!-- <div class="row dblcol g-0">
-        <div class="col-xl-6">
-        <img id="fdd_season" src="" title="80N FDD Yearly">
-        </div>
-        <div class="col-xl-6">
-        <img id="fdd_season_anom" src="" title="80N FDD Yearly Anomlay">
-        </div>
-        </div> -->
       
     </section>
+
   </div>
   </div>
   <hr>
@@ -223,7 +239,8 @@
             Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
             <p>National Ice Center. 2008, updated daily. IMS Daily Northern Hemisphere Snow and Ice Analysis at 1 km, 4 km, and
             24 km Resolutions, Version 1.1-1.3. Boulder, Colorado USA. NSIDC: National Snow and Ice Data Center. doi: https://doi.org/10.7265/N52R3PMC.</p>
-        </div>
+            <p>Kalnay et al.,The NCEP/NCAR 40-year reanalysis project, Bull. Amer. Meteor. Soc., 77, 437-470, 1996.; https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html</p>
+          </div>
   </div>
 </main>
 
