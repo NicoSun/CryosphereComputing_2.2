@@ -195,8 +195,8 @@
       <p id="temp_antarctic" onclick="temp_hemi_switcher('sh')">Antarctic</p>
     </div>
 
-    <img id="temp" src="" style="width:75%" title="DMI 80N Temp">
-    <div id="NOAA_NECP_maps" class="row dblcol g-0">
+    <img id="temp" src="" style="width:75%" title="">
+    <div id="NOAA_temp_maps" class="row dblcol g-0">
       <div class="col-xl-6">
       <img id="surface_temp" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_nh.png" title="surface temp">
       </div>
@@ -211,20 +211,20 @@
     <!-- Freezing Degree Days -->
     <section id="FDD">
       <h2 >Freezing Degree Days</h2>
+    <img id="fdd" src="" style="width:75%" title="">
+    <div id="NOAA_fdd_maps" class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img id="surface_fdd" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_nh.png" title="surface fdd">
+      </div>
+      <div class="col-xl-6">
+      <img id="surface_fdd_anom" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_nh_anom.png" title="surface fdd anomaly">
+      </div>
+      </div>
+
     <a href="FDD.html" class=" infostyle" style="margin: 1em 0em;">FDD calculator</a>
     <p class="ex">The graphs show the Freezing Degree days over the whole freezing season. <br>
        The sea ice thickness can be estimated based on the following formula (Lebedev 1938)<br>
        Thickness (cm) = 1.33 * FDD (°C)^0.58</p>
-
-    <img id="temp" src="" style="width:75%" title="DMI 80N Temp">
-    <div id="dmiCharts" class="row dblcol g-0">
-      <div class="col-xl-6">
-      <img id="fdd" src="" title="80N FDD Season">
-      </div>
-      <div class="col-xl-6">
-      <img id="fdd_anom" src="" title="80N FDD Season Anomaly">
-      </div>
-      </div>
       
     </section>
 

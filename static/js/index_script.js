@@ -83,25 +83,16 @@ const temp_hemi_switcher = (value) => {
     } else {
       temp_hemi = value;
       button_switcher2(value);
+      // temp maps
       $('#surface_temp').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_${temp_hemi}.png`)
       $('#surface_temp_anom').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_${temp_hemi}_anom.png`)
 
+      // fdd maps
+      $('#surface_fdd').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_${temp_hemi}.png`)
+      $('#surface_fdd_anom').attr("src",`https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_${temp_hemi}_anom.png`)
+
     }
 
-}
-
-const dmi_data = () => {
-  const temp = "https://nrt.cryospherecomputing.com/DMI/DMI_Temp_graph.png";
-  const fdd = "https://nrt.cryospherecomputing.com/DMI/DMI_FDD_Year.png";
-  const fdd_anom = "https://nrt.cryospherecomputing.com/DMI/DMI_FDD_Year_Anom.png";
-  const fdd_season = "";
-  const fdd_season_anom = "";
-
-  $("#temp").attr("src",temp);
-  $("#fdd").attr("src",fdd);
-  $("#fdd_anom").attr("src",fdd_anom);
-  $("#fdd_season").attr("src",fdd_season);
-  $("#fdd_season_anom").attr("src",fdd_season_anom);
 }
 
 ice_data_switcher('amsr2');
