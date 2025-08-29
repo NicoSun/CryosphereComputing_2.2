@@ -67,13 +67,13 @@
       <div class="row dblcol">
         <div class="col-xl-6">
           <video width="800" height="1000" controls>
-            <source src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/Snow_map_10days.webm" type="video/webm">
+            <source src="https://nrt.cryospherecomputing.com/NOAA_Snow/Snow_map_10days.webm" type="video/webm">
           Your browser does not support the video tag.
           </video>
         </div>
         <div class="col-xl-6">
           <video width="800" height="1000" controls>
-            <source src="https://nrt.cryospherecomputing.com/Snow_Cover_Data/Snow_map_anomaly_10days.webm" type="video/webm">
+            <source src="https://nrt.cryospherecomputing.com/NOAA_Snow/Snow_map_anomaly_10days.webm" type="video/webm">
           Your browser does not support the video tag.
           </video>
         </div>
@@ -96,7 +96,7 @@
 <script rel="javascript" src="./static/js/navbar.js"></script>
 <script type="module">
   //Charts
-  import snowData from './Snow_cover/data/snowStatistics.js';
+  import snowData from './data/Snow_Cover/snowStatistics.js';
 
 Highcharts.chart('Stdv', snowData.stdv);
 Highcharts.chart('Histogram', snowData.histogram);

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Temperature - CryosphereComputing</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--common frameworks -->
+<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--own styles-->
+<link rel="stylesheet" href="./static/css/style.css">
+<script rel="javascript" src="./static/js/functions.js"></script>
+
+<script>
+  $(document).ready( function() {
+    checkAppearance();
+  });
+</script>
+</head>
+
+
+<body>
+  <div id="navbar-container"></div>
+
+<main>
+    <section>
+    <div class="container-fluid" style="max-width:1200px">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <div class="row trlcol">
+            <div class="col-xl-2">
+              <a href="https://cointr.ee/sunlight" class="btn btn-success">Donations</a>
+            </div>
+            <div class="col-xl-8">
+              <h1 >CryosphereComputing</h1>
+              <p ><i>by Nico Sun</i></p>
+           
+            </div>
+            <div class="col-xl-2">
+              <h4>Sections</h4>
+                  <div class="infolist"><a href="#FDD" class="btn btn-secondary">FDDs</a></div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+     <div class="row justify-content-center">
+      <div class="d-flex justify-content-center">
+        <a href="index.html" class="btn btn-secondary w-50" style="flex: 0 0 33%; max-width:33%;">Ice & Snow</a>
+        <a href="NRT-temp.html" class="btn btn-primary w-50" style="flex: 0 0 33%; max-width:33%;" >Temperature & FDD</a>
+      </div>
+    </div>
+    </div>
+  </section>
+  <br>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+      
+        <!-- Temperature -->
+    <section id="temp">
+      <h2 >Surface Temperature</h2>
+    <p class="ex">NCEP/NCAR Surface Temperature reanalysis. Mean temperature of last 5 available days</p>
+    <p style="color:red">under construction</p>
+
+    <img id="temp" src="" style="width:75%" title="">
+    <div id="NOAA_temp_maps" class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img id="surface_temp" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_nh.png" title="surface temp">
+      </div>
+      <div class="col-xl-6">
+      <img id="surface_temp_anom" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_temp_nh_anom.png" title="surface temp anomaly">
+      </div>
+      </div>
+      
+    </section>
+
+    <hr>
+    <!-- Freezing Degree Days -->
+    <section id="FDD">
+      <h2 >Freezing Degree Days</h2>
+    <img id="fdd" src="" style="width:75%" title="">
+    <div id="NOAA_fdd_maps" class="row dblcol g-0">
+      <div class="col-xl-6">
+      <img id="surface_fdd" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_nh.png" title="surface fdd">
+      </div>
+      <div class="col-xl-6">
+      <img id="surface_fdd_anom" src="https://nrt.cryospherecomputing.com/NOAA_Temp/NOAA_fdd_nh_anom.png" title="surface fdd anomaly">
+      </div>
+      </div>
+
+    <a href="fdd.html" class=" infostyle" style="margin: 1em 0em;">FDD calculator</a>
+    <p class="ex">The graphs show the Freezing Degree days over the whole freezing season. <br>
+       The sea ice thickness can be estimated based on the following formula (Lebedev 1938)<br>
+       Thickness (cm) = 1.33 * FDD (°C)^0.58</p>
+      
+    </section>
+
+    </div>
+    </div>
+  </div>
+        <div class="row justify-content-center">
+        <div class="col-8 text-center">
+          <h2>Data used</h2>
+          <p>Kalnay et al.,The NCEP/NCAR 40-year reanalysis project, Bull. Amer. Meteor. Soc., 77, 437-470, 1996.; https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html</p>
+          </div>
+  </div>
+</main>
+
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <p>CryosphereComputing</p>
+      </div>
+  </footer>
+
+</body>
+<script rel="javascript" src="./static/js/navbar.js"></script>
+</html>
