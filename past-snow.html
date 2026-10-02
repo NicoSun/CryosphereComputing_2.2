@@ -37,7 +37,7 @@
         <h2>NSIDC/NOAA Snow Extent</h2>
         <p>half-monthly Northern Hemisphere Snow Extent Maps beginning in February 1997</p>
 
-      <img id="past_Arctic" src="data/Analysis/Past_Snow/NOAA_Snowmap_20120715.png" title="Northern Hemisphere Snow Extent">
+      <img id="past_Arctic" src="data/Analysis/Past_Snow/NOAA_Snowmap_20120715.webp" title="Northern Hemisphere Snow Extent">
     </div>
     </div>
 
@@ -100,7 +100,7 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".webp";
 	showimage(imageid);
 } 
 
@@ -112,7 +112,7 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".png";
+	var imageid = "data/Analysis/Past_Snow/NOAA_Snowmap_" + slider.value + monthstring + daystring + ".webp";
 	showimage(imageid);
 } 
 

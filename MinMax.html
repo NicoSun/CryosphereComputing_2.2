@@ -51,10 +51,10 @@
 
     <div class="row dblcol">
       <div class="col-xl-6">
-      <img id="Arctic_Min" src="data/Analysis/MinMax/north/NSIDC_Min_0901_north.png" title="Arctic Minimum of Minima">
+      <img id="Arctic_Min" src="data/Analysis/MinMax/north/NSIDC_Min_0901_north.webp" title="Arctic Minimum of Minima">
       </div>
       <div class="col-xl-6">
-      <img id="Arctic_Max" src="data/Analysis/MinMax/north/NSIDC_Max_0901_north.png" title="Arctic Maximum of Maxima">
+      <img id="Arctic_Max" src="data/Analysis/MinMax/north/NSIDC_Max_0901_north.webp" title="Arctic Maximum of Maxima">
       </div>
       </div>
 
@@ -107,8 +107,8 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageMax = "data/Analysis/MinMax/" + fileending + "/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".png";
-	var imageMin = "data/Analysis/MinMax/" + fileending + "/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".png";
+	var imageMax = "data/Analysis/MinMax/" + fileending + "/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".webp";
+	var imageMin = "data/Analysis/MinMax/" + fileending + "/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".webp";
 	setImageSRC ('Arctic_Max',imageMax);
   setImageSRC ('Arctic_Min',imageMin);
 } 
@@ -122,8 +122,8 @@ Hemisphere.onchange = function() {
 	  fileending = "south"
   }
   //update image
-	var imageMax = "data/Analysis/MinMax/" + fileending + "/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".png";
-	var imageMin = "data/Analysis/MinMax/" + fileending + "/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".png";
+	var imageMax = "data/Analysis/MinMax/" + fileending + "/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".webp";
+	var imageMin = "data/Analysis/MinMax/" + fileending + "/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".webp";
 	setImageSRC ('Arctic_Max',imageMax);
   setImageSRC ('Arctic_Min',imageMin);
 }

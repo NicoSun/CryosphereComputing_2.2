@@ -1,0 +1,67 @@
+/* Container fitted safely inside a 1080p screen view */
+.zoom-container {
+  width: 100%;
+  max-width: 1900px; /* Adjust based on your layout */
+  height: 80vh;     /* Never exceeds 80% of screen height */
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  color: red;
+}
+
+.zoom-container:active {
+  cursor: grabbing;
+}
+
+.compare-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* Ensure images maintain their high-res aspect ratio without distortion */
+.compare-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Crucial: stops 3880x5820px from warping */
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.controls {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+}

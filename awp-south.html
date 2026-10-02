@@ -55,10 +55,10 @@
         <!-- Antarctic images -->
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="normal" src="data/AWP_south/final/Final_2000_south.png" title="Daily Arctic AWP">
+            <img id="normal" src="data/AWP_south/final/Final_2000_south.webp" title="Daily Arctic AWP">
             </div>
             <div class="col-xl-6">
-            <img id="anomaly" src="data/AWP_south/anom/AWP_anom_2000_south.png" title="Accumulated Arctic AWP">
+            <img id="anomaly" src="data/AWP_south/anom/AWP_anom_2000_south.webp" title="Accumulated Arctic AWP">
             </div>
         </div>
 
@@ -75,7 +75,7 @@
         <!-- Antarctic Mean-->
         <div class="row dblcol">
           <div class="col-xl-6">
-            <img src="data/AWP_south/Final_Icefree.png"  style="width:100%">
+            <img src="data/AWP_south/Final_Icefree.webp"  style="width:100%">
           </div>
           <div class="col-xl-6">
             <p class="ex">Select individual years with the slider to view the difference with the new millenia baseline of 2000-2019.</p>
@@ -102,7 +102,7 @@
 
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="percentofmax" src="data/AWP_south/percent/AWP_percent_2000_south.png" title="AWP percent of maximum">
+            <img id="percentofmax" src="data/AWP_south/percent/AWP_percent_2000_south.webp" title="AWP percent of maximum">
             </div>
             <div class="col-xl-6">
                 <p class="ex"> The maximum accumulated solar radiation varies greatly by latitude when taken over the whole astronomical summer.
@@ -158,8 +158,8 @@ slider_A.oninput = function() {
   output_A.innerHTML = (this.value-1)+"-"+this.value;
 
   //update image
-	var imageSRC_D = "data/AWP_south/final/Final_" + slider_A.value + "_south.png";
-	var imagSRC_A = "data/AWP_south/anom/AWP_anom_" + slider_A.value + "_south.png";
+	var imageSRC_D = "data/AWP_south/final/Final_" + slider_A.value + "_south.webp";
+	var imagSRC_A = "data/AWP_south/anom/AWP_anom_" + slider_A.value + "_south.webp";
 	setImageSRC("normal",imageSRC_D);
     setImageSRC("anomaly",imagSRC_A);
 }
@@ -175,7 +175,7 @@ slider.oninput = function() {
   output.innerHTML = (this.value-1)+"-"+this.value;
 
   //update image
-	var imageid = "data/AWP_south/percent/AWP_percent_" + slider.value + "_south.png";
+	var imageid = "data/AWP_south/percent/AWP_percent_" + slider.value + "_south.webp";
 	setImageSRC("percentofmax",imageid);
 }
 </script>

@@ -41,10 +41,10 @@
 
     <div class="row dblcol">
       <div class="col-xl-6">
-      <img id="past" src="data/Analysis/Past_SIT/AMSR2_SIT_2012-09-01.png" title="Arctic Sea Ice Thickness">
+      <img id="past" src="data/Analysis/Past_SIT/AMSR2_SIT_2012-09-01.webp" title="Arctic Sea Ice Thickness">
       </div>
       <div class="col-xl-6">
-      <img id="past_anomaly" src="data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_2012-09-01.png" title="Arctic  Sea Ice Thickness Anomaly">
+      <img id="past_anomaly" src="data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_2012-09-01.webp" title="Arctic  Sea Ice Thickness Anomaly">
       </div>
       </div>
 
@@ -109,8 +109,8 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "data/Analysis/Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
-	var imageid_anomaly = "data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid = "data/Analysis/Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".webp";
+	var imageid_anomaly = "data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".webp";
 	showimage(imageid,imageid_anomaly);
 } 
 
@@ -123,8 +123,8 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "data/Analysis/Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
-	var imageid_anomaly = "data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid = "data/Analysis/Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".webp";
+	var imageid_anomaly = "data/Analysis/Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".webp";
 	showimage(imageid,imageid_anomaly);
 } 
 
@@ -132,8 +132,8 @@ monthstring = monthstring.padStart(2, '0');
 function showimage (imageid,imageid_anomaly){
 
 if((slider.value == 2012 && slider2.value < 8) || (slider.value == currentyear && slider2.value > currentmonth)){
-	imageid = "data/Analysis/Past_SIT/NoData.png";
-	imageid_anomaly = "data/Analysis/Past_SIT/NoData.png";
+	imageid = "data/Analysis/Past_SIT/NoData.webp";
+	imageid_anomaly = "data/Analysis/Past_SIT/NoData.webp";
 } 
 document.getElementById("past").src = imageid;
 document.getElementById("past_anomaly").src = imageid_anomaly;

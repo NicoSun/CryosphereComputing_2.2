@@ -42,10 +42,10 @@
       <section> <!--24km Snow Covered Days-->
         <div class="row dblcol">
           <div class="col-xl-6">  <!-- Snow Cover normal -->
-          <img id="normal" src="data/Snow_Cover/24km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days">
+          <img id="normal" src="data/Snow_Cover/24km/NOAA_Snowmap_2012.webp" title="NOAA Snow Covered Days">
           </div>
           <div class="col-xl-6">  <!-- Snow Cover anomaly -->
-          <img id="anomaly" src="data/Snow_Cover/24km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly">
+          <img id="anomaly" src="data/Snow_Cover/24km/NOAA_Snowmap_anomaly_2012.webp" title="NOAA Snow Covered Days Anomaly">
           </div>
           </div>
     
@@ -64,7 +64,7 @@
       <section>
         <div class="row dblcol justify-content-between">
           <div class="col-xl-6">  <!-- Snow Cover normal -->
-            <img src="data/Snow_Cover/NOAA_Snowmap_Mean_24km_1998-2024.png" title="NOAA Snow Covered Days Mean 24km res">
+            <img src="data/Snow_Cover/NOAA_Snowmap_Mean_24km_1998-2024.webp" title="NOAA Snow Covered Days Mean 24km res">
           </div>
           <div class="col-xl-6">  <!-- Snow Cover anomaly -->
             <p class="ex">
@@ -73,7 +73,7 @@
               However, having a longer record gives a better view of changes over time and a few missing days do not impact the decadal mean much. 
             The baseline for anomaly calculation is 2000-2024<br></p>
             <center>
-              <img src="data/Snow_Cover/NOAA_Snowmap_Mean_200km.png" style="max-width: 450px;" title="NOAA Snow Covered Days Mean 200km res">
+              <img src="data/Snow_Cover/NOAA_Snowmap_Mean_200km.webp" style="max-width: 450px;" title="NOAA Snow Covered Days Mean 200km res">
             </center>
           </div>
           </div>
@@ -84,10 +84,10 @@
           <div class="col-8 text-center">
             <div class="row dblcol"> <!--200km Snow Covered Days-->
               <div class="col-xl-6">  <!-- Snow Cover normal -->
-              <img id="normal_low" src="data/Snow_Cover/200km/NOAA_Snowmap_2012.png" title="NOAA Snow Covered Days 200km resolution">
+              <img id="normal_low" src="data/Snow_Cover/200km/NOAA_Snowmap_2012.webp" title="NOAA Snow Covered Days 200km resolution">
               </div>
               <div class="col-xl-6">  <!-- Snow Cover anomaly -->
-              <img id="anomaly_low" src="data/Snow_Cover/200km/NOAA_Snowmap_anomaly_2012.png" title="NOAA Snow Covered Days Anomaly 200km resolution">
+              <img id="anomaly_low" src="data/Snow_Cover/200km/NOAA_Snowmap_anomaly_2012.webp" title="NOAA Snow Covered Days Anomaly 200km resolution">
               </div>
               </div>
               
@@ -107,7 +107,7 @@
             <option value="3">Europe</option>
             <option value="4">Asia</option>
         </select>
-        <img id="decade_mean" src="data/Snow_Cover/Low_res_Region1.png" style="width:100%">
+        <img id="decade_mean" src="data/Snow_Cover/Low_res_Region1.webp" style="width:100%">
         </div>
       </div>
       </section>
@@ -152,8 +152,8 @@ output_low.innerHTML = slider_low.value;
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value;  
-	var imageSRC = "data/Snow_Cover/24km/NOAA_Snowmap_" + slider.value + ".png";
-	var imageSRC_A = "data/Snow_Cover/24km/NOAA_Snowmap_anomaly_" + slider.value + ".png";
+	var imageSRC = "data/Snow_Cover/24km/NOAA_Snowmap_" + slider.value + ".webp";
+	var imageSRC_A = "data/Snow_Cover/24km/NOAA_Snowmap_anomaly_" + slider.value + ".webp";
 	im_elem = "normal";
 	im_elem_anom = "anomaly";
 	setImageSRC(im_elem,imageSRC);
@@ -162,8 +162,8 @@ slider.oninput = function() {
 
 slider_low.oninput = function() {
   output_low.innerHTML = this.value;  
-	var imageSRC = "data/Snow_Cover/200km/NOAA_Snowmap_" + slider_low.value + ".png";
-	var imageSRC_A = "data/Snow_Cover/200km/NOAA_Snowmap_anomaly_" + slider_low.value + ".png";
+	var imageSRC = "data/Snow_Cover/200km/NOAA_Snowmap_" + slider_low.value + ".webp";
+	var imageSRC_A = "data/Snow_Cover/200km/NOAA_Snowmap_anomaly_" + slider_low.value + ".webp";
 	im_elem = "normal_low";
 	im_elem_anom = "anomaly_low";
 	setImageSRC(im_elem,imageSRC);
@@ -171,7 +171,7 @@ slider_low.oninput = function() {
 } 
 
 input.oninput = function() {
-	var imageSRC = "data/Snow_Cover/Low_res_Region" + input.value + ".png";
+	var imageSRC = "data/Snow_Cover/Low_res_Region" + input.value + ".webp";
 	im_elem = "decade_mean";
 	setImageSRC(im_elem,imageSRC);
 } 

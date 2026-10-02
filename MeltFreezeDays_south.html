@@ -49,13 +49,13 @@
 
     <div class="row trlcol">
       <div class="col-xl-4">
-      <img id="Arctic_Min" src="data/Analysis/Antarctic_melt_freeze/2010s_001_Melt_Date.png" title="Antarctic Earliest Melt Date">
+      <img id="Arctic_Min" src="data/Analysis/Antarctic_melt_freeze/2010s_001_Melt_Date.webp" title="Antarctic Earliest Melt Date">
       </div>
       <div class="col-xl-4">
-      <img id="Arctic_Mean" src="data/Analysis/Antarctic_melt_freeze/2010s_002_Melt_Date.png" title="Antarctic Mean Melt Date">
+      <img id="Arctic_Mean" src="data/Analysis/Antarctic_melt_freeze/2010s_002_Melt_Date.webp" title="Antarctic Mean Melt Date">
       </div>
       <div class="col-xl-4">
-        <img id="Arctic_Max" src="data/Analysis/Antarctic_melt_freeze/2010s_003_Melt_Date.png" title="Antarctic Latest Melt Date">
+        <img id="Arctic_Max" src="data/Analysis/Antarctic_melt_freeze/2010s_003_Melt_Date.webp" title="Antarctic Latest Melt Date">
         </div>
       </div>
 
@@ -106,9 +106,9 @@ output2.innerHTML = this.value;
 decade = this.value;
 
 	//update image
-	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.png";
-	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.png";
-	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.png";
+	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.webp";
+	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.webp";
+	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.webp";
 	showimage(imageMax,imageMean,imageMin);
 } 
 
@@ -121,9 +121,9 @@ Hemisphere.onchange = function() {
 	  fileending = "Freeze"
   }
   //update image
-	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.png";
-	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.png";
-	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.png";
+	var imageMax = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_003_" + fileending + "_Date.webp";
+	var imageMean = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_002_" + fileending + "_Date.webp";
+	var imageMin = "data/Analysis/Antarctic_melt_freeze/" + decade + "s_001_" + fileending + "_Date.webp";
 	showimage(imageMax,imageMean,imageMin);
 }
 

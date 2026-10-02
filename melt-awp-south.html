@@ -50,10 +50,10 @@
       <section>
         <div class="row dblcol"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-          <img id="Melt_AWP_A" src="data/Melt_AWP_south/final/Melt_Final_2000_south.png" title="Final Antarctic Melt-AWP">
+          <img id="Melt_AWP_A" src="data/Melt_AWP_south/final/Melt_Final_2000_south.webp" title="Final Antarctic Melt-AWP">
           </div>
           <div class="col-xl-6">
-          <img id="Melt_AWP_B" src="data/Melt_AWP_south/anom/Melt_anom_2000_south.png" title="Antarctic Melt-AWP Anomaly">
+          <img id="Melt_AWP_B" src="data/Melt_AWP_south/anom/Melt_anom_2000_south.webp" title="Antarctic Melt-AWP Anomaly">
           </div>
           </div>
     
@@ -69,7 +69,7 @@
       <section>
         <div class="row dblcol"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-          <img id="Melt_AWP_A" src="data/Melt_AWP_south/Melt_Final_Mean_south.png" title="Melt-AWP Mean">
+          <img id="Melt_AWP_A" src="data/Melt_AWP_south/Melt_Final_Mean_south.webp" title="Melt-AWP Mean">
           </div>
           <div class="col-xl-6">
           <p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
@@ -127,10 +127,10 @@
         <h2 class="text-center">Regional charts</h2>
         <div class="row dblcol">
           <div class="col-xl-6">
-          <img id="Melt_AWP_RegionD" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionD1.png" title="Daily Regional Melt-AWP">
+          <img id="Melt_AWP_RegionD" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionD1.webp" title="Daily Regional Melt-AWP">
           </div>
           <div class="col-xl-6">
-          <img id="Melt_AWP_RegionA" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionA1.png" title="Accumulated Regional Melt-AWP">
+          <img id="Melt_AWP_RegionA" src="data/Melt_AWP_south/charts/South_Melt_AWP_RegionA1.webp" title="Accumulated Regional Melt-AWP">
           </div>
           </div>
     
@@ -152,10 +152,10 @@
         
         <div class="row dblcol" id="region_heatmap"> <!-- Pan Arctic -->
           <div class="col-xl-6">
-            <img  src="data/Melt_AWP_south/Region_Heatmap.png" style="height:100%">
+            <img  src="data/Melt_AWP_south/Region_Heatmap.webp" style="height:100%">
           </div>
           <div class="col-xl-6">
-            <img src="data/Melt_AWP_south/Region_Heatmap_anom.png" style="height:100%">
+            <img src="data/Melt_AWP_south/Region_Heatmap_anom.webp" style="height:100%">
           </div>
           </div>
        </section>
@@ -197,8 +197,8 @@ slider.oninput = function() {
   output.innerHTML = this.value;
   
   //update image
-	var imageid_D = "data/Melt_AWP_south/final/Melt_Final_" + slider.value + "_south.png";
-	var imageid_A = "data/Melt_AWP_south/anom/Melt_anom_" + slider.value + "_south.png";
+	var imageid_D = "data/Melt_AWP_south/final/Melt_Final_" + slider.value + "_south.webp";
+	var imageid_A = "data/Melt_AWP_south/anom/Melt_anom_" + slider.value + "_south.webp";
   setImageSRC("Melt_AWP_A",imageid_D);
   setImageSRC("Melt_AWP_B",imageid_A);
 } 
@@ -214,8 +214,8 @@ sliderR.oninput = function() {
   outputR.innerHTML = this.value;
   
   //update image
-	var imageid_D = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionD" + sliderR.value + ".png";
-	var imageid_A = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionA" + sliderR.value + ".png";
+	var imageid_D = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionD" + sliderR.value + ".webp";
+	var imageid_A = "data/Melt_AWP_south/charts/South_Melt_AWP_RegionA" + sliderR.value + ".webp";
   setImageSRC("Melt_AWP_RegionD",imageid_D);
   setImageSRC("Melt_AWP_RegionA",imageid_A);
 }

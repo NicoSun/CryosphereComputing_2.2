@@ -44,7 +44,7 @@
       <section>
         <div class="row dblcol">
           <div class="col-xl-6">
-          <img src="data/Snow_Cover/SubRegion_mask_labeled.png" title="Northern Hemisphere Snow Cover Regions">
+          <img src="data/Snow_Cover/SubRegion_mask_labeled.webp" title="Northern Hemisphere Snow Cover Regions">
           </div>
           <div class="col-xl-6">
             <p class="ex">Only the high resolution data since 1997 is good enough for a detailed regional analysis. <br><br>
@@ -60,7 +60,7 @@
               </select>
               </center>
               
-              <img id="Mean_extent" src="data/Snow_Cover/Regional/Mean_extent_Region1.png" style="width:100%">
+              <img id="Mean_extent" src="data/Snow_Cover/Regional/Mean_extent_Region1.webp" style="width:100%">
           </div>
           </div>
       </section>
@@ -80,7 +80,7 @@
             <br></p>
 
 
-            <img id="NorthAmerica"   src="data/Snow_Cover/Regional/NorthAmerica_Region1.png">
+            <img id="NorthAmerica"   src="data/Snow_Cover/Regional/NorthAmerica_Region1.webp">
               <div class="sliderdiv">
                 <span>Region:</span>
                 <span id="NorthAmerica_slider" style="font-weight:bold;color:red">12</span>
@@ -95,7 +95,7 @@
           <div class="col-10 text-center">
             <h3 class="w3-wide">Europe</h3>
             <p>Regions: North Europe, West Europe, Central Europe, Southern Europe, Eastern Europe<br></p>
-          <img id="Europe"   src="data/Snow_Cover/Regional/Europe_Region1.png">
+          <img id="Europe"   src="data/Snow_Cover/Regional/Europe_Region1.webp">
 
           <div class="sliderdiv">
               <span>Region:</span>
@@ -115,7 +115,7 @@
 
 
 
-          <img id="Asia"   src="data/Snow_Cover/Regional/Asia_Region1.png">
+          <img id="Asia"   src="data/Snow_Cover/Regional/Asia_Region1.webp">
 
           <div class="sliderdiv">
               <span>Region:</span>
@@ -169,7 +169,7 @@ output_Asia.innerHTML = slider_Asia.value;
 // Update the current slider value (each time you drag the slider handle)
 
 input.oninput = function() {
-	var imageSRC = "data/Snow_Cover/Regional/Mean_extent_Region" + input.value + ".png";
+	var imageSRC = "data/Snow_Cover/Regional/Mean_extent_Region" + input.value + ".webp";
 	imageelement = "Mean_extent";
   setImageSRC(imageelement,imageSRC);
 } 
@@ -178,7 +178,7 @@ slider_NA.oninput = function() {
   output_NA.innerHTML = this.value;
   
   //update image
-	var imageSRC = "data/Snow_Cover/Regional/NorthAmerica_Region" + slider_NA.value + ".png";
+	var imageSRC = "data/Snow_Cover/Regional/NorthAmerica_Region" + slider_NA.value + ".webp";
 	imageelement = "NorthAmerica";
 	setImageSRC(imageelement,imageSRC);
 } 
@@ -187,7 +187,7 @@ slider_EU.oninput = function() {
   output_EU.innerHTML = this.value;
   
   //update image
-	var imageSRC = "data/Snow_Cover/Regional/Europe_Region" + slider_EU.value + ".png";
+	var imageSRC = "data/Snow_Cover/Regional/Europe_Region" + slider_EU.value + ".webp";
 	imageelement = "Europe";
 	setImageSRC(imageelement,imageSRC);
 } 
@@ -196,7 +196,7 @@ slider_Asia.oninput = function() {
   output_Asia.innerHTML = this.value;
   
   //update image
-	var imageSRC = "data/Snow_Cover/Regional/Asia_Region" + slider_Asia.value + ".png";
+	var imageSRC = "data/Snow_Cover/Regional/Asia_Region" + slider_Asia.value + ".webp";
 	imageelement = "Asia";
 	setImageSRC(imageelement,imageSRC);
 } 

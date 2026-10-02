@@ -42,7 +42,7 @@
           <option value="Antarctic">Antarctic</option>
         </select>
         <br>
-      <img id="past_Arctic" src="data/Analysis/Past_SIC/north/NSIDC_20120915_north.png" title="Arctic Sea Ice Concentration">
+      <img id="past_Arctic" src="data/Analysis/Past_SIC/north/NSIDC_20120915_north.webp" title="Arctic Sea Ice Concentration">
      </div>
      </div>
      <div class="row justify-content-center">
@@ -103,7 +103,7 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".webp";
 	setImageSRC ('past_Arctic',imageid);
 } 
 
@@ -115,7 +115,7 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".webp";
   setImageSRC ('past_Arctic',imageid);
 } 
 
@@ -128,7 +128,7 @@ Hemisphere.onchange = function() {
 	  fileending = "south"
   }
   //update image
-	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "data/Analysis/Past_SIC/" + fileending + "/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".webp";
 setImageSRC ('past_Arctic',imageid);
 }
 

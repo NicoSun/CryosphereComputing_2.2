@@ -1,157 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Antarctica Bedrock</title>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SEO: Improved Title -->
+    <title>Interactive Antarctica Bedrock Elevation Visualization | CryosphereComputing</title>
+    
+    <!-- SEO: Meta Description (Crucial for click-through rates) -->
+    <meta name="description" content="Explore high-resolution (1km) Antarctica bedrock topography from NASA's MEaSUREs BedMachine (NSIDC-0756). Interactive visualization with panning, zooming, comparison sliders, and opacity controls to visualize sub-glacial terrain.">
+    
+    <!-- SEO: Keywords (Helpful for internal search or specific engines) -->
+    <meta name="keywords" content="Antarctica bedrock, MEaSUREs BedMachine Antarctica, NSIDC-0756, glacier elevation, bedrock visualization, Western Antarctica, CryosphereComputing, subglacial topography">
+    
+    <!-- SEO: Author & Robots -->
+    <meta name="author" content="CryosphereComputing">
+    <meta name="robots" content="index, follow">
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
-<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <!-- Open Graph / Facebook (For Social Sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="cryospherecomputing.com/bedrock-antarctica.html">
+    <meta property="og:title" content="Interactive Antarctica Bedrock Elevation Visualization">
+    <meta property="og:description" content="Visualize Antarctica's bedrock terrain using MEaSUREs BedMachine data. Features zoom, pan, and opacity controls.">
+    <meta property="og:image" content="./data/Glacier/antarctica_rgb.webp">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="cryospherecomputing.com/bedrock-antarctica.html">
+    <meta name="twitter:title" content="Interactive Antarctica Bedrock Elevation Visualization">
+    <meta name="twitter:description" content="Explore high-res Antarctica bedrock data with interactive tools.">
+    <meta property="twitter:image" content="./data/Glacier/antarctica_rgb.webp">
 
-<!--common frameworks -->
-<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
-<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+    <!-- Canonical URL (Prevents duplicate content issues) -->
+    <link rel="canonical" href="cryospherecomputing.com/bedrock-antarctica.html">
 
-<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
-<!--own styles-->
-<link rel="stylesheet" href="./static/css/style.css">
-<script rel="javascript" src="./static/js/functions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--common frameworks -->
+    <script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+    <script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
 
-<style>
-.img-comp-container {
-  position: relative;
-  height: 1150px; /*should be the same height as the images*/
-}
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-.img-comp-container_long {
-  position: relative;
-  height: 1482px; /*should be the same height as the images*/
-}
-
-.img-comp-container_short {
-  position: relative;
-  height: 777px; /*should be the same height as the images*/
-}
-</style>
-
-<script>
-  $(document).ready( function() {
-    checkAppearance();
-  });
-</script>
+    <!--own styles-->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/glacier-style.css">
+    <script rel="javascript" src="./static/js/functions.js"></script>
 </head>
 
+
 <body>
-<div id="navbar-container"></div>>
+  <div id="navbar-container"></div>
 
 <main>
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12 text-center">
         <h1>Antarctica Bedrock Elevation</h1>
-        <p><i>Colour image: 2019-01-25</i></p>
-        Opacity(%): <input type="number" id="opacitySlider" value="33" min="0" max="100">
-        <button onclick="setOpacity()">Set</button><br>
-        <img src="data/Glacier/Bedmap2_legend_discrete.png" title="Antarctica Bedrock Legend">
-      <section> <!-- all Antarctica -->
-        <div class="img-comp-container_long">
-          <div class="img-comp-img">
-            <img src="data/Glacier/Antarctica.png" width="1920" height="1482">
-          </div>
-          <div class="img-comp-img img-comp-overlay">
-            <img id="ddd" src="data/Glacier/Antarctica_bed.png" width="1920" height="1482">
-          </div>
-          </div>
-        </section>
-        <hr>
-        <section><!-- Pine Island Glacier -->
-          <h1>Pine Island Glacier</h1>
-          <p><i>Colour image: 2019-02-02</i></p>
-          <div class="img-comp-container">
-            <div class="img-comp-img">
-              <img src="data/Glacier/PIG.png" width="988" height="1150">
-          </div>
-          <div class="img-comp-img img-comp-overlay">
-            <img id="aaa" src="data/Glacier/PIG_bed.png" width="988" height="1150">
-          </div>
-          </div>
+        <p><i>Colour Image Composite: 2024-2026</i></p>
+        <img src="data/Glacier/bed-1500_300.png" alt="Color-coded legend for Antarctic bedrock elevation in meters above sea level" title="Antarctic Bedrock Legend">
          
+          <div class="image-compare" data-instance="1">
+          <div class="controls">
+            <label for="opacity-slider-1">Bedrock Opacity: <span id="opacity-value-1">33</span>%</label>
+            <input type="range" id="opacity-slider-1" min="0" max="100" value="33">
+          </div>
+          <div class="zoom-container">
+            <div class="compare-wrapper">
+              <img src="data/Glacier/antarctica_rgb.webp" alt="RGB satellite imagery of Antarctica surface features and ice margins (1km resolution)" class="image-base">
+              <div class="image-overlay">
+                <img src="data/Glacier/antarctica_bed.webp" alt="Antarctica bedrock elevation topography map showing subglacial terrain (1km resolution)" class="image-top">
+              </div>
+              <div class="slider-handle"></div>
+            </div>
+          </div>
+        </div>
         </section>
         <hr>
-        <section> <!-- Thwaites -->
-        <h1>Thwaites Glacier</h1>
-        <p><i>Colour image: 2019-02-02</i></p>
-        <div class="img-comp-container_short">
-          <div class="img-comp-img">
-            <img src="data/Glacier/Thawties.png" width="1118" height="777">
-         </div>
-         <div class="img-comp-img img-comp-overlay">
-          <img id="bbb" src="data/Glacier/Thawties_bed.png" width="1118" height="777">
-         </div>
-         </div>
+        <section> <!-- Western Antarctica -->
+          <h2>Western Antarctica</h2>
+          <p><i>Colour image: August 2026</i></p>
+          <div class="image-compare" data-instance="2">
+          <div class="controls">
+            <label for="opacity-slider-2">Bedrock Opacity: <span id="opacity-value-2">33</span>%</label>
+            <input type="range" id="opacity-slider-2" min="0" max="100" value="33">
+          </div>
+          <div class="zoom-container">
+            <div class="compare-wrapper">
+              <img src="data/Glacier/west_antarctica_rgb.webp" alt="RGB satellite imagery of Western Antarctica surface features and ice margins (250m resolution)" class="image-base">
+              <div class="image-overlay">
+                <img src="data/Glacier/west_antarctica_bed.webp" alt="Western Antarctica bedrock elevation topography map showing subglacial terrain (500m resolution)" class="image-top">
+              </div>
+              <div class="slider-handle"></div>
+            </div>
+          </div>
+        </div>
         </section>
         <hr>
-        <section> <<!-- Crossen & Dotson Ice shelf -->
-          <h1>Crossen & Dotson Ice shelf</h1>
-        <p><i>Colour image: 2019-02-02</i></p>
-        <div class="img-comp-container_short">
-          <div class="img-comp-img">
-            <img src="data/Glacier/Crossen.png" width="1274" height="777">
-         </div>
-         <div class="img-comp-img img-comp-overlay">
-          <img id="ccc" src="data/Glacier/Crossen_bed.png" width="1274" height="777">
-         </div>
-         </div>
 
+        <section class="seo-intro">
+          <h2>About This Visualization</h2>
+          <p>Explore the hidden topography beneath Antarctica's ice sheet using this interactive bedrock elevation visualization. By overlaying high-resolution satellite imagery with NASA’s BedMachine Greenland dataset, users can dynamically compare surface features against subglacial terrain.</p>
+          
+          <p><strong>Key Features:</strong></p>
+          <ul>
+            <li>Interactive before/after comparison slider for precise alignment</li>
+            <li>Adjustable bedrock opacity to isolate topographic details beneath ice cover</li>
+            <li>High-resolution panning across Western Antarcica</li>
+          </ul>
+          <a href="bedrock-archive-2019-antarctica.html" class="infostyle">Archived 2019 Viewer</a>
+
+          <p><strong>Data Sources:</strong></p>
+          <p>This visualization combines NSIDC MEaSUREs BedMachine for subglacial elevation modeling with Terra satellite imager. Temporal coverage spans 2024–2026, enabling assessment of ice sheet dynamics and bedrock interactions.</p>
         </section>
-        <hr>
-         <h2>Data used</h2>
-         <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
-         <p>Terra / MODIS from NASA Worldview.</p>
+
+        <p style="font-size: 0.8em"> Morlighem, M. (2025). MEaSUREs BedMachine Antarctica (NSIDC-0756, Version 4). [Bed].
+              Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center.
+              https://doi.org/10.5067/POJQI54A45HX. [06/06/2026].</p>
+        <p>Terra / MODIS from NASA Worldview.</p>
     </div>
     </div>
   </div>
 </main>
 
-<!-- Footer -->
-<footer>
+  <!-- Footer -->
+  <footer>
   <hr>
   <div class="container-fluid">
     <div class="row justify-content-center text-center">
-      <p>CryosphereComputing</p>
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> CryosphereComputing | Antarctica Bedrock Visualization</p>
     </div>
-</footer>
+  </footer>
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Antarctica Bedrock Elevation Visualization",
+      "description": "Interactive visualization of Antarctica bedrock topography using MEaSUREs BedMachine data. Features include panning, zooming, and opacity controls.",
+      "keywords": "antarctica, bedrock, elevation, glacier, measures, nsidc-0756",
+      "creator": {
+        "@type": "Organization",
+        "name": "CryosphereComputing"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "webp image",
+          "contentUrl": "./data/Glacier/antarctica_rgb.webp"
+        }
+      ],
+      "temporalCoverage": "2024-2026",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Antarctica"
+      },
+      "citation": "Morlighem, M. (2025). MEaSUREs BedMachine Antarctica (NSIDC-0756, Version 4)."
+    }
+  </script>
 
 </body>
 
 <script rel="javascript" src="./static/js/navbar.js"></script>
-<script type="module">
-import {initComparisons} from './static/js/img-comparison.js';
-initComparisons();
-</script>
-
-<script>
-var opacityvalueA = document.getElementById("aaa");
-var opacityvalueB = document.getElementById("bbb");
-var opacityvalueC = document.getElementById("ccc");
-var opacityvalueD = document.getElementById("ddd");
-opacityvalueA.style.opacity = 0.33;
-opacityvalueB.style.opacity = 0.33;
-opacityvalueC.style.opacity = 0.33;
-opacityvalueD.style.opacity = 0.33;
-
-function setOpacity() {
-  var Useropacity = document.getElementById("opacitySlider");
-  opacityvalueA.style.opacity = Useropacity.value/100;
-  opacityvalueB.style.opacity = Useropacity.value/100;
-  opacityvalueC.style.opacity = Useropacity.value/100;
-  opacityvalueD.style.opacity = Useropacity.value/100;
-}
-
-</script>
-
+<script src="./static/js/glacier-script.js"></script>
 </html>

@@ -40,10 +40,10 @@
         </div>
         <div class="row dblcol">
         <div class="col-xl-6">
-          <img id="normal" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_2000.png" style="width:100%" title="Arctic Ice Free Days">
+          <img id="normal" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_2000.webp" style="width:100%" title="Arctic Ice Free Days">
         </div>
         <div class="col-xl-6">
-          <img id="anomaly" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_2000.png" style="width:100%" title="Arctic Ice Free Days Anomaly">
+          <img id="anomaly" src="data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_2000.webp" style="width:100%" title="Arctic Ice Free Days Anomaly">
         </div>
         </div>
 
@@ -59,13 +59,13 @@
       <section>
         <div class="row dblcol">
           <div class="col-xl-6">
-            <img src="data/Analysis/IceFreeDays/Arctic_IceFreeDays_Mean.png" style="width:100%" title="Arctic Ice Free Days Mean">
+            <img src="data/Analysis/IceFreeDays/Arctic_IceFreeDays_Mean.webp" style="width:100%" title="Arctic Ice Free Days Mean">
           </div>
           <div class="col-xl-6">
             <p class="ex">Select individual years with the slider to view the difference with the long term mean.
               Ice Free is defined as having an ice concentration below 15%.  The baseline for anomaly calculation is 1979-2019
             </p>
-            <img src="data/Analysis/IceFreeDays/Antarctic_IceFreeDays_Mean.png" style="width:100%" title="Antarctic Ice Free Days Mean">
+            <img src="data/Analysis/IceFreeDays/Antarctic_IceFreeDays_Mean.webp" style="width:100%" title="Antarctic Ice Free Days Mean">
           </div>
           </div>
       </section>
@@ -73,10 +73,10 @@
       <section>
         <div class="row dblcol">
           <div class="col-xl-6"> <!-- Icefree Antarctic normal -->
-            <img id="normal_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_2000.png" style="width:100%" title="Antarctic Ice Free Days">
+            <img id="normal_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_2000.webp" style="width:100%" title="Antarctic Ice Free Days">
           </div>
           <div class="col-xl-6"> <!-- Icefree Antarctic anomaly -->
-            <img id="anomaly_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_2000.png" style="width:100%" title="Antarctic Ice Free Days Anomaly">
+            <img id="anomaly_south" src="data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_2000.webp" style="width:100%" title="Antarctic Ice Free Days Anomaly">
           </div>
           </div>
 
@@ -122,8 +122,8 @@ slider_A.oninput = function() {
   output_A.innerHTML = this.value;
   
   //update image
-	var imageSRC_D = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_" + slider_A.value + ".png";
-	var imagSRC_A = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_" + slider_A.value + ".png";
+	var imageSRC_D = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays_" + slider_A.value + ".webp";
+	var imagSRC_A = "data/Analysis/IceFreeDays/north/Arctic_IceFreeDays__anom_" + slider_A.value + ".webp";
   setImageSRC("normal",imageSRC_D);
   setImageSRC("anomaly",imagSRC_A);
 } 
@@ -140,8 +140,8 @@ slider.oninput = function() {
   output.innerHTML = this.value;
   
   //update image
-	var imageSRC_D = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_" + slider.value + ".png";
-	var imagSRC_A = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_" + slider.value + ".png";
+	var imageSRC_D = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays_" + slider.value + ".webp";
+	var imagSRC_A = "data/Analysis/IceFreeDays/south/Antarctic_IceFreeDays__anom_" + slider.value + ".webp";
   setImageSRC("normal_south",imageSRC_D);
   setImageSRC("anomaly_south",imagSRC_A);
 } 

@@ -76,10 +76,10 @@ p.ex {
         <!-- Pan Arctic images -->
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="normal" src="data/AWP/final/Final_2000.png" title="Daily Arctic AWP">
+            <img id="normal" src="data/AWP/final/Final_2000.webp" title="Daily Arctic AWP">
             </div>
             <div class="col-xl-6">
-            <img id="anomaly" src="data/AWP/anom/AWP_anom_2000.png" title="Accumulated Arctic AWP">
+            <img id="anomaly" src="data/AWP/anom/AWP_anom_2000.webp" title="Accumulated Arctic AWP">
             </div>
         </div>
 
@@ -96,7 +96,7 @@ p.ex {
         <!-- Pan Arctic Mean-->
         <div class="row dblcol">
           <div class="col-xl-6">
-            <img src="data/AWP/Final_Icefree.png"  style="width:100%">
+            <img src="data/AWP/Final_Icefree.webp"  style="width:100%">
           </div>
           <div class="col-xl-6">
             <p class="ex">Select individual years with the slider to view the difference with the new millenia baseline of 2000-2019. Regions with a high coastline
@@ -125,7 +125,7 @@ p.ex {
 
         <div class="row dblcol">
             <div class="col-xl-6">
-            <img id="percentofmax" src="data/AWP/percent/AWP_percent_2000.png" title="AWP percent of maximum">
+            <img id="percentofmax" src="data/AWP/percent/AWP_percent_2000.webp" title="AWP percent of maximum">
             </div>
             <div class="col-xl-6">
                 <p class="ex"> The maximum accumulated solar radiation varies greatly by latitude when taken over the whole astronomical summer.
@@ -164,7 +164,7 @@ p.ex {
         <!-- High Arctic data -->
         <div class="row dblcol">
             <div class="col-xl-6">
-                <img src="Documentation/Region_image_AWP.png" style="height:100%">
+                <img src="Documentation/Region_image_AWP.webp" style="height:100%">
             </div>
             <div class="col-xl-6">
                 <div id="Accumulated_central" style="min-width: 400px; max-width: 800px; height: 600px; margin: 0 auto"></div>
@@ -218,8 +218,8 @@ p.ex {
       output_A.innerHTML = this.value;
     
       //update image
-        var imageSRC_D = "data/AWP/final/Final_" + slider_A.value + ".png";
-        var imagSRC_A = "data/AWP/anom/AWP_anom_" + slider_A.value + ".png";
+        var imageSRC_D = "data/AWP/final/Final_" + slider_A.value + ".webp";
+        var imagSRC_A = "data/AWP/anom/AWP_anom_" + slider_A.value + ".webp";
         setImageSRC("normal",imageSRC_D);
         setImageSRC("anomaly",imagSRC_A);
     }
@@ -234,7 +234,7 @@ p.ex {
       output.innerHTML = this.value;
     
       //update image
-        var imageSRC = "data/AWP/percent/AWP_percent_" + slider.value + ".png";
+        var imageSRC = "data/AWP/percent/AWP_percent_" + slider.value + ".webp";
         setImageSRC("percentofmax",imageSRC);
     }
     // ------------------------------------------
