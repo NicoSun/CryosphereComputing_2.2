@@ -10,6 +10,10 @@
   user-select: none;
   -webkit-user-select: none;
   color: red;
+  background-color: rgb(16, 16, 44);
+
+  border: 2px solid aliceblue; /* White border (change `2px` for thickness) */
+  border-radius: 1em;       /* Rounded corners (adjust value as desired) */
 }
 
 .zoom-container:active {
