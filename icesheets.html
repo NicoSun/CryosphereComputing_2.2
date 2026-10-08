@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Iceheet Histograms</title>
 <head>
+    <title>Greenland & Antarctic Ice Sheet Thickness & Elevation Histograms | NSIDC Data</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Interactive histograms of ice sheet thickness, surface elevation, and bedrock depth. Visualize NASA BedMachine Greenland v3 and BEDMAP2 Antarctica datasets sourced from NSIDC.">
+    <meta name="keywords" content="ice sheet thickness, bedmachine greenland, bedmap2 antarctica, nsidc data, ice elevation histogram, glacier thickness distribution, cryosphere data visualization, climate research charts">
+    <meta name="author" content="CryosphereComputing">
+    <meta name="robots" content="index, follow">
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
-<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Ice Sheet Thickness & Elevation Histograms | BedMachine & BEDMAP2 Data">
+    <meta property="og:description" content="Explore ice sheet statistics with interactive charts showing thickness, surface elevation, and bedrock data from NASA and NSIDC.">
+    <meta property="og:type" content="website">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
-<!--common frameworks -->
-<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
-<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--common frameworks -->
+    <script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+    <script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
 
-<!--own styles-->
-<link rel="stylesheet" href="./static/css/style.css">
-<script rel="javascript" src="./static/js/functions.js"></script>
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <!--own styles-->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script rel="javascript" src="./static/js/functions.js"></script>
 
-<script>
-  $(document).ready( function() {
-    checkAppearance();
-  });
-</script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <script>
+      $(document).ready( function() {
+        checkAppearance();
+      });
+    </script>
 </head>
 
 <body>
@@ -38,29 +49,65 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-10 text-center">
-            <h2>Ice Sheet Main page</h2>
-            <button onclick="more_info('more_info')" class=" infostyle">Info</button>
-            <div id="more_info">
-            <p> This page shows the distribution of Greenland's and Antarctica's ice thickness, surface elevation and bedrock elevation.
+            <h1>Ice Sheet Thickness & Elevation Histograms</h1>
+            <p class="lead mb-4">
+              Visualize the distribution of ice thickness, surface elevation, and bedrock depth for Greenland and
+              Antarctica using data from NASA's IceBridge program and NSIDC archives.
             </p>
-            </div>
+            <button onclick="more_info('more_info')" class="btn btn-outline-secondary mb-3">More Info</button>
+            <div id="more_info" class="text-start p-4 rounded shadow-sm mb-4">
+            <h3>Data Visualization Overview</h3>
+            <p>
+              This dashboard provides detailed statistical distributions of ice sheet properties. The interactive charts display:
+            </p>
+            <ul>
+                <li><strong>Ice Thickness:</strong> Distribution of ice volume across the sheets.</li>
+                <li><strong>Surface Elevation:</strong> Variations in surface height relative to sea level.</li>
+                <li><strong>Bedrock Elevation:</strong> Topography beneath the ice, critical for understanding bed conditions and flow dynamics.</li>
+            </ul>
+          </div>
+          </div>
+            
             <hr>
-            <h3>Greenland</h3>
+            <h2 id="greenland">Greenland Main Ice Sheet</h2>
+            <p class="text-muted small">Data Source: IceBridge BedMachine Greenland, Version 6</p>
             <div id="Greenland_thickness" style="min-width: 800px; max-width: 1200px; height: 800px; margin: 0 auto"></div>
             <div id="Greenland_surface" style="min-width: 800px; max-width: 1200px; height: 800px; margin: 0 auto"></div>
             <div id="Greenland_bedrock" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
             <hr>
-            <h3>Antarctica including ice shelves</h3>
+
+            <h2 id="antarctica">Antarctic Ice Sheet</h2>
+            <p class="text-muted small">Includes ice shelves. Data Source: MEaSUREs BedMachine Antarctica, Version 4</p>
             <div id="Antarctic_thickness" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
             <div id="Antarctic_surface" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
             <div id="Antarctic_bedrock" style="min-width: 800px; max-width: 1200px; height: 1000px; margin: 0 auto"></div>
             <hr>
-            <h2>Data used</h2>
-            <h4>Greenland</h4>
-            <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>
 
-            <h4>Antarctica</h4>
-            <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p>
+            <section class="data-source">
+                    <h2>Data Sources & Provenance</h2>
+                    
+                    <div class="row justify-content-center text-start">
+                        <div class="col-md-6 mb-3">
+                            <h4>Antarctica Data</h4>
+                            <p>Sourced from <a href="https://nsidc.org/data/NSIDC-0756" target="_blank" rel="noopener noreferrer">MEaSUREs BedMachine Antarctica, Version 4</a>.</p>
+                            <blockquote class="citation small text-muted">
+                                Fretwell, P. et al. (2013). The Cryosphere, 7, 375-393. 
+                                <a href="https://doi.org/10.5067/POJQI54A45HX" target="_blank">DOI: 10.5067/POJQI54A45HX</a>
+                            </blockquote>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <h4>Greenland Data</h4>
+                            <p>Sourced from NASA's IceBridge program via the 
+                                <a href="https://nsidc.org/data/IDBMG4" target="_blank" rel="noopener noreferrer">IceBridge BedMachine Greenland, Version 6</a>.
+                            </p>
+                            <blockquote class="citation small text-muted">
+                                Morlighem, M. et al. (2017), updated 2018. 
+                                <a href="https://doi.org/10.5067/6B6B225B8V2D" target="_blank">DOI: 10.5067/6B6B225B8V2D</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
 
           </div>
           </div>
@@ -73,9 +120,35 @@
     <hr>
     <div class="container-fluid">
       <div class="row justify-content-center text-center">
-        <p>CryosphereComputing</p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> CryosphereComputing | Antarctic & Greenland Thickness & Elevation</p>
       </div>
-  </footer>
+    </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Ice Sheet Thickness and Elevation Histograms",
+  "description": "Interactive histograms visualizing ice thickness, surface elevation, and bedrock depth for Greenland (BedMachine v6) and Antarctica (BedMachine v4).",
+  "keywords": ["ice sheet", "thickness", "elevation", "bedmachine", "bedmap", "nsidc", "climate data"],
+  "creator": {
+    "@type": "Organization",
+    "name": "CryosphereComputing"
+  },
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "visualization",
+      "contentUrl": "./icesheets.html"
+    }
+  ],
+  "citation": [
+    "Fretwell, P. et al. BedMachine Antarctica, Version 4.",
+    "Morlighem, M. et al. BedMachine Greenland, Version 6."
+  ]
+}
+</script>
+
 
 <script rel="javascript" src="./static/js/navbar.js"></script>
 

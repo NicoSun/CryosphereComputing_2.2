@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Icebergs</title>
 <head>
+    <title>Antarctic Iceberg Tracker | Weekly Locations, Size & Drift Data</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Monitor weekly Antarctic iceberg locations, sizes, and drift speeds. Interactive map and data table updated weekly using U.S. National Ice Center (NIC) sources.">
+    <meta name="keywords" content="Antarctic icebergs, iceberg tracker, weekly iceberg locations, climate monitoring, national ice center data, cryosphere computing, iceberg size, navigation safety">
+    <meta name="author" content="CryosphereComputing">
+    <meta name="robots" content="index, follow">
 
-<link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
-<link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Antarctic Iceberg Tracker | weekly Locations & Data">
+    <meta property="og:description" content="Track Antarctic icebergs with live locations, size analysis, and drift speed maps. Updated weekly from U.S. National Ice Center data.">
+    <meta property="og:type" content="website">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link REL="SHORTCUT ICON" href="static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="static/favicon.ico" type="image/x-icon">
 
-<!--common frameworks -->
-<script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
-<script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--common frameworks -->
+  <script rel="javascript" src="./static/js/jquery-3.6.4.min.js"></script>
+  <script rel="javascript" src="./static/js/bootstrap.bundle.min.js"></script>
 
-<!--own styles-->
-<link rel="stylesheet" href="./static/css/style.css">
-<link rel="stylesheet" href="./static/css/table.css">
-<script rel="javascript" src="./static/js/functions.js"></script>
-<script rel="javascript" src="./static/js/table.js"></script>
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Resources -->
-<script rel="javascript" src="./static/am5/index.js"></script>
-<script rel="javascript" src="./static/am5/Animated.js"></script>
-<script rel="javascript" src="./static/am5/map.js"></script>
-<script rel="javascript" src="./static/am5/worldRegionsHigh.js"></script>
+  <!--own styles-->
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/table.css">
+  <script rel="javascript" src="./static/js/functions.js"></script>
+  <script rel="javascript" src="./static/js/table.js"></script>
 
-<script>
-  $(document).ready( function() {
-    checkAppearance();
-  });
-</script>
+  <!-- Resources -->
+  <script rel="javascript" src="./static/am5/index.js"></script>
+  <script rel="javascript" src="./static/am5/Animated.js"></script>
+  <script rel="javascript" src="./static/am5/map.js"></script>
+  <script rel="javascript" src="./static/am5/worldRegionsHigh.js"></script>
+
+  <script>
+    $(document).ready( function() {
+      checkAppearance();
+    });
+  </script>
 </head>
 
 <body>
@@ -43,7 +54,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-10 text-center">
-        <h2>Antarctic Icebergs</h2>
+         <h1>Antarctic Iceberg Tracker</h1>
         <p class="ex">Iceberg locations, speed and size updated every Saturday</p>
 
         <center>
@@ -70,15 +81,29 @@
       <hr>
 
       <div>
-        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" style="width:100%" title="weekly iceberg travel distance">
-        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_size.png" style="width:100%" title="current top iceberg sizes">
+        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_movement.png" style="width:100%" alt="Chart showing weekly iceberg travel distance in Antarctica" 
+               title="weekly iceberg travel distance">
+        <img src="https://nrt.cryospherecomputing.com/icebergs/icebergs_size.png" style="width:100%" alt="Chart displaying current largest Antarctic icebergs by area" title="current top iceberg sizes">
       </div>
 
-  
       <hr>
-      <h2 >Data used</h2>
-      <p> U.S. National Ice Center (NIC); https://usicecenter.gov/pub/Iceberg_Tabular.csv </p>
+        <div class="seo-content">
+            <h2>About Antarctic Iceberg Monitoring</h2>
+            <p>
+                This dashboard provides real-time tracking of Antarctic icebergs, leveraging authoritative data from the 
+                <strong>U.S. National Ice Center (NIC)</strong>. Researchers, maritime operators, and climate scientists use this 
+                interactive chart to monitor drift patterns, iceberg sizes, and potential navigation hazards in Southern Ocean shipping routes.
+            </p>
+            
+            <h3>Data Methodology & Updates</h3>
+            <p>
+                Our tracking system visualizes locations derived from satellite imagery processed by the NIC. Data is refreshed 
+                every Saturday to ensure accuracy regarding iceberg movement and calving events. The table below allows users to sort 
+                specific icebergs by latitude, longitude, length, width, and approximate area.
+            </p>
 
+            <p class="small text-muted mt-3">Data Source: U.S. National Ice Center (NIC) via <a href="https://usicecenter.gov/pub/Iceberg_Tabular.csv" rel="noopener noreferrer">Iceberg_Tabular.csv</a></p>
+        </div>
 
       </div>
       </div>
@@ -90,9 +115,9 @@
     <hr>
     <div class="container-fluid">
       <div class="row justify-content-center text-center">
-        <p>CryosphereComputing</p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> CryosphereComputing | Antarctic Icebergs</p>
       </div>
-  </footer>
+    </footer>
 
 
 <script rel="javascript" src="./static/js/navbar.js"></script>
